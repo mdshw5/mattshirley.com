@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Matthew Shirley">
+
+<title>Mattshirley.com &middot; an n=1 experiment</title>
+
+<link href="{{ url_for('recent_feed') }}"
+      rel="alternate"
+      title="Recent Changes" 
+      type="application/atom+xml">
+<link rel=stylesheet media="screen" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<link rel=stylesheet media="print" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27937514-1']);
+  _gaq.push(['_setDomainName', 'mattshirley.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<body>
+<div class="container">
+    <div class="row well hidden-print">
+        <div class="row">
+            <div class="col-sm-8 col-md-9">
+                {{ render_markdown('/home/matt/microblog/microblog/static/md/banner.md') }}
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <img class="img-circle" src="{{ 'mdshw5@gmail.com' | gravatar }}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-md-3 hidden-print">
+            <ul class="list-unstyled">
+                <li><h5>ME</h5></li>
+                <li><a href="{{ url_for('about') }}#contact">Contact</a></li>
+                <li><a href="{{ url_for('about') }}#education">Education</a></li>
+                <li><a href="{{ url_for('about') }}#publications">Publications</a></li>
+                <li><a href="{{ url_for('about') }}#research">Research</a></li>
+                <li><a href="{{ url_for('about') }}#teaching">Teaching</a></li>
+                <li><a href="{{ url_for('about') }}#seminars">Seminars</a></li>
+                <li><a href="{{ url_for('about') }}#posters">Posters</a></li>
+                <li><a href="{{ url_for('about') }}#software">Software</a></li>
+                <li><a href="{{ url_for('posts') }}#posts">Blog</a></li>
+                <hr>
+                <li><h5>GITHUB REPOSITORIES</h5></li>
+                {{ get_git_repos('mdshw5') }}
+                <hr>
+                <li><h5>TOOLS</h5></li>
+                <li><a href="{{ url_for('scical') }}">Hopkins Science Calendar Feed</a></li>
+                <li><a href="{{ url_for('validate') }}">Hamstring: Checksum</a></li>
+                <li><a href="{{ url_for('methyldecode') }}">MethylString: Decode</a></li>
+                <li><a href="{{ url_for('methylencode') }}">MethylString: Encode</a></li>
+                <li><a href="http://tripod.mattshirley.com" target="_blank">triPOD: Parent of Origin Detection</a></li>
+            </ul>
+            <hr>
+        </div>
+        <div class="col-sm-10 col-md-9">
+            <div class="content">
+                {% for message in get_flashed_messages() %}
+                <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ message }}
+                </div>
+                {% endfor %}
+                {% block body %}{% endblock %}
+            </div>
+            <div class="hidden-print" id="disqus_thread">
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'mattshirley'; // required: replace example with your forum shortname
+                
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <div>
+                <small class="text-muted hidden-print">Powered by <a href="http://flask.pocoo.org">Flask. </a></small> 
+                <small class="text-muted hidden-print">Styled with <a href="http://twitter.github.io/">Bootstrap.</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Matt Shirley (matt.shirley@jhmi.edu)" />
+  <meta name="date" content="2013-04-25" />
+  <title>Hello web: Accessing databases and APIs using Biopython</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Hello web: Accessing databases and APIs using Biopython</h1>
+  <p class="author">
+Matt Shirley (matt.shirley@jhmi.edu)
+  </p>
+  <p class="date">25 April 2013</p>
+</div>
+<div id="what-is-biopython" class="slide section level1">
+<h1>What is Biopython?</h1>
+<ul>
+<li><a href="http://biopython.org">Biopython</a> is a Python module providing a collection of useful tools for:
+<ul>
+<li>parsing bioinformatics file formats</li>
+<li>structured, object-oriented access to bioinformatics data</li>
+<li>interfacing with online bioinformatics databases</li>
+<li>methods for common bioinformatics data manipulations</li>
+</ul></li>
+</ul>
+</div>
+<div id="installing-biopython" class="slide section level1">
+<h1>Installing Biopython</h1>
+<ul>
+<li>Windows
+<ul>
+<li>Download the <a href="http://biopython.org/wiki/Download">appropriate installer</a> for your version of Python</li>
+</ul></li>
+<li>Mac &amp; Linux
+<ul>
+<li>Easy option: from a terminal execute <code>sudo pip install Biopython</code>. If <code>pip</code> is not installed, try <code>easy_install</code>.</li>
+<li>Harder option: Download the <a href="http://biopython.org/DIST/biopython-1.61.tar.gz">source tarball</a> and follow the compilation instructions.</li>
+</ul></li>
+</ul>
+<p>To test whether you successfully installed Biopython, run <code>python -c 'import Bio'</code>. If you don't see an error message, you're done.</p>
+</div>
+<div id="simple-example-the-seq-class" class="slide section level1">
+<h1>Simple example: the Seq class</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> Bio.Seq <span class="ch">import</span> Seq
+<span class="ch">from</span> Bio.Alphabet <span class="ch">import</span> generic_dna
+
+dna = Seq(<span class="st">&#39;ATGGGGTTCGATCGTCCTTTCCCAGCTCTGACTAG&#39;</span>, generic_dna)
+<span class="kw">print</span> <span class="dt">str</span>(dna)
+
+rna = dna.transcribe()
+<span class="kw">print</span> <span class="dt">str</span>(rna)
+
+prot = dna.translate()
+<span class="kw">print</span> <span class="dt">str</span>(prot)</code></pre>
+<pre><code>## ATGGGGTTCGATCGTCCTTTCCCAGCTCTGACTAG
+## AUGGGGUUCGAUCGUCCUUUCCCAGCUCUGACUAG
+## MGFDRPFPALT</code></pre>
+</div>
+<div id="seq-class-methods" class="slide section level1">
+<h1>Seq class methods</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> Bio.Seq <span class="ch">import</span> Seq
+<span class="ch">from</span> Bio.Alphabet <span class="ch">import</span> generic_dna
+
+dna = Seq(<span class="st">&#39;ATGGGGTTCGATCGTCCTTTCCCAGCTCTGACTAG&#39;</span>, generic_dna)
+<span class="kw">print</span> <span class="dt">str</span>(dna)
+<span class="kw">print</span> <span class="dt">str</span>(dna.complement())
+<span class="kw">print</span> <span class="dt">str</span>(dna.reverse_complement())
+
+prot = dna.translate()
+<span class="kw">print</span> <span class="dt">str</span>(prot)
+<span class="kw">try</span>:
+    prot.complement()
+<span class="kw">except</span> <span class="ot">ValueError</span>, e:
+    <span class="kw">print</span> e</code></pre>
+<pre><code>## ATGGGGTTCGATCGTCCTTTCCCAGCTCTGACTAG
+## TACCCCAAGCTAGCAGGAAAGGGTCGAGACTGATC
+## CTAGTCAGAGCTGGGAAAGGACGATCGAACCCCAT
+## MGFDRPFPALT
+## Proteins do not have complements!</code></pre>
+<p>Why can we not complement a <em>Protein</em>? Simple: Biopython Seq objects have an &quot;alphabet&quot; associated with them that prevents you from doing such silly things.</p>
+</div>
+<div id="counting-bases-method-gc-content-example" class="slide section level1">
+<h1>Counting bases method: GC content example</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> Bio.Seq <span class="ch">import</span> Seq
+<span class="ch">from</span> Bio.Alphabet <span class="ch">import</span> generic_dna
+
+dna = Seq(<span class="st">&#39;ATGGGGTTCGATCGTCCTTTCCCAGCTCTGACTAG&#39;</span>, generic_dna)
+comp = dna.complement()
+<span class="kw">print</span> <span class="dt">str</span>(dna)
+<span class="kw">print</span> [(base, dna.count(base)) <span class="kw">for</span> base in [<span class="st">&#39;A&#39;</span>,<span class="st">&#39;C&#39;</span>,<span class="st">&#39;T&#39;</span>,<span class="st">&#39;G&#39;</span>]]
+<span class="kw">print</span> [(base, comp.count(base)) <span class="kw">for</span> base in [<span class="st">&#39;A&#39;</span>,<span class="st">&#39;C&#39;</span>,<span class="st">&#39;T&#39;</span>,<span class="st">&#39;G&#39;</span>]]</code></pre>
+<pre><code>## ATGGGGTTCGATCGTCCTTTCCCAGCTCTGACTAG
+## [(&#39;A&#39;, 5), (&#39;C&#39;, 10), (&#39;T&#39;, 11), (&#39;G&#39;, 9)]
+## [(&#39;A&#39;, 11), (&#39;C&#39;, 9), (&#39;T&#39;, 5), (&#39;G&#39;, 10)]</code></pre>
+<p>Note that you don't really need Biopython for this, except for the complement function.</p>
+</div>
+<div id="querying-entrez" class="slide section level1">
+<h1>Querying Entrez</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> textwrap <span class="ch">import</span> fill
+<span class="ch">from</span> Bio <span class="ch">import</span> Entrez
+Entrez.email = <span class="st">&#39;matt.shirley@jhmi.edu&#39;</span>
+
+query = Entrez.einfo()
+result = Entrez.read(query)
+keys = result.keys()
+<span class="kw">print</span> keys
+results = <span class="st">&#39; &#39;</span>.join(result[<span class="st">&#39;DbList&#39;</span>])
+<span class="kw">print</span> fill(results, <span class="dv">60</span>)</code></pre>
+<pre><code>## [u&#39;DbList&#39;]
+## pubmed protein nuccore nucleotide nucgss nucest structure
+## genome assembly gcassembly genomeprj bioproject biosample
+## biosystems blastdbinfo books cdd clinvar clone gap gapplus
+## dbvar epigenomics gene gds geoprofiles homologene journals
+## medgen mesh ncbisearch nlmcatalog omia omim pmc popset probe
+## proteinclusters pcassay pccompound pcsubstance pubmedhealth
+## seqannot snp sra taxonomy toolkit toolkitall toolkitbook
+## unigene unists gencoll</code></pre>
+<p>Use <code>einfo()</code> to list the properties of each database. In this example, we return a result listing all of the available databases to query.</p>
+</div>
+<div id="querying-a-specific-database-in-entrez" class="slide section level1">
+<h1>Querying a specific database in Entrez</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> textwrap <span class="ch">import</span> fill
+<span class="ch">from</span> Bio <span class="ch">import</span> Entrez
+Entrez.email = <span class="st">&#39;matt.shirley@jhmi.edu&#39;</span>
+
+query = Entrez.einfo(db=<span class="st">&#39;pubmed&#39;</span>)
+result = Entrez.read(query)
+keys = result.keys()
+<span class="kw">print</span> keys
+results = <span class="st">&#39; &#39;</span>.join(result[<span class="st">&#39;DbInfo&#39;</span>])
+<span class="kw">print</span> fill(results, <span class="dv">60</span>)
+<span class="kw">print</span> result[<span class="st">&#39;DbInfo&#39;</span>][<span class="st">&#39;Count&#39;</span>]</code></pre>
+<pre><code>## [u&#39;DbInfo&#39;]
+## Count LastUpdate MenuName Description LinkList FieldList
+## DbName
+## 22690440</code></pre>
+</div>
+<div id="listing-our-search-terms" class="slide section level1">
+<h1>Listing our search terms</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> Bio <span class="ch">import</span> Entrez
+Entrez.email = <span class="st">&#39;matt.shirley@jhmi.edu&#39;</span>
+
+query = Entrez.einfo(db=<span class="st">&#39;pubmed&#39;</span>)
+result = Entrez.read(query)
+fieldlist = result[<span class="st">&#39;DbInfo&#39;</span>][<span class="st">&#39;FieldList&#39;</span>]
+<span class="kw">for</span> field in fieldlist:
+    <span class="kw">print</span> <span class="st">&#39;</span><span class="ot">%(Name)s</span><span class="st">, </span><span class="ot">%(FullName)s</span><span class="st">, </span><span class="ot">%(Description)s</span><span class="st">&#39;</span> % field</code></pre>
+<pre><code>## ALL, All Fields, All terms from all searchable fields
+## UID, UID, Unique number assigned to publication
+## FILT, Filter, Limits the records
+## TITL, Title, Words in title of publication
+## WORD, Text Word, Free text associated with publication
+## MESH, MeSH Terms, Medical Subject Headings assigned to publication
+## MAJR, MeSH Major Topic, MeSH terms of major importance to publication
+## AUTH, Author, Author(s) of publication
+## JOUR, Journal, Journal abbreviation of publication
+## AFFL, Affiliation, Author&#39;s institutional affiliation and address
+## ECNO, EC/RN Number, EC number for enzyme or CAS registry number
+## SUBS, Supplementary Concept, CAS chemical name or MEDLINE Substance Name
+## PDAT, Date - Publication, Date of publication
+## EDAT, Date - Entrez, Date publication first accessible through Entrez
+## VOL, Volume, Volume number of publication
+## PAGE, Pagination, Page number(s) of publication
+## PTYP, Publication Type, Type of publication (e.g., review)
+## LANG, Language, Language of publication
+## ISS, Issue, Issue number of publication
+## SUBH, MeSH Subheading, Additional specificity for MeSH term
+## SI, Secondary Source ID, Cross-reference from publication to other databases
+## MHDA, Date - MeSH, Date publication was indexed with MeSH terms
+## TIAB, Title/Abstract, Free text associated with Abstract/Title
+## OTRM, Other Term, Other terms associated with publication
+## INVR, Investigator, Investigator
+## COLN, Author - Corporate, Corporate Author of publication
+## CNTY, Place of Publication, Country of publication
+## PAPX, Pharmacological Action, MeSH pharmacological action pre-explosions
+## GRNT, Grant Number, NIH Grant Numbers
+## MDAT, Date - Modification, Date of last modification
+## CDAT, Date - Completion, Date of completion
+## PID, Publisher ID, Publisher ID
+## FAUT, Author - First, First Author of publication
+## FULL, Author - Full, Full Author Name(s) of publication
+## FINV, Investigator - Full, Full name of investigator
+## TT, Transliterated Title, Words in transliterated title of publication
+## LAUT, Author - Last, Last Author of publication
+## PPDT, Print Publication Date, Date of print publication
+## EPDT, Electronic Publication Date, Date of Electronic publication
+## LID, Location ID, ELocation ID
+## CRDT, Date - Create, Date publication first accessible through Entrez
+## BOOK, Book, ID of the book that contains the document
+## ED, Editor, Section&#39;s Editor
+## ISBN, ISBN, ISBN
+## PUBN, Publisher, Publisher&#39;s name
+## AUCL, Author Cluster ID, Author Cluster ID
+## EID, Extended PMID, Extended PMID</code></pre>
+</div>
+<div id="searching-pubmed" class="slide section level1">
+<h1>Searching PubMed</h1>
+<p>Use <code>Entrez.esearch</code> to actually search one of the databases, providing a search query term using the fields we identified using <code>Entrez.einfo</code>.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> Bio <span class="ch">import</span> Entrez
+Entrez.email = <span class="st">&#39;matt.shirley@jhmi.edu&#39;</span>
+
+query = Entrez.esearch(db=<span class="st">&#39;pubmed&#39;</span>, \
+term=<span class="st">&#39;Shirley M[AUTH] AND Johns Hopkins School of Medicine[AFFL]&#39;</span>)
+result = Entrez.read(query)
+<span class="kw">print</span> result[<span class="st">&#39;Count&#39;</span>]
+<span class="kw">print</span> result[<span class="st">&#39;IdList&#39;</span>]</code></pre>
+<pre><code>## 3
+## [&#39;23549483&#39;, &#39;23185369&#39;, &#39;22374857&#39;]</code></pre>
+<p>Dang. Only three publications as of:</p>
+<pre><code>## 2013-04-24</code></pre>
+</div>
+<div id="searching-nucleotide" class="slide section level1">
+<h1>Searching Nucleotide</h1>
+<p>Use <code>Entrez.efetch</code> to return a result from an accession number. Here we're grabbing the FASTA format sequence from a GenBank accession.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> Bio <span class="ch">import</span> Entrez
+Entrez.email = <span class="st">&#39;matt.shirley@jhmi.edu&#39;</span>
+
+query = Entrez.efetch(db=<span class="st">&#39;nucleotide&#39;</span>, \
+<span class="dt">id</span>=<span class="st">&#39;312176363&#39;</span>, \
+rettype=<span class="st">&#39;gb&#39;</span>, \
+retmode=<span class="st">&#39;text&#39;</span>)
+sequence = query.read()
+<span class="kw">print</span> sequence
+<span class="kw">with</span> <span class="dt">open</span>(<span class="st">&#39;example.gb&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="ch">as</span> out:
+    out.write(sequence)</code></pre>
+<pre><code>## LOCUS       NM_002072               2215 bp    mRNA    linear   PRI 17-APR-2013
+## DEFINITION  Homo sapiens guanine nucleotide binding protein (G protein), q
+##             polypeptide (GNAQ), mRNA.
+## ACCESSION   NM_002072
+## VERSION     NM_002072.3  GI:312176363
+## KEYWORDS    .
+## SOURCE      Homo sapiens (human)
+##   ORGANISM  Homo sapiens
+##             Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+##             Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+##             Catarrhini; Hominidae; Homo.
+## REFERENCE   1  (bases 1 to 2215)
+##   AUTHORS   Xiang,B., Zhang,G., Stefanini,L., Bergmeier,W., Gartner,T.K.,
+##             Whiteheart,S.W. and Li,Z.
+##   TITLE     The Src family kinases and protein kinase C synergize to mediate
+##             Gq-dependent platelet activation
+##   JOURNAL   J. Biol. Chem. 287 (49), 41277-41287 (2012)
+##    PUBMED   23066026
+##   REMARK    GeneRIF: Src family kinases, PI3 kinase and protein kinase C
+##             synergize to mediate Gq-dependent platelet activation
+## REFERENCE   2  (bases 1 to 2215)
+##   AUTHORS   Daniels,A.B., Lee,J.E., MacConaill,L.E., Palescandolo,E., Van
+##             Hummelen,P., Adams,S.M., DeAngelis,M.M., Hahn,W.C., Gragoudas,E.S.,
+##             Harbour,J.W., Garraway,L.A. and Kim,I.K.
+##   TITLE     High throughput mass spectrometry-based mutation profiling of
+##             primary uveal melanoma
+##   JOURNAL   Invest. Ophthalmol. Vis. Sci. 53 (11), 6991-6996 (2012)
+##    PUBMED   22977135
+##   REMARK    GeneRIF: The vast majority of primary large uveal melanomas harbor
+##             mutually-exclusive mutations in GNAQ or GNA11, but very rarely have
+##             the oncogenic mutations that are reported commonly in other
+##             cancers.
+##             Publication Status: Online-Only
+## REFERENCE   3  (bases 1 to 2215)
+##   AUTHORS   Drastichova,Z. and Novotny,J.
+##   TITLE     Identification and subcellular localization of molecular complexes
+##             of Gq/11alpha protein in HEK293 cells
+##   JOURNAL   Acta Biochim. Biophys. Sin. (Shanghai) 44 (8), 641-649 (2012)
+##    PUBMED   22710260
+##   REMARK    GeneRIF: analysis of molecular complexes of Gq/11alpha protein in
+##             HEK293 cells
+## REFERENCE   4  (bases 1 to 2215)
+##   AUTHORS   Golebiewska,U., Guo,Y., Khalikaprasad,N., Zurawsky,C.,
+##             Yerramilli,V.S. and Scarlata,S.
+##   TITLE     gamma-Synuclein interacts with phospholipase Cbeta2 to modulate G
+##             protein activation
+##   JOURNAL   PLoS ONE 7 (8), E41067 (2012)
+##    PUBMED   22905097
+##   REMARK    GeneRIF: gamma-synuclein has a role in promoting a more robust G
+##             protein Galphaq activation of PLCbeta2
+## REFERENCE   5  (bases 1 to 2215)
+##   AUTHORS   Svensson,L., Stanley,P., Willenbrock,F. and Hogg,N.
+##   TITLE     The Galphaq/11 proteins contribute to T lymphocyte migration by
+##             promoting turnover of integrin LFA-1 through recycling
+##   JOURNAL   PLoS ONE 7 (6), E38517 (2012)
+##    PUBMED   22701657
+##   REMARK    GeneRIF: Vesicle-associated Galphaq/11 is required for the turnover
+##             of LFA-1 adhesion that is necessary for immune cell migration.
+## REFERENCE   6  (bases 1 to 2215)
+##   AUTHORS   Dong,Q., Shenker,A., Way,J., Haddad,B.R., Lin,K., Hughes,M.R.,
+##             McBride,O.W., Spiegel,A.M. and Battey,J.
+##   TITLE     Molecular cloning of human G alpha q cDNA and chromosomal
+##             localization of the G alpha q gene (GNAQ) and a processed
+##             pseudogene
+##   JOURNAL   Genomics 30 (3), 470-475 (1995)
+##    PUBMED   8825633
+## REFERENCE   7  (bases 1 to 2215)
+##   AUTHORS   Lesch,K.P. and Manji,H.K.
+##   TITLE     Signal-transducing G proteins and antidepressant drugs: evidence
+##             for modulation of alpha subunit gene expression in rat brain
+##   JOURNAL   Biol. Psychiatry 32 (7), 549-579 (1992)
+##    PUBMED   1333286
+## REFERENCE   8  (bases 1 to 2215)
+##   AUTHORS   Berstein,G., Blank,J.L., Jhon,D.Y., Exton,J.H., Rhee,S.G. and
+##             Ross,E.M.
+##   TITLE     Phospholipase C-beta 1 is a GTPase-activating protein for Gq/11,
+##             its physiologic regulator
+##   JOURNAL   Cell 70 (3), 411-418 (1992)
+##    PUBMED   1322796
+## REFERENCE   9  (bases 1 to 2215)
+##   AUTHORS   Shenker,A., Goldsmith,P., Unson,C.G. and Spiegel,A.M.
+##   TITLE     The G protein coupled to the thromboxane A2 receptor in human
+##             platelets is a member of the novel Gq family
+##   JOURNAL   J. Biol. Chem. 266 (14), 9309-9313 (1991)
+##    PUBMED   1851174
+## REFERENCE   10 (bases 1 to 2215)
+##   AUTHORS   Banno,Y., Yada,Y. and Nozawa,Y.
+##   TITLE     Purification and characterization of membrane-bound phospholipase C
+##             specific for phosphoinositides from human platelets
+##   JOURNAL   J. Biol. Chem. 263 (23), 11459-11465 (1988)
+##    PUBMED   2841328
+## COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+##             reference sequence was derived from DB474490.1, BC069520.1,
+##             BC057777.1 and CV570171.1.
+##             This sequence is a reference standard in the RefSeqGene project.
+##             On Nov 17, 2010 this sequence version replaced gi:40254461.
+##             
+##             Summary: This locus encodes a guanine nucleotide-binding protein.
+##             The encoded protein, an alpha subunit in the Gq class, couples a
+##             seven-transmembrane domain receptor to activation of phospolipase
+##             C-beta. Mutations at this locus have been associated with problems
+##             in platelet activation and aggregation. A related pseudogene exists
+##             on chromosome 2.[provided by RefSeq, Nov 2010].
+##             
+##             Publication Note:  This RefSeq record includes a subset of the
+##             publications that are available for this gene. Please see the Gene
+##             record to access additional publications.
+##             
+##             ##Evidence-Data-START##
+##             Transcript exon combination :: BC057777.1, U43083.1 [ECO:0000332]
+##             RNAseq introns              :: single sample supports all introns
+##                                            ERS025084 [ECO:0000348]
+##             ##Evidence-Data-END##
+## PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+##             1-1                 DB474490.1         1-1
+##             2-1361              BC069520.1         1-1360
+##             1362-2098           BC057777.1         1335-2071
+##             2099-2099           CV570171.1         220-220
+##             2100-2215           BC057777.1         2073-2188
+## FEATURES             Location/Qualifiers
+##      source          1..2215
+##                      /organism=&quot;Homo sapiens&quot;
+##                      /mol_type=&quot;mRNA&quot;
+##                      /db_xref=&quot;taxon:9606&quot;
+##                      /chromosome=&quot;9&quot;
+##                      /map=&quot;9q21&quot;
+##      gene            1..2215
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /note=&quot;guanine nucleotide binding protein (G protein), q
+##                      polypeptide&quot;
+##                      /db_xref=&quot;GeneID:2776&quot;
+##                      /db_xref=&quot;HGNC:4390&quot;
+##                      /db_xref=&quot;MIM:600998&quot;
+##      exon            1..204
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /inference=&quot;alignment:Splign:1.39.8&quot;
+##                      /number=1
+##      STS             51..1167
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /db_xref=&quot;UniSTS:482300&quot;
+##      CDS             69..1148
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /note=&quot;guanine nucleotide-binding protein alpha-q&quot;
+##                      /codon_start=1
+##                      /product=&quot;guanine nucleotide-binding protein G(q) subunit
+##                      alpha&quot;
+##                      /protein_id=&quot;NP_002063.2&quot;
+##                      /db_xref=&quot;GI:40254462&quot;
+##                      /db_xref=&quot;CCDS:CCDS6658.1&quot;
+##                      /db_xref=&quot;GeneID:2776&quot;
+##                      /db_xref=&quot;HGNC:4390&quot;
+##                      /db_xref=&quot;MIM:600998&quot;
+##                      /translation=&quot;MTLESIMACCLSEEAKEARRINDEIERQLRRDKRDARRELKLLL
+##                      LGTGESGKSTFIKQMRIIHGSGYSDEDKRGFTKLVYQNIFTAMQAMIRAMDTLKIPYK
+##                      YEHNKAHAQLVREVDVEKVSAFENPYVDAIKSLWNDPGIQECYDRRREYQLSDSTKYY
+##                      LNDLDRVADPAYLPTQQDVLRVRVPTTGIIEYPFDLQSVIFRMVDVGGQRSERRKWIH
+##                      CFENVTSIMFLVALSEYDQVLVESDNENRMEESKALFRTIITYPWFQNSSVILFLNKK
+##                      DLLEEKIMYSHLVDYFPEYDGPQRDAQAAREFILKMFVDLNPDSDKIIYSHFTCATDT
+##                      ENIRFVFAAVKDTILQLNLKEYNLV&quot;
+##      exon            205..389
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /inference=&quot;alignment:Splign:1.39.8&quot;
+##                      /number=2
+##      exon            390..544
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /inference=&quot;alignment:Splign:1.39.8&quot;
+##                      /number=3
+##      exon            545..673
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /inference=&quot;alignment:Splign:1.39.8&quot;
+##                      /number=4
+##      exon            674..803
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /inference=&quot;alignment:Splign:1.39.8&quot;
+##                      /number=5
+##      exon            804..957
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /inference=&quot;alignment:Splign:1.39.8&quot;
+##                      /number=6
+##      exon            958..2198
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /inference=&quot;alignment:Splign:1.39.8&quot;
+##                      /number=7
+##      STS             1596..1815
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /standard_name=&quot;A002Y36&quot;
+##                      /db_xref=&quot;UniSTS:59945&quot;
+##      STS             1977..2180
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##                      /standard_name=&quot;SHGC-53345&quot;
+##                      /db_xref=&quot;UniSTS:63543&quot;
+##      polyA_signal    2168..2173
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+##      polyA_site      2198
+##                      /gene=&quot;GNAQ&quot;
+##                      /gene_synonym=&quot;G-ALPHA-q; GAQ&quot;
+## ORIGIN      
+##         1 gggagggtgt gtgtgcgcgc tgtgagcagg gggtgccggc ggggctgcag cggaggcact
+##        61 ttggaagaat gactctggag tccatcatgg cgtgctgcct gagcgaggag gccaaggaag
+##       121 cccggcggat caacgacgag atcgagcggc agctccgcag ggacaagcgg gacgcccgcc
+##       181 gggagctcaa gctgctgctg ctcgggacag gagagagtgg caagagtacg tttatcaagc
+##       241 agatgagaat catccatggg tcaggatact ctgatgaaga taaaaggggc ttcaccaagc
+##       301 tggtgtatca gaacatcttc acggccatgc aggccatgat cagagccatg gacacactca
+##       361 agatcccata caagtatgag cacaataagg ctcatgcaca attagttcga gaagttgatg
+##       421 tggagaaggt gtctgctttt gagaatccat atgtagatgc aataaagagt ttatggaatg
+##       481 atcctggaat ccaggaatgc tatgatagac gacgagaata tcaattatct gactctacca
+##       541 aatactatct taatgacttg gaccgcgtag ctgaccctgc ctacctgcct acgcaacaag
+##       601 atgtgcttag agttcgagtc cccaccacag ggatcatcga ataccccttt gacttacaaa
+##       661 gtgtcatttt cagaatggtc gatgtagggg gccaaaggtc agagagaaga aaatggatac
+##       721 actgctttga aaatgtcacc tctatcatgt ttctagtagc gcttagtgaa tatgatcaag
+##       781 ttctcgtgga gtcagacaat gagaaccgaa tggaggaaag caaggctctc tttagaacaa
+##       841 ttatcacata cccctggttc cagaactcct cggttattct gttcttaaac aagaaagatc
+##       901 ttctagagga gaaaatcatg tattcccatc tagtcgacta cttcccagaa tatgatggac
+##       961 cccagagaga tgcccaggca gcccgagaat tcattctgaa gatgttcgtg gacctgaacc
+##      1021 cagacagtga caaaattatc tactcccact tcacgtgcgc cacagacacc gagaatatcc
+##      1081 gctttgtctt tgctgccgtc aaggacacca tcctccagtt gaacctgaag gagtacaatc
+##      1141 tggtctaatt gtgcctccta gacacccgcc ctgcccttcc ctggtgggct attgaagata
+##      1201 cacaagaggg actgtatttc tgtggaaaac aatttgcata atactaattt attgccgtcc
+##      1261 tggactctgt gtgagcgtgt ccacagagtt tgtagtaaat attatgattt tatttaaact
+##      1321 attcagagga aaaacagagg atgctgaagt acagtcccag cacatttcct ctctatcttt
+##      1381 tttttaggca aaaccttgtg actcagtgta ttttaaattc tcagtcatgc actcacaaag
+##      1441 ataagacttg tttctttctg tctctctctc tttttctttt ctatggagca aaacaaagct
+##      1501 gatttccctt ttttcttccc ccgctaattc atacctccct cctgatgttt ttcccaggtt
+##      1561 acaatggcct ttatcctagt tccattcttg gtcaagtttt tctctcaaat gatacagtca
+##      1621 ggacacatcg ttcgatttaa gccatcatca gcttaattta agtttgtagt ttttgctgaa
+##      1681 ggattatatg tattaatact tacggtttta aatgtgttgc tttggataca cacatagttt
+##      1741 cttttttaat agaatatact gtcttgtctc actttggact gggacagtgg atgcccatct
+##      1801 aaaagttaag tgtcatttct tttagatgtt taccttcagc catagcttga ttgctcagag
+##      1861 aaatatgcag aaggcaggat caaagacaca caggagtcct ttcttttgaa atgccacgtg
+##      1921 ccattgtctt tcctcccttc tttgcttctt tttcttaccc tctctttcaa ttgcagatgc
+##      1981 caaaaaagat gccaacagac actacattac cctaatggct gctacccaga acctttttat
+##      2041 aggttgttct taattttttt gttgttgttg ttcaagcttt tcctttcttt tttttcttgg
+##      2101 tgtttgggcc acgattttaa aatgactttt attatgggta tgtgttgcca aagctggctt
+##      2161 tttgtcaaat aaaatgaata cgaacttaaa aaataaaaaa aaaaaaaaaa aaaaa
+## //</code></pre>
+</div>
+<div id="converting-file-types" class="slide section level1">
+<h1>Converting file types</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> Bio <span class="ch">import</span> SeqIO
+count = SeqIO.convert(<span class="st">&#39;example.gb&#39;</span>, <span class="st">&#39;genbank&#39;</span>, <span class="st">&#39;example.fasta&#39;</span>, <span class="st">&#39;fasta&#39;</span>)
+<span class="kw">print</span> <span class="st">&#39;converted {0} records&#39;</span>.<span class="dt">format</span>(count)</code></pre>
+<pre><code>## converted 1 records</code></pre>
+</div>
+<div id="reading-sequence-files" class="slide section level1">
+<h1>Reading sequence files</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> textwrap <span class="ch">import</span> fill
+<span class="ch">from</span> Bio <span class="ch">import</span> SeqIO
+<span class="kw">with</span> <span class="dt">open</span>(<span class="st">&#39;example.fasta&#39;</span>, <span class="st">&#39;rU&#39;</span>) <span class="ch">as</span> infile:
+    sequence = SeqIO.read(infile, <span class="st">&#39;fasta&#39;</span>)
+<span class="kw">print</span> sequence.<span class="dt">id</span>
+<span class="kw">print</span> fill(<span class="dt">str</span>(sequence.seq))</code></pre>
+<pre><code>## NM_002072.3
+## GGGAGGGTGTGTGTGCGCGCTGTGAGCAGGGGGTGCCGGCGGGGCTGCAGCGGAGGCACTTTGGAAGAAT
+## GACTCTGGAGTCCATCATGGCGTGCTGCCTGAGCGAGGAGGCCAAGGAAGCCCGGCGGATCAACGACGAG
+## ATCGAGCGGCAGCTCCGCAGGGACAAGCGGGACGCCCGCCGGGAGCTCAAGCTGCTGCTGCTCGGGACAG
+## GAGAGAGTGGCAAGAGTACGTTTATCAAGCAGATGAGAATCATCCATGGGTCAGGATACTCTGATGAAGA
+## TAAAAGGGGCTTCACCAAGCTGGTGTATCAGAACATCTTCACGGCCATGCAGGCCATGATCAGAGCCATG
+## GACACACTCAAGATCCCATACAAGTATGAGCACAATAAGGCTCATGCACAATTAGTTCGAGAAGTTGATG
+## TGGAGAAGGTGTCTGCTTTTGAGAATCCATATGTAGATGCAATAAAGAGTTTATGGAATGATCCTGGAAT
+## CCAGGAATGCTATGATAGACGACGAGAATATCAATTATCTGACTCTACCAAATACTATCTTAATGACTTG
+## GACCGCGTAGCTGACCCTGCCTACCTGCCTACGCAACAAGATGTGCTTAGAGTTCGAGTCCCCACCACAG
+## GGATCATCGAATACCCCTTTGACTTACAAAGTGTCATTTTCAGAATGGTCGATGTAGGGGGCCAAAGGTC
+## AGAGAGAAGAAAATGGATACACTGCTTTGAAAATGTCACCTCTATCATGTTTCTAGTAGCGCTTAGTGAA
+## TATGATCAAGTTCTCGTGGAGTCAGACAATGAGAACCGAATGGAGGAAAGCAAGGCTCTCTTTAGAACAA
+## TTATCACATACCCCTGGTTCCAGAACTCCTCGGTTATTCTGTTCTTAAACAAGAAAGATCTTCTAGAGGA
+## GAAAATCATGTATTCCCATCTAGTCGACTACTTCCCAGAATATGATGGACCCCAGAGAGATGCCCAGGCA
+## GCCCGAGAATTCATTCTGAAGATGTTCGTGGACCTGAACCCAGACAGTGACAAAATTATCTACTCCCACT
+## TCACGTGCGCCACAGACACCGAGAATATCCGCTTTGTCTTTGCTGCCGTCAAGGACACCATCCTCCAGTT
+## GAACCTGAAGGAGTACAATCTGGTCTAATTGTGCCTCCTAGACACCCGCCCTGCCCTTCCCTGGTGGGCT
+## ATTGAAGATACACAAGAGGGACTGTATTTCTGTGGAAAACAATTTGCATAATACTAATTTATTGCCGTCC
+## TGGACTCTGTGTGAGCGTGTCCACAGAGTTTGTAGTAAATATTATGATTTTATTTAAACTATTCAGAGGA
+## AAAACAGAGGATGCTGAAGTACAGTCCCAGCACATTTCCTCTCTATCTTTTTTTTAGGCAAAACCTTGTG
+## ACTCAGTGTATTTTAAATTCTCAGTCATGCACTCACAAAGATAAGACTTGTTTCTTTCTGTCTCTCTCTC
+## TTTTTCTTTTCTATGGAGCAAAACAAAGCTGATTTCCCTTTTTTCTTCCCCCGCTAATTCATACCTCCCT
+## CCTGATGTTTTTCCCAGGTTACAATGGCCTTTATCCTAGTTCCATTCTTGGTCAAGTTTTTCTCTCAAAT
+## GATACAGTCAGGACACATCGTTCGATTTAAGCCATCATCAGCTTAATTTAAGTTTGTAGTTTTTGCTGAA
+## GGATTATATGTATTAATACTTACGGTTTTAAATGTGTTGCTTTGGATACACACATAGTTTCTTTTTTAAT
+## AGAATATACTGTCTTGTCTCACTTTGGACTGGGACAGTGGATGCCCATCTAAAAGTTAAGTGTCATTTCT
+## TTTAGATGTTTACCTTCAGCCATAGCTTGATTGCTCAGAGAAATATGCAGAAGGCAGGATCAAAGACACA
+## CAGGAGTCCTTTCTTTTGAAATGCCACGTGCCATTGTCTTTCCTCCCTTCTTTGCTTCTTTTTCTTACCC
+## TCTCTTTCAATTGCAGATGCCAAAAAAGATGCCAACAGACACTACATTACCCTAATGGCTGCTACCCAGA
+## ACCTTTTTATAGGTTGTTCTTAATTTTTTTGTTGTTGTTGTTCAAGCTTTTCCTTTCTTTTTTTTCTTGG
+## TGTTTGGGCCACGATTTTAAAATGACTTTTATTATGGGTATGTGTTGCCAAAGCTGGCTTTTTGTCAAAT
+## AAAATGAATACGAACTTAAAAAATAAAAAAAAAAAAAAAAAAAAA</code></pre>
+</div>
+<div id="writing-sequence-files" class="slide section level1">
+<h1>Writing sequence files</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> Bio <span class="ch">import</span> SeqIO
+<span class="kw">with</span> <span class="dt">open</span>(<span class="st">&#39;example.fasta&#39;</span>, <span class="st">&#39;rU&#39;</span>) <span class="ch">as</span> infile:
+    sequence = SeqIO.read(infile, <span class="st">&#39;fasta&#39;</span>)
+sequence.seq = sequence.seq.translate()
+<span class="kw">print</span> sequence.seq[:<span class="dv">36</span>]
+<span class="kw">with</span> <span class="dt">open</span>(<span class="st">&#39;example_prot.fasta&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="ch">as</span> out:
+    SeqIO.write(sequence, out, <span class="st">&#39;fasta&#39;</span>)</code></pre>
+<pre><code>## GRVCVRAVSRGCRRGCSGGTLEE*LWSPSWRAA*AR</code></pre>
+<p>Reading our example FASTA file, translating it to protein, then writing a new FASTA file.</p>
+</div>
+<div id="questions" class="slide section level1">
+<h1>Questions?</h1>
+<p>There's no homework this week. Let's use this extra time to discuss your final project proposals and go through any issues with last week's homework.</p>
+</div>
+</body>
+</html>

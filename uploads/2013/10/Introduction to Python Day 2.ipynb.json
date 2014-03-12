@@ -1,0 +1,470 @@
+{
+ "metadata": {
+  "name": "Introduction to Python Day 2"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Overview\n\n- Importing modules\n- Reading and writing files\n- Functions\n- Classes\n- Writing scripts"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Importing Modules"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "- Python comes with a fairly large number of functions and data structures \"out of the box\".\n- Some things are missing though\n- We can add functionality by `importing` modules"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "import time\ntime.time()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 40,
+       "text": "1383091943.203496"
+      }
+     ],
+     "prompt_number": 40
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "time.strftime('%c', time.localtime())",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 41,
+       "text": "'Wed Oct 30 00:12:23 2013'"
+      }
+     ],
+     "prompt_number": 41
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "import math\nmath.log10(1000)",
+     "language": "python",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 42,
+       "text": "3.0"
+      }
+     ],
+     "prompt_number": 42
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "import this",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 43
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Reading and writing files\n\nUsing the `open` function, we can open any file for reading or writing."
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "fasta_file = open('hemoglobin_beta.fasta', 'r')\nfasta_file",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 44,
+       "text": "<open file 'hemoglobin_beta.fasta', mode 'r' at 0x19e7b70>"
+      }
+     ],
+     "prompt_number": 44
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "`open` takes one of several modes:\n\n- 'r' for *reading*\n- 'w' for *writing*\n- 'a' for *appending* writes to the end of a file\n- 'r+' for both read and write\n- 'rb' and 'wb' for *binary* files\n  - mostly this is unnecessary when your files are text"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "We can read the entire contents of a file with `open.readlines`"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "fasta_contents = fasta_file.readlines()\nfasta_file.close() ## close open file\nlen(fasta_contents)",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 45,
+       "text": "39"
+      }
+     ],
+     "prompt_number": 45
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "The `readlines` method reads the entire file as list of strings, including the line terminator `\\n`."
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "print fasta_contents",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "['>gi|17985948|ref|NM_033234.1| Rattus norvegicus hemoglobin, beta (Hbb), mRNA\\n', 'TGCTTCTGACATAGTTGTGTTGACTCACAAACTCAGAAACAGACACCATGGTGCACCTGACTGATGCTGA\\n', 'GAAGGCTGCTGTTAATGGCCTGTGGGGAAAGGTGAACCCTGATGATGTTGGTGGCGAGGCCCTGGGCAGG\\n', 'CTGCTGGTTGTCTACCCTTGGACCCAGAGGTACTTTGATAGCTTTGGGGACCTGTCCTCTGCCTCTGCTA\\n', 'TCATGGGTAACCCTAAGGTGAAGGCCCATGGCAAGAAGGTGATAAACGCCTTCAATGATGGCCTGAAACA\\n', 'CTTGGACAACCTCAAGGGCACCTTTGCTCATCTGAGTGAACTCCACTGTGACAAGCTGCATGTGGATCCT\\n', 'GAGAACTTCAGGCTCCTGGGCAATATGATTGTGATTGTGTTGGGCCACCACCTGGGCAAGGAATTCACCC\\n', 'CCTGTGCACAGGCTGCCTTCCAGAAGGTGGTGGCTGGAGTGGCCAGTGCCCTGGCTCACAAGTACCACTA\\n', 'AACCTCTTTTCCTGCTCTTGTCTTTGTGCAATGGTCAATTGTTCCCAAGAGAGCATCTGTCAGTTGTTGT\\n', 'CAAAATGACAAAGACCTTTGAAAATCTGTCCTACTAATAAAAGGCATTTACTTTCACTGC\\n', '>gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA\\n', 'ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGA\\n', 'GGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGC\\n', 'AGGCTGCTGGTGGTCTACCCTTGGACCCAGAGGTTCTTTGAGTCCTTTGGGGATCTGTCCACTCCTGATG\\n', 'CTGTTATGGGCAACCCTAAGGTGAAGGCTCATGGCAAGAAAGTGCTCGGTGCCTTTAGTGATGGCCTGGC\\n', 'TCACCTGGACAACCTCAAGGGCACCTTTGCCACACTGAGTGAGCTGCACTGTGACAAGCTGCACGTGGAT\\n', 'CCTGAGAACTTCAGGCTCCTGGGCAACGTGCTGGTCTGTGTGCTGGCCCATCACTTTGGCAAAGAATTCA\\n', 'CCCCACCAGTGCAGGCTGCCTATCAGAAAGTGGTGGCTGGTGTGGCTAATGCCCTGGCCCACAAGTATCA\\n', 'CTAAGCTCGCTTTCTTGCTGTCCAATTTCTATTAAAGGTTCCTTTGTTCCCTAAGTCCAACTACTAAACT\\n', 'GGGGGATATTATGAAGGGCCTTGAGCATCTGGATTCTGCCTAATAAAAAACATTTATTTTCATTGC\\n', '>gi|160358323|ref|NM_173917.2| Bos taurus hemoglobin, beta (HBB), mRNA\\n', 'ACACTTGCTTCTGACACAACCGTGTTCACTAGCAACTACACAAACAGACACCATGCTGACTGCTGAGGAG\\n', 'AAGGCTGCCGTCACCGCCTTTTGGGGCAAGGTGAAAGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGC\\n', 'TGCTGGTTGTCTACCCCTGGACTCAGAGGTTCTTTGAGTCCTTTGGGGACTTGTCCACTGCTGATGCTGT\\n', 'TATGAACAACCCTAAGGTGAAGGCCCATGGCAAGAAGGTGCTAGATTCCTTTAGTAATGGCATGAAGCAT\\n', 'CTCGATGACCTCAAGGGCACCTTTGCTGCGCTGAGTGAGCTGCACTGTGATAAGCTGCATGTGGATCCTG\\n', 'AGAACTTCAAGCTCCTGGGCAACGTGCTAGTGGTTGTGCTGGCTCGCAATTTTGGCAAGGAATTCACCCC\\n', 'GGTGCTGCAGGCTGACTTTCAGAAGGTGGTGGCTGGTGTGGCCAATGCCCTGGCCCACAGATATCATTAA\\n', 'GCTCCCTTTCCTGCTTTCCAGGAAAGGTTTTTTCATCCTCAGAGCCCAAAGATTGAATATGGAAAAATTA\\n', 'TGAAGTGTTTTGAGCATCTGGCCTCTGCCTAATAAAGACATTTATTTTCATTGCAAAAAAAAAAAAAAAA\\n', 'AAA\\n', '>gi|256600241|ref|NM_001164428.1| Macaca mulatta hemoglobin, beta (HBB), mRNA\\n', 'ACAGACACCATGGTGCATCTGACTCCTGAGGAGAAGACTGCCGTTACCACCCTGTGGGGCAAGGTGAACG\\n', 'TGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGCTGCTGGTGGTCTACCCTTGGACCCAGAGGTTCTTTGA\\n', 'TTCCTTTGGGGATCTGTCCTCTCCTGATGCTGTTATGGGCAACCCTAAGGTGAAGGCTCATGGCAAGAAA\\n', 'GTGCTTGGTGCCTTTAGTGATGGCCTGAATCACCTGGACAACCTCAAGGGCACCTTTGCCCAGCTCAGTG\\n', 'AGCTGCACTGTGACAAGCTGCATGTGGATCCTGAGAACTTCAAGCTCCTGGGCAACGTGCTGGTGTGTGT\\n', 'GCTGGCCCATCACTTTGGCAAAGAATTCACCCCGCAAGTGCAGGCTGCCTATCAGAAAGTGGTGGCTGGT\\n', 'GTGGCTAATGCCCTGGCCCACAAGTACCACTAAGCTCACTTTCTTGCTGTC\\n']\n"
+      }
+     ],
+     "prompt_number": 46
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "[line.strip('\\n') for line in fasta_contents][:9]",
+     "language": "python",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 47,
+       "text": "['>gi|17985948|ref|NM_033234.1| Rattus norvegicus hemoglobin, beta (Hbb), mRNA',\n 'TGCTTCTGACATAGTTGTGTTGACTCACAAACTCAGAAACAGACACCATGGTGCACCTGACTGATGCTGA',\n 'GAAGGCTGCTGTTAATGGCCTGTGGGGAAAGGTGAACCCTGATGATGTTGGTGGCGAGGCCCTGGGCAGG',\n 'CTGCTGGTTGTCTACCCTTGGACCCAGAGGTACTTTGATAGCTTTGGGGACCTGTCCTCTGCCTCTGCTA',\n 'TCATGGGTAACCCTAAGGTGAAGGCCCATGGCAAGAAGGTGATAAACGCCTTCAATGATGGCCTGAAACA',\n 'CTTGGACAACCTCAAGGGCACCTTTGCTCATCTGAGTGAACTCCACTGTGACAAGCTGCATGTGGATCCT',\n 'GAGAACTTCAGGCTCCTGGGCAATATGATTGTGATTGTGTTGGGCCACCACCTGGGCAAGGAATTCACCC',\n 'CCTGTGCACAGGCTGCCTTCCAGAAGGTGGTGGCTGGAGTGGCCAGTGCCCTGGCTCACAAGTACCACTA',\n 'AACCTCTTTTCCTGCTCTTGTCTTTGTGCAATGGTCAATTGTTCCCAAGAGAGCATCTGTCAGTTGTTGT']"
+      }
+     ],
+     "prompt_number": 47
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "- We can use the `strip` method for each string in our new list.\n- `'AGTC\\n'.strip() == 'AGTC\\n'.strip('\\n\\r\\t ')`\n  - The method default is to strip all \"whitespace\" characters"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "for line in fasta_contents:\n    line = line.strip()\n    if line[0] == '>':\n        print 'Header is %s' % (line)\n    else:\n        pass",
+     "language": "python",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "Header is >gi|17985948|ref|NM_033234.1| Rattus norvegicus hemoglobin, beta (Hbb), mRNA\nHeader is >gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA\nHeader is >gi|160358323|ref|NM_173917.2| Bos taurus hemoglobin, beta (HBB), mRNA\nHeader is >gi|256600241|ref|NM_001164428.1| Macaca mulatta hemoglobin, beta (HBB), mRNA\n"
+      }
+     ],
+     "prompt_number": 48
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "- We can loop through the list and identify the FASTA header lines by `'>'` at index 0"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "You can also iterate directly on an open file."
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "fasta_file = open('hemoglobin_beta.fasta', 'r')\nfor line in fasta_file:\n    line = line.strip()\n    if line[0] == '>':\n        print 'Header is %s' % (line)\n    else:\n        pass ## do nothing\nfasta_file.close()",
+     "language": "python",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "-"
+      }
+     },
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "Header is >gi|17985948|ref|NM_033234.1| Rattus norvegicus hemoglobin, beta (Hbb), mRNA\nHeader is >gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA\nHeader is >gi|160358323|ref|NM_173917.2| Bos taurus hemoglobin, beta (HBB), mRNA\nHeader is >gi|256600241|ref|NM_001164428.1| Macaca mulatta hemoglobin, beta (HBB), mRNA\n"
+      }
+     ],
+     "prompt_number": 49
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Exercise 1: Identify the sequence lines in a FASTA file\n\nHow would you change the previous `for` loop to identify only the sequence lines from the FASTA file?"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Exercise 2: Count the sequences in a FASTA file\n\nHow would you count the number of sequences in a FASTA file?"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "We can use `open` to write a file using a loop."
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "outfile = open('just_the_headers.fasta', 'w')\nfor line in fasta_contents:\n    line = line.strip()\n    if line[0] == '>':\n        outfile.write(line + '\\n') ## add back a line terminator\noutfile.close()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 50
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Context handler"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "with open('hemoglobin_beta.fasta', 'r') as fasta_file:\n    for line in fasta_file:\n        if line[0] == '>':\n            print \"I found a header!\"",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "I found a header!\nI found a header!\nI found a header!\nI found a header!\n"
+      }
+     ],
+     "prompt_number": 51
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "The `with` context handler automatically closes a file after the subsequent code block finishes evaluation."
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Functions"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "def get_fasta_headers(fasta):\n    headers = [] ## an empty list to store found headers\n    for line in fasta:\n        if line[0] == '>':\n            headers.append(line) ## add header to headers list\n        else:\n            pass \n    return headers",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 52
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "fasta_headers = get_fasta_headers(fasta_contents)\nfasta_headers",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 53,
+       "text": "['>gi|17985948|ref|NM_033234.1| Rattus norvegicus hemoglobin, beta (Hbb), mRNA\\n',\n '>gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA\\n',\n '>gi|160358323|ref|NM_173917.2| Bos taurus hemoglobin, beta (HBB), mRNA\\n',\n '>gi|256600241|ref|NM_001164428.1| Macaca mulatta hemoglobin, beta (HBB), mRNA\\n']"
+      }
+     ],
+     "prompt_number": 53
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "Functions take *arguments* and *return* values.\n\n```\ndef function(args):\n    do_something\n    return(something)\n```\n\n- `return` can only be called once, and then the function ends\n- `args` can be any type of object"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "def get_fasta_headers(fasta, count=False):\n    counter = 0 ## counter if we need it\n    headers = [] ## an empty list to store found headers\n    for line in fasta:\n        if line[0] == '>':\n            headers.append(line) ## add header to headers list\n            if count:\n                counter += 1\n        else:\n            pass \n    if count:\n        return (headers, counter)\n    return headers",
+     "language": "python",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "outputs": [],
+     "prompt_number": 54
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "get_fasta_headers(fasta_contents, count=True)",
+     "language": "python",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "-"
+      }
+     },
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 55,
+       "text": "(['>gi|17985948|ref|NM_033234.1| Rattus norvegicus hemoglobin, beta (Hbb), mRNA\\n',\n  '>gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA\\n',\n  '>gi|160358323|ref|NM_173917.2| Bos taurus hemoglobin, beta (HBB), mRNA\\n',\n  '>gi|256600241|ref|NM_001164428.1| Macaca mulatta hemoglobin, beta (HBB), mRNA\\n'],\n 4)"
+      }
+     ],
+     "prompt_number": 55
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Exercise 3: complement DNA sequence\n\nHow can we write a function that takes a DNA string and returns the complementary sequence?"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Classes"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "Classes are like a blueprint for an object in Python. They are defined similarly to functions."
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "class fasta:\n    def __init__(self, name='', seq=''):\n        self.name = name\n        self.seq = seq\n    def __len__(self):\n        return len(self.seq)\n    def complement(self):\n        pairings = {'a':'t', 't':'a',\n                    'g':'c', 'c':'g'}\n        comp = ''\n        for base in self.seq.lower():\n            comp += pairings[base]\n        return comp",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 56
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "seq1 = fasta(name='seq1', seq='ATGGCTATGTATGAT')\nseq1.complement()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 57,
+       "text": "'taccgatacatacta'"
+      }
+     ],
+     "prompt_number": 57
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Writing scripts\n\nSo far we have been using Python *interactively*. This is fine for small, one-time tasks. However, if we need to run a longer or more complicated task we should write a *script*.\n\nWe just write the code in a text editor and save it with a `.py` extension.\n\n```\nwith open('hemoglobin_beta.fasta', 'r') as fasta_file:\n    for line in fasta_file:\n        if line[0] == '>':\n            print line\n```"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "Then simply run the script from your shell:\n\n```\n$ python find_headers.py\n>gi|17985948|ref|NM_033234.1| Rattus norvegicus hemoglobin, beta (Hbb), mRNA\n>gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA\n>gi|160358323|ref|NM_173917.2| Bos taurus hemoglobin, beta (HBB), mRNA\n>gi|256600241|ref|NM_001164428.1| Macaca mulatta hemoglobin, beta (HBB), mRNA\n```"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {
+      "slideshow": {
+       "slide_type": "slide"
+      }
+     },
+     "source": "##Homework!\n\nWrite a script that reads [this file](https://dl.dropboxusercontent.com/u/570154/hbb.txt) and converts each sequence from DNA to RNA. Email me the script as well as the resulting sequences!"
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

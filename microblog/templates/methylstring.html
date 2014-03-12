@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+{% from "_formhelpers.html" import render_field %}
+<form method=post action="/methylstring">
+  <dl>
+    {{ render_field(form.string) }}
+  </dl>
+  <dl>
+    {{ render_field(form.length) }}
+  </dl>
+  <p><button class="btn" type=submit>Decode</button>
+</form>
+<p>MethylString decodes ASCII encoded methylation strings from bisulfite converted DNA sequences.</p>
+<h2>Output format</h2>
+<p>Each ASCII character encodes two digits which encode information about two nucleotide positions. 
+Possible values for the methylation string (MT) are:</p>
+<pre>
+    0 - not a cytosine
+    1 - converted, unmethylated cytosine on top strand
+    2 - converted, unmethylated cytosine on bot strand
+    3 - converted, unmethylated cytosine on top strand complement
+    4 - converted, unmethylated cytosine on bot strand complement
+    5 - methylated cytosine on top strand
+    6 - methylated cytosine on bot strand
+    7 - reserved
+    8 - reserved
+</pre>
+<p>A representational diagram of top and bottom strands is also produced, which depicts 
+the top and bottom DNA strand as well as deamination (C/c) and methylation (M) status of 
+every cytosine.</p>
+{% endblock %}

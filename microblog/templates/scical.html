@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block body %}
+<p>Do you read the <a href="http://www.hopkinsmedicine.org/scical/">Johns Hopkins Medicine Science Calendar</a> every day? <em>Me either.</em> That's why I've created a service that scrapes the calendar page and formats it as a subscribable iCalendar feed. If you notice errors in the events listed, please contact the <a href="http://www.hopkinsmedicine.org/scical/">calendar's maintainer</a>. Times for events longer than 1 hour may be incorrect.</p>
+<p><a href="webcal://mattshirley.com/scical.ics">Subscribe using your calendaring application</a> or manually at <code>http://mattshirley.com/scical.ics</code>.</p>
+
+{% endblock %}

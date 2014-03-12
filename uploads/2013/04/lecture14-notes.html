@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Matt Shirley (matt.shirley@jhmi.edu)" />
+  <meta name="date" content="2013-05-02" />
+  <title>Interfacing R and Python using Rpy2</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Interfacing R and Python using Rpy2</h1>
+  <p class="author">
+Matt Shirley (matt.shirley@jhmi.edu)
+  </p>
+  <p class="date">02 May 2013</p>
+</div>
+<div id="installing-rpy2" class="slide section level1">
+<h1>Installing <a href="http://rpy.sourceforge.net/rpy2.html">Rpy2</a></h1>
+<p>You'll need <code>R &gt; 2.15</code>, as well as <code>Python &gt; 2.7</code>. If you have trouble calling <code>R</code> from <code>Rpy2</code>, you might need to compile <code>R</code> yourself using <code>--enable-R-shlib</code>. If you have no idea what this means <a href="http://rpy.sourceforge.net/rpy_faq.html">read this</a>.</p>
+<ul>
+<li>Linux or MacOS
+<ul>
+<li><code>easy_install rpy2</code> or <code>pip install rpy2</code></li>
+</ul></li>
+<li>Windows
+<ul>
+<li>See this <a href="http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows">post on Stack Overflow</a> if you want to use <code>pip</code> yourself</li>
+<li>If you just want a recent version of Rpy2 and are on Windows, install <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#rpy2">from Chris Gohlke</a></li>
+<li>Alternatively, install a very old version of <a href="http://sourceforge.net/projects/rpy/files/rpy2/2.0.x/">rpy2</a> if you are using Python 2.6 or older</li>
+</ul></li>
+</ul>
+</div>
+<div id="what-is-rpy2" class="slide section level1">
+<h1>What is Rpy2?</h1>
+<p><code>Rpy2</code> is a Python interface to the <a href="http://www.r-project.org">R statistical programming language</a>. Many of Python's core strengths (readable code, flexible I/O, design philosophy) complement R's core strengths (strong statistical heritage, powerful graphics).</p>
+<ul>
+<li>Sometimes it just makes sense to create your plots using R's graphics engine</li>
+<li>You could achieve this by writing data from your Python script to a file, making a system call to R, and having the R script read the data and create a plot.</li>
+<li>However, it would be better to stay &quot;inside&quot; of Python, but still call functions in R.</li>
+</ul>
+</div>
+<div id="a-very-simple-example" class="slide section level1">
+<h1>A (very) simple example</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> rpy2.robjects <span class="ch">as</span> robjects
+r = robjects.r
+
+x = robjects.IntVector([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])
+y = robjects.IntVector([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])
+z = x + y
+<span class="kw">print</span> z
+z_mean = r.mean(z)
+<span class="kw">print</span> z_mean</code></pre>
+<pre><code>## [1] 1 2 3 4 5 6
+## 
+## [1] 3.5</code></pre>
+<p>We import the parts of R that we need, and then call our R code as Python functions.</p>
+</div>
+<div id="a-statistics-example" class="slide section level1">
+<h1>A statistics example</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> rpy2.robjects <span class="ch">as</span> robjects
+<span class="ch">from</span> rpy2.robjects.packages <span class="ch">import</span> importr
+gd = importr(<span class="st">&#39;grDevices&#39;</span>)
+
+r = robjects.r
+x = r.rnorm(<span class="dv">5000</span>)
+y = r.sample(x, replace=<span class="ot">True</span>, size=<span class="dv">5000</span>)
+gd.png(<span class="dt">file</span>=<span class="st">&quot;figure1.png&quot;</span>)
+r.plot(x, y, ylab=<span class="st">&quot;y&quot;</span>, xlab=<span class="st">&quot;x&quot;</span>, pch=<span class="dv">19</span>)
+r.title(<span class="st">&quot;5,000 random samples from a normal distribution&quot;</span>)
+gd.dev_off()</code></pre>
+<div class="figure">
+<img src="figure1.png" />
+</div>
+<p>These points are kind of over-plotted. Let's see what we can do about that.</p>
+</div>
+<div id="importing-another-r-package-hexbin" class="slide section level1">
+<h1>Importing another R package (hexbin)</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> rpy2.robjects <span class="ch">as</span> robjects
+<span class="ch">from</span> rpy2.robjects.packages <span class="ch">import</span> importr
+gd = importr(<span class="st">&#39;grDevices&#39;</span>)
+hb = importr(<span class="st">&#39;hexbin&#39;</span>)
+
+r = robjects.r
+x = r.rnorm(<span class="dv">5000</span>)
+y = r.sample(x, replace=<span class="ot">True</span>, size=<span class="dv">5000</span>)
+<span class="dt">bin</span>=hb.hexbin(x, y, xbins=<span class="dv">50</span>)
+gd.png(<span class="dt">file</span>=<span class="st">&quot;figure2.png&quot;</span>)
+r.plot(<span class="dt">bin</span>, ylab=<span class="st">&quot;y&quot;</span>, xlab=<span class="st">&quot;x&quot;</span>, \
+       main=<span class="st">&quot;5,000 random samples from a normal distribution&quot;</span>)
+gd.dev_off()</code></pre>
+<div class="figure">
+<img src="figure2.png" />
+</div>
+<p>Binning the data by proximity, we can now see the pattern of density at the center of the scatter-plot.</p>
+</div>
+<div id="plotting-using-ggplot2" class="slide section level1">
+<h1>Plotting using ggplot2</h1>
+<p>Adapted from <a href="http://rpy.sourceforge.net/rpy2/doc-2.3/html/graphics.html#package-ggplot2">Rpy2 documentation</a></p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> rpy2.robjects.lib.ggplot2 <span class="ch">as</span> ggplot2
+<span class="ch">import</span> rpy2.robjects <span class="ch">as</span> ro
+<span class="ch">from</span> rpy2.robjects.packages <span class="ch">import</span> importr
+gd = importr(<span class="st">&#39;grDevices&#39;</span>)
+stats = importr(<span class="st">&#39;stats&#39;</span>)
+x = ro.r.rnorm(<span class="dv">5000</span>)
+y = ro.r.sample(x, replace=<span class="ot">True</span>, size=<span class="dv">5000</span>)
+rnorm = stats.rnorm
+dataf_rnorm = ro.DataFrame({<span class="st">&#39;x&#39;</span>: x, <span class="st">&#39;y&#39;</span>: y})
+gd.png(<span class="dt">file</span>=<span class="st">&quot;figure3.png&quot;</span>)
+gp = ggplot2.ggplot(dataf_rnorm)
+pp = gp + \
+     ggplot2.aes_string(x=<span class="st">&#39;x&#39;</span>, y=<span class="st">&#39;y&#39;</span>) + \
+     ggplot2.geom_point(alpha = <span class="fl">0.3</span>) + \
+     ggplot2.geom_density2d(ggplot2.aes_string(col = <span class="st">&#39;..level..&#39;</span>)) + \
+     ggplot2.ggtitle(<span class="st">&#39;point + density&#39;</span>)
+pp.plot()
+gd.dev_off()</code></pre>
+<div class="figure">
+<img src="figure3.png" />
+</div>
+</div>
+<div id="converting-to-a-python-object" class="slide section level1">
+<h1>Converting to a python object</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> rpy2.robjects <span class="ch">as</span> robjects
+<span class="ch">import</span> numpy
+r = robjects.r
+
+z = r.rnorm(<span class="dv">10</span>)
+<span class="kw">print</span> z
+zz = numpy.array(z)
+<span class="kw">print</span> zz
+<span class="kw">print</span> zz.mean()</code></pre>
+<pre><code>##  [1] -0.8705863 -0.4139811  0.1400550  0.9812354 -0.5370096  0.6348409
+##  [7]  0.4793611  0.1047836 -0.4170225 -0.1014255
+## 
+## [-0.87058631 -0.41398111  0.14005498  0.9812354  -0.53700964  0.63484085
+##   0.47936106  0.10478359 -0.41702254 -0.10142546]
+## 2.50828216816e-05</code></pre>
+<p>We can process our data in R, and then move the data back to a Python data structure for further computations.</p>
+</div>
+<div id="summary" class="slide section level1">
+<h1>Summary</h1>
+<p>You can write the parts of your program in a language appropriate for the task. Highlights of R include:</p>
+<ul>
+<li>Access to the <a href="http://cran.r-project.org">CRAN</a> and <a href="http://www.bioconductor.org">bioconductor</a> software repositories</li>
+<li>Robust statistical analyses (SVD, PCA, linear regression, ANOVA) built in to the base <code>stats</code> library</li>
+<li>A knowledgeable community and <a href="https://stat.ethz.ch/mailman/listinfo/r-help">established mailing list</a></li>
+</ul>
+</div>
+<div id="questions" class="slide section level1">
+<h1>Questions?</h1>
+<p>If you have any questions, feel free to email me at matt.shirley@jhmi.edu</p>
+<p><img src="cartoon.png" /> <a href="http://www.qwantz.com/index.php?comic=2406">Source</a></p>
+</div>
+</body>
+</html>

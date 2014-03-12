@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body %}
+<h4 id="posts">Posts</h4>
+  {% for entry in entries %}
+<p class="text-muted">{{ entry[0] }}<br>&nbsp&nbsp&nbsp&nbsp<a href="{{ url_for('display_post', postname=entry[1]) }}">{{ entry[1].replace('-',' ') }}</a></p>
+  {% endfor %}
+{% endblock %}
