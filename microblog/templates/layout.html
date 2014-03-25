@@ -53,17 +53,13 @@
                 <li><a href="{{ url_for('about') }}#posters">Posters</a></li>
                 <li><a href="{{ url_for('about') }}#software">Software</a></li>
                 <hr>
-                <li><h5>BLOG</h5></li>
-                <li><a href="{{ url_for('posts') }}#posts">Posts</a></li>
-                <li>Most Recent Post:</li>
-                <li><div>{{ recent_blurb() }}</div></li>
+                <li><h5>LATEST POST</h5></li>
+                <li><em><a href="{{ url_for('display_post', postname=recent_blurb()[2]) }}">{{ recent_blurb()[0] }}</a></em></li>
+                <li><blockquote>{{ recent_blurb()[1] }}</blockquote></li>
+                <li><a href="{{ url_for('posts') }}#posts">More posts</a></li>
                 <hr>
                 <li><h5>GITHUB REPOSITORIES</h5></li>
                 {{ get_git_repos('mdshw5') }}
-                <hr>
-                <li><h5>TOOLS</h5></li>
-                <li><a href="{{ url_for('scical') }}">Hopkins Science Calendar Feed</a></li>
-                <li><a href="http://tripod.mattshirley.com" target="_blank">triPOD: Parent of Origin Detection</a></li>
             </ul>
             <hr>
         </div>

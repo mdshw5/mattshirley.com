@@ -8,7 +8,7 @@ from flask.ext.gravatar import Gravatar
 from werkzeug.contrib.atom import AtomFeed
 from app import app
 from models import render_markdown, refresh_postlisting, \
-    make_external, get_git_repos, orcid_to_markdown, scrape_scical, \
+    make_external, get_git_repos, scrape_scical, \
     most_recent_blurb
 
 # configuration
@@ -53,10 +53,6 @@ def recent_feed():
 def return_scical():
     cal = scrape_scical()
     return Response(cal, mimetype='text/calendar')
-
-@app.route('/scical')
-def scical():
-    return render_template('scical.html')
 
 @app.context_processor
 def query_git_repos():

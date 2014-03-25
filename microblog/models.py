@@ -61,36 +61,6 @@ def refresh_postlisting():
     except Exception, e:
         return e
 
-def orcid_to_markdown(orcid):
-    request = urllib2.Request('http://pub.orcid.org/0000-0003-0855-9274/orcid-works')
-    request.add_header("Accept", "application/orcid+json")
-    data = json.load(urllib2.urlopen(request))
-    bibfile = os.path.join(ROOT, '/static/bib/publications.bib')
-    cslfile = os.path.join(ROOT, '/static/csl/plos.csl')
-    templatefile = os.path.join(ROOT, '/static/md/publications_template.md')
-    mdfile = os.path.join(ROOT, '/static/md/publications.md')
-    out = []
-    with open(bibfile, 'w') as bib:
-        for i,p in enumerate(data['orcid-profile']['orcid-activities']['orcid-works']['orcid-work']):
-            i +=1
-            bibline = p['work-citation']['citation']
-            out.append(bibline)
-            fields = bibline.split(',')
-            s = fields[0].split('{')
-            fields[0] = '{'.join([s[0], ' s'+str(i)])
-            bib.write(','.join(fields) + '\n')
-    with open(templatefile, 'w') as tmpl:
-        for i,p in enumerate(data['orcid-profile']['orcid-activities']['orcid-works']['orcid-work']):
-            i +=1
-            tmpl.write('[@{0}]'.format('s'+str(i)))
-    call = ['pandoc', '-s', '-S', '--biblio', bibfile, '--csl', cslfile, templatefile, '-t', 'markdown', '-o', mdfile]
-    sub.call(call)
-    with open(mdfile, 'r') as mdin:
-        contents = mdin.readlines()
-    with open(mdfile, 'w') as mdout:
-        mdout.write(''.join(contents[1:]))
-    return ''.join(contents[1:])
-
 @cache.cached(timeout=300)
 def get_git_repos(user_name):
     try:
@@ -115,9 +85,13 @@ def most_recent_blurb():
         entries = json.load(i)
         entries = sorted(entries.items(), reverse=True)
         most_recent_post = entries[0][1]
-        rendered_post = render_markdown(ROOT + '/posts/{0}.{1}'.format(most_recent_post, 'md'), header=True)
-        lines = rendered_post.split('\n')
-        return '{0}...'.format(lines[1])
+        post_markdown = open(ROOT + '/posts/{0}.{1}'.format(most_recent_post, 'md')).readlines()
+        blank = False
+        while len(post_markdown.pop(0)) > 1:
+            continue
+        return (post_markdown[0].strip('#'),
+                '{0}...'.format(''.join(post_markdown[1:])[:200]),
+                most_recent_post)
 
 
 def render_markdown(md, header=False):
