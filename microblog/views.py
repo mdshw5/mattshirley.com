@@ -1,20 +1,19 @@
 import os
 import json
-import hamstring
 import datetime
-import pylibmc
 import monitor
-from flask import Flask, request, session, g, redirect, url_for, abort, \
-     render_template, flash, send_from_directory, Markup, Response
+from flask import request, redirect, url_for, \
+     render_template, send_from_directory, Response
 from flask.ext.gravatar import Gravatar
 from werkzeug.contrib.atom import AtomFeed
 from app import app
-from models import render_markdown, post_date, HamstringValidate, MethylDecode, decodeASCII, \
-    MethylEncode, encodeASCII, refresh_postlisting, make_external, ncbi_epi, get_git_repos, orcid_to_markdown, \
-    scrape_scical
+from models import render_markdown, refresh_postlisting, \
+    make_external, get_git_repos, orcid_to_markdown, scrape_scical, \
+    most_recent_blurb
 
 # configuration
-ROOT = '/home/matt/microblog/'
+ROOT = os.path.dirname(__file__)
+
 gravatar = Gravatar(app,
                     size=180,
                     rating='g',
@@ -41,7 +40,7 @@ def recent_feed():
         articles = sorted(articles.items(), reverse=True)
         articles = articles[:10]
     for article in articles:
-        feed.add(article[1], unicode(render_markdown(ROOT + 'posts/{0}.{1}'.format(article[1], 'md'), 
+        feed.add(article[1], unicode(render_markdown(ROOT + 'posts/{0}.{1}'.format(article[1], 'md'),
                                                      header=True)),
                  content_type='html',
                  author='Matt Shirley',
@@ -65,11 +64,11 @@ def query_git_repos():
 
 @app.context_processor
 def utility_processor():
-    return(dict(render_markdown=render_markdown))
+    return(dict(render_markdown=render_markdown, recent_blurb=most_recent_blurb))
 
 @app.route('/<postname>')
 def display_post(postname):
-    content = render_markdown(ROOT + 'posts/{0}.{1}'.format(postname, 'md'), header=True)
+    content = render_markdown(ROOT + '/posts/{0}.{1}'.format(postname, 'md'), header=True)
     if content is not False:
         return render_template('markdown.html', **locals())
     elif content is False:
@@ -98,7 +97,7 @@ def posts():
 
 @app.route('/about', methods=['GET'])
 def about():
-    content = render_markdown(ROOT + 'microblog/static/md/about.md')
+    content = render_markdown(ROOT + '/static/md/about.md')
     serif = True
     if request.method == 'GET':
         print_page = request.args.get('print', '')
@@ -125,59 +124,6 @@ def uploads(year, month, filename):
     print dirpath
     return send_from_directory(dirpath, filename)
 
-@app.route('/hamstring-validate', methods=['GET', 'POST'])
-def validate():
-    form = HamstringValidate(request.form)
-    if request.method == 'POST' and form.validate():
-        barcode = form.barcode.data
-        content = hamstring.decodeHamming(barcode, 3)
-        flash(Markup('<p>Sequence: {0}</p><p>Checksum: {1}</p>'.format(content.get('nucleotide'), 
-                                                   content.get('chksum'))))
-        return render_template('hamstring-validate.html', form=form)
-    return render_template('hamstring-validate.html', form=form)
-
-@app.route('/methyldecode', methods=['GET', 'POST'])
-def methyldecode():
-    form = MethylDecode(request.form)
-    if request.method == 'POST' and form.validate():
-        string = form.string.data
-        length = form.length.data
-        if length == '':
-            length = len(string*2)
-        content = decodeASCII(string, length)
-        flash(Markup("<pre style='border:0px;background-color:transparent'>" + 
-                     content + "<br>C/c = deaminated (converted) cytosine on self/complement strand" +
-                     "<br>M = methylated cytosine on top/bottom strand" +
-                     "</pre>"))
-        return render_template('methyldecode.html', form=form)
-    return render_template('methyldecode.html', form=form)
-
-@app.route('/methylencode', methods=['GET', 'POST'])
-def methylencode():
-    form = MethylEncode(request.form)
-    if request.method == 'POST' and form.validate():
-        string = form.string.data
-        content = encodeASCII(string)
-        flash(Markup("<pre style='border:0px;background-color:transparent'>" + 
-                     content + 
-                     "</pre>"))
-        return render_template('methylencode.html', form=form)
-    return render_template('methylencode.html', form=form)
-    
-@app.route('/epi_galaxy', methods=['GET', 'POST'])
-def epi_galaxy():
-    form = ncbi_epi(request.form, GALAXY_URL = request.args.get('GALAXY_URL'),
-                                  tool_id = request.args.get('tool_id'),
-                                  sendToGalaxy = request.args.get('sendToGalaxy')
-                                  )
-    if request.method == 'POST':
-        GALAXY_URL = form.GALAXY_URL.data
-        tool_id = form.tool_id.data
-        ids = form.ids.data
-        returnURL = "{0}?tool_id={1}&URL=http://www.ncbi.nlm.nih.gov/projects/genome/galaxy/beFileInfo4Galaxy.cgi?id={2}".format(GALAXY_URL,                                                                                                                                               tool_id,                                                                                                                                               ids)
-        return redirect(returnURL)
-    return render_template('epi_galaxy.html', form=form)
-    
 @app.route('/reload')
 def reload():
     """ Monitor for changes to site code and restart wsgi process if necessary """
