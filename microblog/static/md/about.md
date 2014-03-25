@@ -50,6 +50,16 @@
 
 - **Shirley MD**, Baugher JD, Stevens EL, Tang Z, Gerry N, Beiswanger CM, Berlin DS, Pevsner J. *[Chromosomal variation in lymphoblastoid cell lines][18]*. Human Mutation. 2012. PMID: [22374857][19]
 
+<div id="software"></div>
+### Software
+
+- [pyfaidx: efficient pythonic random access to fasta subsequences](http://dx.doi.org/10.5281/zenodo.8548). ZENODO. 10.5281/zenodo.8548
+- [fastqp](https://github.com/mdshw5/fastqp): Simple FASTQ and SAM read quality assessment and plotting using Python.
+- [hamstring][9]: Python module for generating Hamming7,4 error-correcting DNA barcodes. Based on work by [Leonid Bystrykh][10].
+- [triPOD][11]: web interface for the triPOD analysis developed by [Joe Baugher et al][12].
+- [sra toolkit](http://toolshed.g2.bx.psu.edu/view/matt-shirley/ncbi_sra_toolkit): Galaxy tool definitions for [NCBI SRA Toolkit](http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software)
+- [ncbi epigenomics](http://toolshed.g2.bx.psu.edu/view/matt-shirley/ncbi_epi_browse): Galaxy interface to [NCBI Epigenomics](http://www.ncbi.nlm.nih.gov/epigenomics)
+
 <div id="research" style="page-break-after:always;"></div>
 ### Research
 
@@ -96,16 +106,6 @@
 - Computational Genomics Young Investigators Symposium, [Deep amplicon sequencing reveals GNAQ 548G>A as the causal somatic mutation in Sturge-Weber syndrome and common port-wine stains](uploads/2013/10/Young-Investigators-Seminar.pdf), October 17 2013, Center for Computational Genomics, Johns Hopkins School of Medicine, Baltimore MD
 - Thesis Seminar, [Sturge–Weber syndrome & port-wine stain: Genomic analysis reveals somatic activating mutation in GNAQ as genetic basis for neurocutaneous disorder][21], May 22 2013, Department of Biochemistry, Cellular, and Molecular Biology, Johns Hopkins School of Medicine, Baltimore MD
 - Graduate Student Colloquium, [Chromosomal Variation in Lymphoblastoid Cell Lines][27], December 10 2012, Department of Biochemistry, Cellular, and Molecular Biology, Johns Hopkins School of Medicine, Baltimore MD
-
-<div id="software"></div>
-### Software
-
-- [pyfaidx](https://github.com/mdshw5/pyfaidx): A pure Python implementation of samtools faidx FASTA indexing.
-- [fastqp](https://github.com/mdshw5/fastqp): Simple FASTQ and SAM read quality assessment and plotting using Python.
-- [hamstring][9]: Python module for generating Hamming7,4 error-correcting DNA barcodes. Based on work by [Leonid Bystrykh][10].
-- [triPOD][11]: web interface for the triPOD analysis developed by [Joe Baugher et al][12].
-- [sra toolkit](http://toolshed.g2.bx.psu.edu/view/matt-shirley/ncbi_sra_toolkit): Galaxy tool definitions for [NCBI SRA Toolkit](http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software)
-- [ncbi epigenomics](http://toolshed.g2.bx.psu.edu/view/matt-shirley/ncbi_epi_browse): Galaxy interface to [NCBI Epigenomics](http://www.ncbi.nlm.nih.gov/epigenomics)
 
 <div id="posters" style="page-break-after:always;"></div>
 ###Posters
