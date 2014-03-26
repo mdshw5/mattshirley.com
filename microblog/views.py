@@ -60,7 +60,7 @@ def query_git_repos():
 
 @app.context_processor
 def utility_processor():
-    return(dict(render_markdown=render_markdown, recent_blurb=most_recent_blurb))
+    return(dict(ROOT=ROOT, render_markdown=render_markdown, recent_blurb=most_recent_blurb))
 
 @app.route('/<postname>')
 def display_post(postname):
