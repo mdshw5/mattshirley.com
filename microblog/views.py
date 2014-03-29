@@ -15,7 +15,7 @@ from models import render_markdown, refresh_postlisting, \
 ROOT = os.path.dirname(__file__)
 
 gravatar = Gravatar(app,
-                    size=360,
+                    size=180,
                     rating='g',
                     default='retro',
                     force_default=False,
