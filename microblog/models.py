@@ -52,7 +52,7 @@ def scrape_scical():
 def refresh_postlisting():
     try:
         entries = os.listdir(ROOT + '/posts')
-        dates = map(post_date, [os.path.join(ROOT, 'posts', entry) for entry in entries])
+        dates = map(post_date, [os.path.join(ROOT, 'blog/posts', entry) for entry in entries])
         entries = map(os.path.splitext, entries)
         entries, ext = zip(*entries)
         with open(os.path.join(ROOT, 'postlisting'), 'w') as o:
@@ -85,7 +85,7 @@ def most_recent_blurb():
         entries = json.load(i)
         entries = sorted(entries.items(), reverse=True)
         most_recent_post = entries[0][1]
-        post_markdown = open(ROOT + '/posts/{0}.{1}'.format(most_recent_post, 'md')).readlines()
+        post_markdown = open(ROOT + '/blog/posts/{0}.{1}'.format(most_recent_post, 'md')).readlines()
         blank = False
         while len(post_markdown.pop(0)) > 1:
             continue

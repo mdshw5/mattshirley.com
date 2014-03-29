@@ -15,7 +15,7 @@ from models import render_markdown, refresh_postlisting, \
 ROOT = os.path.dirname(__file__)
 
 gravatar = Gravatar(app,
-                    size=180,
+                    size=360,
                     rating='g',
                     default='retro',
                     force_default=False,
@@ -40,7 +40,7 @@ def recent_feed():
         articles = sorted(articles.items(), reverse=True)
         articles = articles[:10]
     for article in articles:
-        feed.add(article[1], unicode(render_markdown(ROOT + 'posts/{0}.{1}'.format(article[1], 'md'),
+        feed.add(article[1], unicode(render_markdown(ROOT + 'blog/posts/{0}.{1}'.format(article[1], 'md'),
                                                      header=True)),
                  content_type='html',
                  author='Matt Shirley',
@@ -64,7 +64,7 @@ def utility_processor():
 
 @app.route('/<postname>')
 def display_post(postname):
-    content = render_markdown(ROOT + '/posts/{0}.{1}'.format(postname, 'md'), header=True)
+    content = render_markdown(ROOT + '/blog/posts/{0}.{1}'.format(postname, 'md'), header=True)
     if content is not False:
         return render_template('markdown.html', **locals())
     elif content is False:
