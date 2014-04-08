@@ -6,4 +6,4 @@ SECRET_KEY = os.urandom(24)
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-cache = Cache(app)
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
