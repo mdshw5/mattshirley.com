@@ -1,13 +1,13 @@
 <div id="about"></div>
-<h2 class="hidden-print">Matthew Shirley, Ph.D.</h2>
-<div id="contact" class="row hidden-print">
+# Matthew Shirley, Ph.D.
+<div id="contact" class="row visible-print">
     <div class="col-sm-8 col-md-8 col-sm-offset-3 col-md-offset-3 well well-sm text-right">
-        Department of Oncology<br>
-        Sidney Kimmel Comprehensive Cancer Center<br>
-        The Johns Hopkins School of Medicine<br>
-        CRBII 142<br>
-        1550 Orleans Street<br>
-        Baltimore MD 21287<br>
+        Department of Oncology<br>  
+        Sidney Kimmel Comprehensive Cancer Center<br>  
+        The Johns Hopkins School of Medicine<br>  
+        CRBII 142<br>  
+        1550 Orleans Street<br>  
+        Baltimore MD 21287<br>  
         <a href="mailto:matt.shirley@jhmi.edu">matt.shirley@jhmi.edu</a><br>
         <div class="btn-group">
             <button type="button" class="btn btn-primary" onclick="window.location.href = 'mailto:matt.shirley@jhmi.edu'"><span class="glyphicon glyphicon-envelope"></span></button>
@@ -16,19 +16,7 @@
         </div>
     </div>
 </div>
-<div class="row container text-center visible-print">
-        <h2>Matthew Shirley, Ph.D.</h2>
-        <a>
-        Department of Oncology<br>
-        Sidney Kimmel Comprehensive Cancer Center<br>
-        The Johns Hopkins School of Medicine<br>
-        CRBII 142<br>
-        1550 Orleans Street<br>
-        Baltimore MD 21287<br>
-        matt.shirley@jhmi.edu<br>
-        (443)637-4759<br>
-        </a>
-</div>
+
 <div id="education"></div>
 ### Education
 <li class="list-unstyled">
@@ -36,6 +24,45 @@
   Johns Hopkins School of Medicine, Baltimore MD</ul>
     <ul><strong>2008</strong> - B.S. Biochemistry, University of Missouri, Columbia MO</ul>
 </li>
+
+<div id="research" style="page-break-after:always;"></div>
+### Research
+
+- **2013-Current** - Postdoctoral Fellow, Department of Oncology,
+ Johns Hopkins School of Medicine, Baltimore MD
+
+    *Working in the labs of Drs. Sarah Wheelan and Vasan Yegnasubramanian I
+     developed computational tools for the analysis of novel high-dimensional
+     sequencing methods. We applied these tools to prostate cancer biomarker
+     discovery.*
+
+- **2008-2013** - Ph.D. Candidate, Department of Biochemistry,
+ Cellular, and Molecular Biology, Johns Hopkins School of Medicine, Baltimore MD
+
+    *As a graduate student I started research with Drs. Jin Zhang and
+     Heng Zhu in the Department of Pharmacology at Johns Hopkins School
+     of Medicine. Using the protein microarrays pioneered by the Zhu lab
+     we interrogated the kinome for novel kinase-substrate interactions.
+     I continued my graduate research in the lab of Dr. Jonathan Pevsner
+     at Kennedy Krieger Institute where I characterized the extent of
+     genetic variability in lymphoblast cell lines.
+     My research culminated in the discovery of a somatic mutation in
+     **GNAQ** which is found only in affected tissues from patients
+     with the Sturge-Weber syndrome. This work spanned wet-lab and
+     computational work involving microarray design and analysis as
+     well as DNA resequencing assay design, high-dimensional data
+     analysis, and tool development.*
+
+- **2006-2008** - Research Assistant, Department of Biochemistry,
+ University of Missouri, Columbia MO
+
+    *In my third year of college at the University of Missouri
+     I joined the lab of Dr. Judy Wall in the Department of Biochemistry.
+     In the Wall lab I worked on characterizing the molecular genetics of
+     the bacterium **Desulfovibrio vulgaris** Hildenborough for its potential
+     in heavy metal bioremediation. My work involved characterizing a Tn5
+     transposon mediated mutant library, as well as operation and configuration
+     of a gas chromatagraph.*
 
 <div id="publications"></div>
 ### Peer-Reviewed Publications
@@ -59,21 +86,6 @@
 - [triPOD][11]: web interface for the triPOD analysis developed by [Joe Baugher et al][12].
 - [sra toolkit](http://toolshed.g2.bx.psu.edu/view/matt-shirley/ncbi_sra_toolkit): Galaxy tool definitions for [NCBI SRA Toolkit](http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software)
 - [ncbi epigenomics](http://toolshed.g2.bx.psu.edu/view/matt-shirley/ncbi_epi_browse): Galaxy interface to [NCBI Epigenomics](http://www.ncbi.nlm.nih.gov/epigenomics)
-
-<div id="research" style="page-break-after:always;"></div>
-### Research
-
-- **2013-Current** - Postdoctoral Fellow, Department of Oncology, Johns Hopkins School of Medicine, Baltimore MD
-
-    *Working in the labs of Drs. Sarah Wheelan and Vasan Yegnasubramanian I developed computational tools for the analysis of novel high-dimensional  sequencing methods. We applied these tools to prostate cancer biomarker discovery.*
-
-- **2008-2013** - Ph.D. Candidate, Department of Biochemistry, Cellular, and Molecular Biology, Johns Hopkins School of Medicine, Baltimore MD
-
-    *As a graduate student I started research with Drs. Jin Zhang and Heng Zhu in the Department of Pharmacology at Johns Hopkins School of Medicine. Using the protein microarrays pioneered by the Zhu lab we interrogated the kinome for novel kinase-substrate interactions. I continued my graduate research in the lab of Dr. Jonathan Pevsner at Kennedy Krieger Institute where I characterized the extent of genetic variability in lymphoblast cell lines. My research culminated in the discovery of a somatic mutation in *GNAQ* which is found only in affected tissues from patients with the Sturge-Weber syndrome. This work spanned wet-lab and computational work involving microarray design and analysis as well as DNA resequencing assay design, high-dimensional data analysis, and tool development.*
-
-- **2006-2008** - Research Assistant, Department of Biochemistry, University of Missouri, Columbia MO
-
-    *In my third year of college at the University of Missouri I joined the lab of Dr. Judy Wall in the Department of Biochemistry. In the Wall lab I worked on characterizing the molecular genetics of the bacterium *Desulfovibrio vulgaris* Hildenborough for its potential in heavy metal bioremediation. My work involved characterizing a Tn5 transposon mediated mutant library, as well as operation and configuration of a gas chromatagraph.*
 
 <div id="grants"></div>
 ### Grants
