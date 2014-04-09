@@ -1,6 +1,6 @@
 <div id="about"></div>
 # Matthew Shirley, Ph.D.
-<div id="contact" class="row visible-print">
+<div id="contact" class="row">
     <div class="col-sm-8 col-md-8 col-sm-offset-3 col-md-offset-3 well well-sm text-right">
         Department of Oncology<br>  
         Sidney Kimmel Comprehensive Cancer Center<br>  
