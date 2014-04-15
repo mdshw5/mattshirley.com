@@ -80,7 +80,7 @@
 <div id="software"></div>
 ### Software
 
-- [pyfaidx: efficient pythonic random access to fasta subsequences](http://dx.doi.org/10.5281/zenodo.8548). ZENODO. 10.5281/zenodo.8548
+- [pyfaidx: efficient pythonic random access to fasta subsequences](http://dx.doi.org/10.6084/m9.figshare.972933). figshare. 10.6084/m9.figshare.972933
 - [fastqp](https://github.com/mdshw5/fastqp): Simple FASTQ and SAM read quality assessment and plotting using Python.
 - [hamstring][9]: Python module for generating Hamming7,4 error-correcting DNA barcodes. Based on work by [Leonid Bystrykh][10].
 - [triPOD][11]: web interface for the triPOD analysis developed by [Joe Baugher et al][12].
