@@ -18,6 +18,7 @@
 </div>
 
 <div id="education"></div>
+
 ### Education
 <li class="list-unstyled">
     <ul><strong>2013</strong> - Ph.D. Biochemistry, Cellular, and Molecular Biology, 
@@ -26,6 +27,7 @@
 </li>
 
 <div id="research" style="page-break-after:always;"></div>
+
 ### Research
 
 - **2013-Current** - Postdoctoral Fellow, Department of Oncology,
@@ -65,6 +67,7 @@
      of a gas chromatagraph.*
 
 <div id="publications"></div>
+
 ### Peer-Reviewed Publications
 
 *See a full of publications at [Google Scholar](http://scholar.google.com/citations?user=b7Jyb4YAAAAJ&hl=en).*
@@ -77,7 +80,15 @@
 
 - **Shirley MD**, Baugher JD, Stevens EL, Tang Z, Gerry N, Beiswanger CM, Berlin DS, Pevsner J. *[Chromosomal variation in lymphoblastoid cell lines][18]*. Human Mutation. 2012. PMID: [22374857][19]
 
+<div id="abstracts"></div>
+
+### Abstracts
+
+- **Shirley MD** et al. *[A Somatic Mosaic Mutation in GNAQ causes Sturge-Weber syndrome and Isolated Port-wine Birthmarks](http://mattshirley.com/uploads/2014/04/ana24069.pdf)*, 42nd Annual Meeting of the Child Neurology Society. November 2013.
+
+
 <div id="software"></div>
+
 ### Software
 
 - [pyfaidx: efficient pythonic random access to fasta subsequences](http://dx.doi.org/10.6084/m9.figshare.972933). figshare. 10.6084/m9.figshare.972933
@@ -88,10 +99,12 @@
 - [ncbi epigenomics](http://toolshed.g2.bx.psu.edu/view/matt-shirley/ncbi_epi_browse): Galaxy interface to [NCBI Epigenomics](http://www.ncbi.nlm.nih.gov/epigenomics)
 
 <div id="grants"></div>
+
 ### Grants
 - 2013 - AWS in Education Grant, supporting *Introduction to Python* short course in the Center for Computational Genomics
 
 <div id="teaching"></div>
+
 ### Teaching
 
 - **2013-Current** - Instructor, Center for Computational Genomics, Johns Hopkins School of Medicine, Baltimore MD
@@ -114,6 +127,7 @@
 - Biotrac45: Bioinformatic Analysis of Next Generation Sequencing Data, [Galaxy for Next Generation Sequencing Analysis][28], November 12 2012, FAES, Bethesda MD
 
 <div id="seminars"></div>
+
 ### Seminars
 
 - Computational Genomics Young Investigators Symposium, [Deep amplicon sequencing reveals GNAQ 548G>A as the causal somatic mutation in Sturge-Weber syndrome and common port-wine stains](uploads/2013/10/Young-Investigators-Seminar.pdf), October 17 2013, Center for Computational Genomics, Johns Hopkins School of Medicine, Baltimore MD
@@ -121,6 +135,7 @@
 - Graduate Student Colloquium, [Chromosomal Variation in Lymphoblastoid Cell Lines][27], December 10 2012, Department of Biochemistry, Cellular, and Molecular Biology, Johns Hopkins School of Medicine, Baltimore MD
 
 <div id="posters" style="page-break-after:always;"></div>
+
 ###Posters
 
 - Graduate Student Association Poster Session, [Chromosomal Variation in Lymphoblastoid Cell Lines][39], April 25 2012, Johns Hopkins School of Medicine, Baltimore MD
@@ -129,12 +144,13 @@
 - Environmental Stress Pathway Project, [Rapid Automated Characterization of Transposon Insertion Mutants in *Desulfovibrio vulgaris* Hildenborough by srnPCR](http://vimss.lbl.gov/publicfiles/ESPP_retreat_2007_Shirley.pdf), 2007, Virtual Institute for Microbial Stress and Survival, Lawrence Berkeley National Laboratories, Berkeley CA
 
 <div id="awards"></div>
+
 ### Awards
 - 2007 - Chancellor’s Award for Excellence in Research, Undergraduate Research and Creative Achievements Forum, University of Missouri, Columbia MO
 
  [1]: http://biolchem.bs.jhmi.edu/bcmb/Pages/index.aspx
  [2]: http://biochem.missouri.edu/
- [3]: uploads/2012/03/N-Engl-J-Med-2013-Shirley.pdf
+ [3]: http://mattshirley.com/uploads/2012/03/N-Engl-J-Med-2013-Shirley.pdf
  [4]: http://www.ncbi.nlm.nih.gov/pubmed/23656586
  [5]: http://www.sturge-weber.org/component/content/article/4-general-info/311-route-to-a-cure.html
  [6]: http://www.sturge-weber.org/images/stories/BVMC/explaining_gnaq.pdf
@@ -144,21 +160,21 @@
  [10]: http://www.plosone.org/article/info:doi/10.1371/journal.pone.0036852
  [11]: http://tripod.mattshirley.com
  [12]: http://www.biomedcentral.com/1471-2164/14/367/
- [13]: uploads/2013/04/Mol-Syst-Biol-2013-Newman.pdf
+ [13]: http://mattshirley.com/uploads/2013/04/Mol-Syst-Biol-2013-Newman.pdf
  [14]: http://www.ncbi.nlm.nih.gov/pubmed/?term=23549483
  [15]: http://www.nature.com/doifinder/10.1038/msb.2013.12
- [16]: uploads/2013/03/journal.pone_.0049575.pdf
+ [16]: http://mattshirley.com/uploads/2013/03/journal.pone_.0049575.pdf
  [17]: http://www.ncbi.nlm.nih.gov/pubmed/23185369
- [18]: uploads/2012/03/22062_ftp.pdf
+ [18]: http://mattshirley.com/uploads/2012/03/22062_ftp.pdf
  [19]: http://www.ncbi.nlm.nih.gov/pubmed/22374857
- [21]: uploads/2013/05/SWS_thesis_seminar.html
- [22]: uploads/2013/04/lecture14-notes.html
+ [21]: http://mattshirley.com/uploads/2013/05/SWS_thesis_seminar.html
+ [22]: http://mattshirley.com/uploads/2013/04/lecture14-notes.html
  [23]: http://www.faes.org
- [24]: uploads/2013/04/lecture13-notes.html
- [25]: uploads/2013/04/lecture12-notes.html
- [26]: uploads/2013/02/Galaxy-for-NGS-Analysis.pdf
- [27]: uploads/2012/10/Chromosomal-Variation-in-Lymphoblastoid-Cell-Lines.pdf
- [28]: uploads/2012/11/Galaxy-for-NGS-Analysis-2012-10-09.pdf
- [29]: uploads/2013/07/Galaxy-for-NGS-Analysis-07-09-13.pdf
- [39]: uploads/2013/01/MS_variation_poster_final.pdf
- [30]: uploads/2013/01/Undergrad_poster.pdf
+ [24]: http://mattshirley.com/uploads/2013/04/lecture13-notes.html
+ [25]: http://mattshirley.com/uploads/2013/04/lecture12-notes.html
+ [26]: http://mattshirley.com/uploads/2013/02/Galaxy-for-NGS-Analysis.pdf
+ [27]: http://mattshirley.com/uploads/2012/10/Chromosomal-Variation-in-Lymphoblastoid-Cell-Lines.pdf
+ [28]: http://mattshirley.com/uploads/2012/11/Galaxy-for-NGS-Analysis-2012-10-09.pdf
+ [29]: http://mattshirley.com/uploads/2013/07/Galaxy-for-NGS-Analysis-07-09-13.pdf
+ [39]: http://mattshirley.com/uploads/2013/01/MS_variation_poster_final.pdf
+ [30]: http://mattshirley.com/uploads/2013/01/Undergrad_poster.pdf
