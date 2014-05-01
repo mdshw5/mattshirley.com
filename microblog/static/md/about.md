@@ -114,6 +114,7 @@
     <h5>Titles of talks link to slides.</h5>
 </div>
 
+- BIOF309: Introduction to Python [Sequence alignment with Biopython](http://mattshirley.com/uploads/2014/04/sequence_alignment_biopython.slides.html), April 24, 2014, FAES, Bethesda MD
 - Biotrac45: Bioinformatic Analysis of Next Generation Sequencing Data, [Galaxy for Next Generation Sequencing Analysis][29], April 8, 2014, FAES, Bethesda MD
 - Introduction to Python^: [data structures and flow control](uploads/2013/10/Introduction%20to%20Python%20Day%201.ipynb.slides.html), October 28 2013, Center for Computational Genomics, Baltimore MD
 - Introduction to Python^: [functions, classes, and I/O](uploads/2013/10/Introduction%20to%20Python%20Day%202.ipynb.slides.html), October 30 2013, Center for Computational Genomics, Baltimore MD  
