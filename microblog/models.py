@@ -93,14 +93,13 @@ def most_recent_blurb():
                 '{0}...'.format(''.join(post_markdown[1:])[:200]),
                 most_recent_post)
 
-
 def render_markdown(md, header=False):
     """ Takes a markdown file and returns html """
     try:
         mdfile = codecs.open(md, 'r', 'utf-8')
     except IOError:
         return False
-
+    extensions=['tables', 'fenced_code', 'footnotes']
     with mdfile:
         if header == True:
             header = []
@@ -114,9 +113,9 @@ def render_markdown(md, header=False):
                 elif line == '\n':
                     start = True
             header = dict(map(lambda x: str(x).split(': ')[0:2], header))
-            content = Markup(markdown.markdown(''.join(content)))
+            content = Markup(markdown.markdown(''.join(content), extensions=extensions))
         elif header == False:
-            content = Markup(markdown.markdown(mdfile.read()))
+            content = Markup(markdown.markdown(mdfile.read(), extensions=extensions))
     return content
 
 def make_external(url):

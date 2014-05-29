@@ -2,18 +2,15 @@
 # Matthew Shirley, Ph.D.
 <div id="contact" class="row">
     <div class="col-sm-8 col-md-8 col-sm-offset-3 col-md-offset-3 well well-sm text-right">
-        Department of Oncology  
-        Sidney Kimmel Comprehensive Cancer Center  
-        The Johns Hopkins School of Medicine  
-        CRBII 142  
-        1550 Orleans Street  
-        Baltimore MD 21287  
-        <a href="mailto:matt.shirley@jhmi.edu">matt.shirley@jhmi.edu</a>  
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary" onclick="window.location.href = 'mailto:matt.shirley@jhmi.edu'"><span class="glyphicon glyphicon-envelope"></span></button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href = 'http://www.google.com/webhp?hl=en&sa=N&tab=lw#q=matt+shirley+mdshw5&hl=en&ei=dCf3UfqpOqHl4AOI1ICgDg&start=0&sa=N&bav=on.2,or.r_cp.r_qf.&fp=2932c87ff975568f&biw=1159&bih=730&bvm=pv.xjs.s.en_US.9jgl75mduIg.O%2Cpv.xjs.s.en_US.9jgl75mduIg.O'"><span class="glyphicon glyphicon-search"></span></button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href = 'http://mattshirley.com/about?print=true'"><span class="glyphicon glyphicon-print"></span></button>
-        </div>
+        Contact |
+        ------- |
+        Department of Oncology |
+        Sidney Kimmel Comprehensive Cancer Center |
+        The Johns Hopkins School of Medicine |
+        CRBII 142 |
+        1550 Orleans Street |
+        Baltimore MD 21287 |
+        <a href="mailto:matt.shirley@jhmi.edu">matt.shirley@jhmi.edu</a> |
     </div>
 </div>
 
