@@ -225,9 +225,6 @@ table {
   a:visited {
     text-decoration: underline;
   }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -251,7 +248,7 @@ table {
     max-width: 100% !important;
   }
   @page  {
-    margin: 2cm .5cm;
+    margin: 4cm;
   }
   p,
   h2,

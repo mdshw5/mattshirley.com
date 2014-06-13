@@ -12,6 +12,7 @@
       type="application/atom+xml">
 <link rel=stylesheet media="screen" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 <link rel=stylesheet media="print" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
@@ -36,23 +37,13 @@
                 {{ render_markdown(ROOT + '/static/md/banner.md') }}
             </div>
             <div class="col-sm-4 col-md-3">
-                <img class="img-circle" src="{{ 'mdshw5@gmail.com' | gravatar }}">
+                <a href="{{ url_for('about') }}"><img class="img-circle" src="{{ 'mdshw5@gmail.com' | gravatar }}"/></a>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-2 col-md-3 hidden-print">
             <ul class="list-unstyled">
-                <li><h5>ME</h5></li>
-                <li><a href="{{ url_for('about') }}#contact">Contact</a></li>
-                <li><a href="{{ url_for('about') }}#education">Education</a></li>
-                <li><a href="{{ url_for('about') }}#publications">Publications</a></li>
-                <li><a href="{{ url_for('about') }}#research">Research</a></li>
-                <li><a href="{{ url_for('about') }}#teaching">Teaching</a></li>
-                <li><a href="{{ url_for('about') }}#seminars">Seminars</a></li>
-                <li><a href="{{ url_for('about') }}#posters">Posters</a></li>
-                <li><a href="{{ url_for('about') }}#software">Software</a></li>
-                <hr>
                 <li><h5>LATEST POST</h5></li>
                 <li><em><a href="{{ url_for('display_post', postname=recent_blurb()[2]) }}">{{ recent_blurb()[0] }}</a></em></li>
                 <li><blockquote class="hidden-sm">{{ recent_blurb()[1] }}</blockquote></li>
@@ -62,7 +53,11 @@
                 {{ get_git_repos('mdshw5') }}
             </ul>
             <hr>
-            <a href="https://impactstory.org/MatthewShirley"><img class="visible-lg visible-md" src="https://impactstory.org/static/img/impactstory-logo.png" width="150" /></a>
+            <div class="hidden-sm">
+                <a class="twitter-timeline" height="300px" data-chrome="nofooter noborders" href="https://twitter.com/mdshw5" data-widget-id="477458580396707841">Tweets by @mdshw5</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <a href="https://impactstory.org/MatthewShirley"><img class="visible-lg visible-md" src="https://impactstory.org/static/img/impactstory-logo.png" width="150" /></a>
+            </div>
         </div>
         <div class="col-sm-10 col-md-9">
             <div class="content">

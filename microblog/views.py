@@ -93,11 +93,15 @@ def posts():
 
 @app.route('/about', methods=['GET'])
 def about():
-    content = render_markdown(ROOT + '/static/md/about.md')
     serif = True
     if request.method == 'GET':
-        print_page = request.args.get('print', '')
-        if print_page == 'true':
+        print_page = request.args.get('print', False)
+        resume_template = request.args.get('resume', False)
+        if resume_template:
+            content = render_markdown('{0}/static/md/{1}.md'.format(ROOT, resume_template))
+        else:
+            content = render_markdown('{0}/static/md/{1}.md'.format(ROOT, 'generic'))
+        if print_page:
             return render_template('print_markdown.html', **locals())
         else:
             return render_template('markdown.html', **locals())
