@@ -21,7 +21,7 @@
         <p>Postdoctoral Fellow<br>
         The Johns Hopkins School of Medicine<br>
         Department of Oncology<br>
-        Bioinformatics / Computational Genomics
+        Bioinformatics / Computational Genomics<br>
         http://mattshirley.com
         </td>
 
