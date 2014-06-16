@@ -22,6 +22,7 @@
         The Johns Hopkins School of Medicine<br>
         Department of Oncology<br>
         Bioinformatics / Computational Genomics
+        http://mattshirley.com
         </td>
 
         <td style="text-align:right;vertical-align:top;">
@@ -42,8 +43,8 @@
 #### Education
 <table>
     <tr><td style="padding:2mm;"><strong>2013</strong></td><td>Ph.D. Biochemistry, Cellular, and Molecular Biology, 
-        Johns Hopkins School of Medicine, Baltimore MD</td></tr>
-    <tr><td style="padding:2mm;"><strong>2008</strong></td><td>B.S. Biochemistry, University of Missouri, Columbia MO</td></tr>
+        Johns Hopkins School of Medicine, Baltimore, MD</td></tr>
+    <tr><td style="padding:2mm;"><strong>2008</strong></td><td>B.S. Biochemistry, University of Missouri, Columbia, MO</td></tr>
 </table>
 
 #### Research Experience
