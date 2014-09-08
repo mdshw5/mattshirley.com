@@ -19,7 +19,7 @@
 <table style="width:100%;">
     <tr>
         <td style="text-align:left;vertical-align:top;padding-right:4em" width="60%">
-            Rare disease, prostate cancer genomics researcher, developer of software for genomics data.
+            Rare disease and prostate cancer genomics researcher, developer of software for genomics data.
         </td>
 
         <td style="text-align:right;vertical-align:top;" width="40%">
