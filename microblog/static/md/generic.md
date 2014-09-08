@@ -124,14 +124,16 @@
 <div id="grants"></div>
 
 #### Grants
- | |
----- | - |-------------------
-**2013** |  | Amazon Web Services in Education Grant, supporting *Introduction to Python*
+
+<table>
+    <tr><td style="padding:2mm;"><strong>2013</strong></td><td>Amazon Web Services in Education Grant, supporting <em>Introduction to Python</em></td></tr>
+</table
 
 <div id="teaching"></div>
 
 #### Teaching Experience
-| |
----- | - | -------------------
-**2013** | | Center for Computational Genomics, Johns Hopkins School of Medicine, Baltimore MD
-**2013** | | Bioinformatics & Computational Biology Department, Foundation for Advanced Education in the Sciences, Bethesda MD
+
+<table>
+    <tr><td style="padding:2mm;"><strong>2013</strong></td><td>Center for Computational Genomics, Johns Hopkins School of Medicine, Baltimore MD</td></tr>
+    <tr><td style="padding:2mm;"><strong>2013</strong></td><td>Bioinformatics & Computational Biology Department, Foundation for Advanced Education in the Sciences, Bethesda MD</td></tr>
+</table>
