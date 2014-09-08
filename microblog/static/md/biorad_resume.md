@@ -9,7 +9,7 @@
     </td>
     <td style="text-align:right;">
         <div class="hidden-print" align="right">
-            <button type="button" class="btn btn-default" onclick="window.location.href = 'about?print=true&resume=h3_biomedicine_resume'"><span class="glyphicon glyphicon-print"></span></button>
+            <button type="button" class="btn btn-default" onclick="window.location.href = 'about?print=true&resume=biorad_resume'"><span class="glyphicon glyphicon-print"></span></button>
         </div>
     </td>
 </tr>
@@ -23,7 +23,7 @@
         </td>
 
         <td style="text-align:right;vertical-align:top;">
-        1900 Sulgrave Ave <br>
+        1900 Sulgrave Ave Apt 2E <br>
         Baltimore, MD 21209 <br>
         <a href="mailto:mdshw5@gmail.com">mdshw5@gmail.com</a> <br>
         <i class="fa fa-briefcase" style="color:#666666;font-size:80%"></i> (443) 637-2459 <br>
@@ -51,7 +51,7 @@
  - Developing computational tools for novel bisulfite sequencing methods.
  - Mining NGS data for epigenetic prostate cancer biomarkers.
  - Collaboratively developing and deploying [new tools](#software) in the bioinformatics community.
- - Teaching [classes and workshops](#teaching) for computational biology and programming.
+ - Teaching classes and workshops for computational biology and programming.
 
     *Mentors: Dr. Sarah Wheelan and Dr. Vasan Yegnasubramanian*  
 
@@ -78,17 +78,16 @@
 #### Skills
 
 <ul class="list-inline">
-    <li>NGS Experimental Design/Analysis</li>
-    <li>Molecular Biology</li>
-    <li>Data Exploration</li>
-    <li>Machine Learning</li>
+    <li>NGS Experimental Design</li>
+    <li>NGS Analysis</li>
+    <li>Data Cleaning/Exploration</li>
     <li>Data Management</li>
     <li>R</li>
     <li>Python</li>
-    <li>Bash</li>
     <li>Unix</li>
-    <li>Software Development</li>
-    <li>Cluster/Cloud Computing</li>
+    <li>Object-oriented Software Development</li>
+    <li>Full-stack Web Development</li>
+    <li>High Performance Computing</li>
     <li></li>
 </ul>
 
