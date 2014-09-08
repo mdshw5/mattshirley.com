@@ -19,7 +19,7 @@
 <table style="width:100%;">
     <tr>
         <td style="text-align:left;vertical-align:top;">
-            Rare disease, prostate cancer research. Developing software for genomic data.
+            Rare disease, prostate cancer genomics researcher, developer of software for genomics data.
         </td>
 
         <td style="text-align:right;vertical-align:top;">
@@ -46,8 +46,10 @@
 
 #### Research Experience
 
-**2013-current**: Postdoctoral Fellow, Department of Oncology,
-    Johns Hopkins School of Medicine
+<table>
+    <tr><td style="padding:2mm;"><strong>2013-</strong></td><td>Postdoctoral Fellow, Department of Oncology,
+    Johns Hopkins School of Medicine</td></tr>
+</table>
 
  - Developing computational tools for novel bisulfite sequencing methods.
  - Refining methods for analysis of methyl-binding domain sequencing data.
@@ -57,7 +59,9 @@
 
     *Mentors: Dr. Sarah Wheelan and Dr. Vasan Yegnasubramanian*  
 
-**2008-2013**: Ph.D. Candidate, Department of Neuroscience, Johns Hopkins School of Medicine
+<table>
+    <tr><td style="padding:2mm;"><strong>2008-2013</strong></td><td>Ph.D. Candidate, Department of Neuroscience, Johns Hopkins School of Medicine</td></tr>
+</table>
 
  - Discovered [somatic mutation](#publications) causing Sturge-Weber syndrome using whole genome sequencing.
  - Characterized [SNP and CNV variability in lymphoblast](#publications) cell lines using DNA microarrays.
@@ -68,14 +72,16 @@
     *Mentors: Dr. Jonathan Pevsner, Dr. Jin Zhang, and Dr. Heng Zhu*
 
 
-**2006-2008**: Research Assistant, Department of Biochemistry,
- University of Missouri-Columbia
+<table>
+    <tr><td style="padding:2mm;"><strong>2006-2008</strong></td><td> Research Assistant, Department of Biochemistry,
+ University of Missouri-Columbia</td></tr>
+</table>
 
  - Studied heavy metal bioremediation potential of bacterium *Desulfovibrio vulgaris* Hildenborough.
  - Sequenced transposon insertion mutagenesis library in *DvH*.
  - Characterized metabolites of *DvH* anaerobic growth using gas chromatography.
 
-    Mentor: *Dr. Judy Wall*
+    *Mentor: Dr. Judy Wall*
 
 #### Skills
 
