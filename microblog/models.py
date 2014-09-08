@@ -64,10 +64,11 @@ def refresh_postlisting():
 @cache.cached(timeout=300)
 def get_git_repos(user_name):
     try:
-        data = json.load(urllib2.urlopen('https://api.github.com/users/{user}/repos?sort=updated'.format(user=user_name)))
+        data = json.load(urllib2.urlopen('https://api.github.com/users/{user}/repos?sort=updated&type=all'.format(user=user_name)))
         links = list()
         for repo in data:
-            links.append(u'<li><a href="{url}" target="_blank">{name}</a></li>'.format(url=repo['html_url'], name=repo['name']))
+            if not repo['fork']:
+                links.append(u'<li><a href="{url}" target="_blank">{name}</a></li>'.format(url=repo['html_url'], name=repo['name']))
         return Markup('\n'.join(links))
     except:
         return('Repositories not available')
