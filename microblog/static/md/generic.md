@@ -52,8 +52,8 @@
 </table>
 
  - Developing computational tools for novel bisulfite sequencing methods.
- - Refining methods for analysis of methyl-binding domain sequencing data.
  - Mining NGS data for epigenetic prostate cancer biomarkers.
+ - Creating visualizations for exploring geometric relationships between genomic elements.
  - Collaboratively developing and deploying [new tools](#software) in the bioinformatics community.
  - Teaching [classes and workshops](#teaching) for computational biology and programming.
 
@@ -66,18 +66,17 @@
  - Discovered [somatic mutation](#publications) causing Sturge-Weber syndrome using whole genome sequencing.
  - Characterized [SNP and CNV variability in lymphoblast](#publications) cell lines using DNA microarrays.
  - Supported development of [software and method](#publications) for population-scale genetic relatedness testing.
- - Interrogated the kinome for [novel kinase-substrate interactions](#publications) using protein microarrays.
+ - Explored the human kinome for [novel kinase-substrate interactions](#publications) using protein microarrays.
  - Developed and deployed [web-based tool](#software) for somatic mosaicism detection.
 
     *Mentors: Dr. Jonathan Pevsner, Dr. Jin Zhang, and Dr. Heng Zhu*
-
 
 <table>
     <tr><td style="padding:2mm;"><strong>2006-2008</strong></td><td> Research Assistant, Department of Biochemistry,
  University of Missouri-Columbia</td></tr>
 </table>
 
- - Studied heavy metal bioremediation potential of bacterium *Desulfovibrio vulgaris* Hildenborough.
+ - Studied genetics of heavy metal bioremediation in bacterium *Desulfovibrio vulgaris* Hildenborough.
  - Sequenced transposon insertion mutagenesis library in *DvH*.
  - Characterized metabolites of *DvH* anaerobic growth using gas chromatography.
 
@@ -91,7 +90,7 @@
     <li>Data Exploration</li>
     <li>Python</li>
     <li>R</li>
-    <li>Version Control</li>
+    <li>Code Version Control</li>
     <li>Unix</li>
     <li>Software Development</li>
     <li>Web Development</li>
