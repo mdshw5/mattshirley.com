@@ -127,7 +127,7 @@
 
 <table>
     <tr><td style="padding:2mm;"><strong>2013</strong></td><td>Amazon Web Services in Education Grant, supporting <em>Introduction to Python</em></td></tr>
-</table
+</table>
 
 <div id="teaching"></div>
 
