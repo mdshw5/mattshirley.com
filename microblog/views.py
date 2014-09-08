@@ -104,6 +104,10 @@ def about():
             content += render_markdown('{0}/static/md/{1}.md'.format(ROOT, 'talks'))
             return render_template('markdown.html', **locals())
 
+@app.route('/about-me')
+def aboutme_legacy():
+    return redirect(url_for('about'))
+
 @app.route('/presentations')
 def presentations():
     return redirect(url_for('about') + '#talks')
