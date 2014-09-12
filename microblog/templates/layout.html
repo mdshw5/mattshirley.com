@@ -42,24 +42,39 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-2 col-md-3 hidden-print">
-            <ul class="list-unstyled">
-                <li><h5>LATEST POST</h5></li>
-                <li><em><a href="{{ url_for('display_post', postname=recent_blurb()[2]) }}">{{ recent_blurb()[0] }}</a></em></li>
-                <li><blockquote class="hidden-sm">{{ recent_blurb()[1] }}</blockquote></li>
-                <li><a href="{{ url_for('posts') }}#posts">More posts</a></li>
-                <hr>
-                <li><h5>GITHUB REPOSITORIES</h5></li>
-                {{ get_git_repos('mdshw5') }}
-            </ul>
+        <div class="col-sm-12 col-md-4 hidden-print">
+
+            <div class="col-sm-6 col-md-12">
+                <h5>GITHUB REPOSITORIES</h5>
+                <ul class="list-inline">
+                    {{ get_git_repos('mdshw5') }}
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-12">
+                <h5>LATEST POST</h5>
+                <ul class="list-unstyled">
+                    <li><em><a href="{{ url_for('display_post', postname=recent_blurb()[2]) }}">{{ recent_blurb()[0] }}</a></em></li>
+                    <li><blockquote>{{ recent_blurb()[1] }}</blockquote></li>
+                    <li><a href="{{ url_for('posts') }}#posts">More posts</a></li>
+                </ul>
+            </div>
             <hr>
-            <div class="hidden-sm">
-                <a class="twitter-timeline" height="300px" data-chrome="nofooter noborders" href="https://twitter.com/mdshw5" data-widget-id="477458580396707841">Tweets by @mdshw5</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                <a href="https://impactstory.org/MatthewShirley"><img class="visible-lg visible-md" src="https://impactstory.org/static/img/impactstory-logo.png" width="150" /></a>
+            <div class="hidden-sm hidden-xs">
+                <table>
+                    <tr>
+                        <td style="padding-right:12px">
+                            <h5>Recent Tweets</h5>
+                        </td>
+                        <td>
+                            <a href="https://twitter.com/mdshw5" class="twitter-follow-button" data-show-count="false">Follow</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </td>
+                    </tr>
+                    <a class="twitter-timeline" height="300px" data-chrome="noscrollbar noheader nofooter noborders" href="https://twitter.com/mdshw5" data-widget-id="477458580396707841" data-tweet-limit="2">Tweets by @mdshw5</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </table>
             </div>
         </div>
-        <div class="col-sm-10 col-md-9">
+        <div class="col-sm-12 col-md-8">
             <div class="content">
                 {% for message in get_flashed_messages() %}
                 <div class="alert alert-info">

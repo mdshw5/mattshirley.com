@@ -28,6 +28,7 @@
         Baltimore MD 21287 <br>
         <a href="mailto:mdshw5@gmail.com">mdshw5@gmail.com</a> <br>
         <i class="fa fa-briefcase" style="color:#666666;font-size:80%"></i> (443) 637-2459 <br>
+        <a href="https://impactstory.org/MatthewShirley"><img src="https://impactstory.org/static/img/impactstory-logo.png" width="15" /></a>
         <a href="https://twitter.com/mdshw5"><i class="fa fa-twitter"></i></a>
         <a href="https://github.com/mdshw5"><i class="fa fa-git"></i></a>
         <a href="https://linkedin.com/in/mdshw5"><i class="fa fa-linkedin-square"></i></a> <br>

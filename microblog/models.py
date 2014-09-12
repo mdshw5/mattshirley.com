@@ -113,7 +113,10 @@ def render_markdown(md, header=False):
                     header.append(line)
                 elif line == '\n':
                     start = True
-            header = dict(map(lambda x: str(x).split(': ')[0:2], header))
+            try:
+                header = dict(map(lambda x: str(x).split(': ')[0:2], header))
+            except ValueError:
+                print(header)
             content = Markup(markdown.markdown(''.join(content), extensions=extensions))
         elif header == False:
             content = Markup(markdown.markdown(mdfile.read(), extensions=extensions))
