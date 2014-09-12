@@ -51,7 +51,7 @@ def scrape_scical():
 
 def refresh_postlisting():
     try:
-        entries = os.listdir(os.path.join(ROOT, 'blog/posts')
+        entries = os.listdir(os.path.join(ROOT, 'blog/posts'))
         dates = map(post_date, [os.path.join(ROOT, 'blog/posts', entry) for entry in entries])
         entries = map(os.path.splitext, entries)
         entries, ext = zip(*entries)
