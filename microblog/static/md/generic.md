@@ -86,7 +86,7 @@
 #### Skills
 
 <ul class="list-inline">
-    <li>Sequencing Analysis (NGS)</li>
+    <li>Sequencing Analysis</li>
     <li>Molecular Biology</li>
     <li>Data Exploration</li>
     <li>Python</li>
