@@ -91,11 +91,13 @@
     <li>Data Exploration</li>
     <li>Python</li>
     <li>R</li>
-    <li>Code Version Control</li>
+    <li>Version Control</li>
+    <li>Continuous Integration</li>
     <li>Unix</li>
-    <li>Software Development</li>
-    <li>Web Development</li>
     <li>Cluster/Cloud Computing</li>
+    <li>Software Development</li>
+    <li>Web UI Design</li>
+    <li>Javascript</li>
     <li>SQL</li>
 </ul>
 
