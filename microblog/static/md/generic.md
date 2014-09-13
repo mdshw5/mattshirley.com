@@ -23,7 +23,7 @@
         </td>
 
         <td style="text-align:right;vertical-align:top;" width="40%">
-        Sidney Kimmel Comprehensive Cancer Center <br>
+        Johns Hopkins School of Medicine <br>
         CRBII 142 1550 Orleans Street <br>
         Baltimore MD 21287 <br>
         <a href="mailto:mdshw5@gmail.com">mdshw5@gmail.com</a> <br>
