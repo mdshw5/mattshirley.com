@@ -92,13 +92,13 @@
     <li>Python</li>
     <li>R</li>
     <li>Version Control</li>
+    <li>SQL</li>
     <li>Continuous Integration</li>
     <li>Unix</li>
     <li>Cluster/Cloud Computing</li>
     <li>Software Development</li>
     <li>Web UI Design</li>
     <li>Javascript</li>
-    <li>SQL</li>
 </ul>
 
 <div id="publications" style="page-break-before:always;"></div>
