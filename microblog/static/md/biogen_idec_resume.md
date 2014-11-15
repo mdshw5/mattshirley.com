@@ -10,7 +10,7 @@
     </td>
     <td style="text-align:right;">
         <div class="hidden-print" align="right">
-            <button type="button" class="btn btn-default" onclick="window.location.href = 'about?print=true'"><span class="glyphicon glyphicon-print"></span></button>
+            <button type="button" class="btn btn-default" onclick="window.location.href = 'about?resume=biogen_idec_resume&print=true'"><span class="glyphicon glyphicon-print"></span></button>
         </div>
     </td>
 </tr>
