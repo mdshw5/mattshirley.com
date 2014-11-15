@@ -45,43 +45,37 @@
     <tr><td style="padding:2mm;"><strong>2008</strong></td><td>B.S. Biochemistry, University of Missouri, Columbia, MO</td></tr>
 </table>
 
-#### Research Experience
+#### Research & Professional Experience
 
 <table>
-    <tr><td style="padding:2mm;"><strong>2013-</strong></td><td>Postdoctoral Fellow, Department of Oncology,
+    <tr><td style="padding:2mm;"><strong>Mar 2013 - current</strong></td><td>Postdoctoral Fellow, Department of Oncology,
     Johns Hopkins School of Medicine</td></tr>
 </table>
 
- - Developing computational tools for novel bisulfite sequencing methods.
- - Mining NGS data for epigenetic prostate cancer biomarkers.
- - Creating visualizations for exploring geometric relationships between genomic elements.
- - Collaboratively developing and deploying [new tools](#software) in the bioinformatics community.
+ - Developing statistical framework for analysis of novel bisulfite sequencing library.
+ - Mining genomic data for epigenetic prostate cancer biomarkers.
+ - Collaboratively developing and deploying [new software tools](#software) in the genomics community.
+ - Mentoring graduate and undergraduate students in computational methods.
  - Teaching [classes and workshops](#teaching) for computational biology and programming.
 
-    *Mentors: Dr. Sarah Wheelan and Dr. Vasan Yegnasubramanian*  
-
 <table>
-    <tr><td style="padding:2mm;"><strong>2008-2013</strong></td><td>Ph.D. Candidate, Department of Neuroscience, Johns Hopkins School of Medicine</td></tr>
+    <tr><td style="padding:2mm;"><strong>Aug 2008 - Mar 2013</strong></td><td>Ph.D. Candidate, Department of Neuroscience, Johns Hopkins School of Medicine</td></tr>
 </table>
 
- - Discovered [somatic mutation](#publications) causing Sturge-Weber syndrome using whole genome sequencing.
+ - Discovered causative Sturge-Weber syndrome [somatic mutation](#publications) using whole genome sequencing.
  - Characterized [SNP and CNV variability in lymphoblast](#publications) cell lines using DNA microarrays.
  - Supported development of [software and method](#publications) for population-scale genetic relatedness testing.
  - Explored the human kinome for [novel kinase-substrate interactions](#publications) using protein microarrays.
  - Developed and deployed [web-based tool](#software) for somatic mosaicism detection.
 
-    *Mentors: Dr. Jonathan Pevsner, Dr. Jin Zhang, and Dr. Heng Zhu*
-
 <table>
-    <tr><td style="padding:2mm;"><strong>2006-2008</strong></td><td> Research Assistant, Department of Biochemistry,
+    <tr><td style="padding:2mm;"><strong>Jun 2006 - May 2008</strong></td><td> Research Assistant, Department of Biochemistry,
  University of Missouri-Columbia</td></tr>
 </table>
 
  - Studied genetics of heavy metal bioremediation in bacterium *Desulfovibrio vulgaris* Hildenborough.
  - Sequenced transposon insertion mutagenesis library in *DvH*.
  - Characterized metabolites of *DvH* anaerobic growth using gas chromatography.
-
-    *Mentor: Dr. Judy Wall*
 
 #### Skills
 
@@ -91,14 +85,13 @@
     <li>Data Exploration</li>
     <li>Python</li>
     <li>R</li>
-    <li>Version Control</li>
+    <li>Bash</li>
+    <li>Code Version Control</li>
     <li>SQL</li>
-    <li>Continuous Integration</li>
+    <li>Continuous Integration Testing</li>
     <li>Unix</li>
-    <li>Cluster/Cloud Computing</li>
+    <li>Cloud Computing</li>
     <li>Software Development</li>
-    <li>Web UI Design</li>
-    <li>Javascript</li>
 </ul>
 
 <div id="publications" style="page-break-before:always;"></div>
