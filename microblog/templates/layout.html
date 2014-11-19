@@ -34,7 +34,7 @@
     <div class="row well hidden-print">
         <div class="row">
             <div class="col-sm-8 col-md-9">
-                {{ render_markdown(ROOT + '/static/md/banner.md') }}
+                {{ render_markdown(root_path + '/static/md/banner.md') }}
             </div>
             <div class="col-sm-4 col-md-3">
                 <a href="{{ url_for('about') }}"><img class="img-circle" src="{{ 'mdshw5@gmail.com' | gravatar }}"/></a>

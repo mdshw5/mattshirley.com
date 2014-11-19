@@ -5,6 +5,7 @@ import markdown
 import re
 import os
 import json
+import yaml
 import urllib2
 import subprocess as sub
 from bs4 import BeautifulSoup
@@ -12,7 +13,8 @@ from icalendar import Calendar, Event
 from datetime import datetime, timedelta
 from app import cache
 
-ROOT = os.path.dirname(__file__)
+root_path = os.path.dirname(__file__)
+
 
 @cache.cached(timeout=600)
 def scrape_scical():
@@ -49,17 +51,6 @@ def scrape_scical():
             pass
     return cal.to_ical()
 
-def refresh_postlisting():
-    try:
-        entries = os.listdir(os.path.join(ROOT, 'blog/posts'))
-        dates = map(post_date, [os.path.join(ROOT, 'blog/posts', entry) for entry in entries])
-        entries = map(os.path.splitext, entries)
-        entries, ext = zip(*entries)
-        with open(os.path.join(ROOT, 'postlisting'), 'w') as o:
-            json.dump(dict(zip(dates, entries)), o, sort_keys=True)
-        return True
-    except Exception, e:
-        return e
 
 @cache.cached(timeout=300)
 def get_git_repos(user_name):
@@ -73,26 +64,17 @@ def get_git_repos(user_name):
     except:
         return('Repositories not available')
 
-def post_date(post):
-    """ Extract the post date from a post md file """
-    with codecs.open(post, 'r', 'utf-8') as mdfile:
-        for line in mdfile.readlines():
-            if re.match('post_date:', line):
-                date = line.split(' ')[1]
-                return date
 
 def most_recent_blurb():
-    with open(os.path.join(ROOT, 'postlisting'), 'r') as i:
-        entries = json.load(i)
-        entries = sorted(entries.items(), reverse=True)
-        most_recent_post = entries[0][1]
-        post_markdown = open(ROOT + '/blog/posts/{0}.{1}'.format(most_recent_post, 'md')).readlines()
-        blank = False
-        while len(post_markdown.pop(0)) > 1:
-            continue
-        return (post_markdown[0].strip('#'),
-                '{0}...'.format(''.join(post_markdown[1:])[:200]),
+    with open(os.path.join(root_path, 'posts/posts.yaml'), 'r') as listing:
+        entries = yaml.load(listing)
+        dates = sorted(entries.keys(), reverse=True)
+        most_recent_post = entries[dates[0]]['url']
+        post_markdown = open('{root}/posts/{postname}.md'.format(root=root_path, postname=most_recent_post)).readlines()
+        return (entries[dates[0]]['title'],
+                '{0}...'.format(''.join([line for line in post_markdown if line[0] != '#'])[:200]),
                 most_recent_post)
+
 
 def render_markdown(md, header=False):
     """ Takes a markdown file and returns html """
@@ -102,25 +84,9 @@ def render_markdown(md, header=False):
         return False
     extensions=['tables', 'fenced_code', 'footnotes']
     with mdfile:
-        if header == True:
-            header = []
-            content = []
-            start = False
-            for line in mdfile.readlines():
-                if start == True:
-                    content.append(line)
-                elif line != '\n':
-                    header.append(line)
-                elif line == '\n':
-                    start = True
-            try:
-                header = dict(map(lambda x: str(x).split(': ')[0:2], header))
-            except ValueError:
-                print(header)
-            content = Markup(markdown.markdown(''.join(content), extensions=extensions))
-        elif header == False:
             content = Markup(markdown.markdown(mdfile.read(), extensions=extensions))
     return content
+
 
 def make_external(url):
     return urljoin(request.url_root, url)

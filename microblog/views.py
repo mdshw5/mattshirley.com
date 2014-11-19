@@ -1,18 +1,17 @@
 import os
 import json
+import yaml
 import datetime
 import monitor
-from flask import request, redirect, url_for, \
-     render_template, send_from_directory, Response
+import models
+from flask import Response, request, redirect, url_for, render_template, send_from_directory
 from flask.ext.gravatar import Gravatar
 from werkzeug.contrib.atom import AtomFeed
 from app import app
-from models import render_markdown, refresh_postlisting, \
-    make_external, get_git_repos, scrape_scical, \
-    most_recent_blurb
+
 
 # configuration
-ROOT = os.path.dirname(__file__)
+root_path = os.path.dirname(__file__)
 
 gravatar = Gravatar(app,
                     size=180,
@@ -35,50 +34,46 @@ def static_from_root():
 def recent_feed():
     feed = AtomFeed('Recent Articles',
                     feed_url=request.url, url=request.url_root)
-    with open(os.path.join(ROOT, 'postlisting'), 'r') as i:
+    with open(os.path.join(root_path, 'postlisting'), 'r') as i:
         articles = json.load(i)
         articles = sorted(articles.items(), reverse=True)
         articles = articles[:10]
     for article in articles:
-        feed.add(article[1], unicode(render_markdown(ROOT + 'blog/posts/{0}.{1}'.format(article[1], 'md'),
+        feed.add(article[1], unicode(models.render_markdown(root_path + 'blog/posts/{0}.{1}'.format(article[1], 'md'),
                                                      header=True)),
                  content_type='html',
                  author='Matt Shirley',
-                 url=make_external('http://mattshirley.com/'+article[1]),
+                 url=models.make_external('http://mattshirley.com/'+article[1]),
                  updated=datetime.datetime.strptime(article[0].replace('-','') + '000000', "%Y%m%d%H%M%S"),
                  published=datetime.datetime.strptime(article[0].replace('-','') + '000000', "%Y%m%d%H%M%S"))
     return feed.get_response()
 
 @app.route('/scical.ics')
 def return_scical():
-    cal = scrape_scical()
+    cal = models.scrape_scical()
     return Response(cal, mimetype='text/calendar')
 
 @app.context_processor
 def query_git_repos():
-    return dict(get_git_repos=get_git_repos)
+    return dict(get_git_repos=models.get_git_repos)
 
 @app.context_processor
 def utility_processor():
-    return(dict(ROOT=ROOT, render_markdown=render_markdown, recent_blurb=most_recent_blurb))
+    return(dict(root_path=root_path, render_markdown=models.render_markdown, recent_blurb=models.most_recent_blurb))
 
 @app.route('/<postname>')
 def display_post(postname):
-    content = render_markdown(ROOT + '/blog/posts/{0}.{1}'.format(postname, 'md'), header=True)
+    content = models.render_markdown('{root}/posts/{postname}.md'.format(root=root_path, postname=postname))
     if content is not False:
         return render_template('markdown.html', **locals())
     elif content is False:
         return render_template('500.html'), 500
 
-@app.route('/update-entries')
+@app.route('/update')
 def update_entries():
-    success = refresh_postlisting()
-    return str(success)
-
-@app.route('/update-citations')
-def update_citations():
-    success = orcid_to_markdown('0000-0003-0855-9274')
-    return str(success)
+    from subprocess import call
+    call('git pull --recurse-submodules'.split())
+    return redirect(url_for('about'))
 
 @app.route('/')
 def index():
@@ -86,10 +81,10 @@ def index():
 
 @app.route('/posts')
 def posts():
-    with open(os.path.join(ROOT, 'postlisting'), 'r') as i:
-        entries = json.load(i)
-        entries = sorted(entries.items(), reverse=True)
-        return render_template('show_entries.html', entries=entries)
+    with open(os.path.join(root_path, 'posts/posts.yaml'), 'r') as listing:
+        entries = yaml.load(listing)
+        dates = sorted(entries.keys(), reverse=True)
+        return render_template('show_entries.html', dates=dates, entries=entries)
 
 @app.route('/about', methods=['GET'])
 def about():
@@ -97,11 +92,11 @@ def about():
     if request.method == 'GET':
         print_page = request.args.get('print', False)
         resume_template = request.args.get('resume', 'generic')
-        content = render_markdown('{0}/static/md/{1}.md'.format(ROOT, resume_template))
+        content = models.render_markdown('{0}/static/md/{1}.md'.format(root_path, resume_template))
         if print_page:
             return render_template('print_markdown.html', **locals())
         else:
-            content += render_markdown('{0}/static/md/{1}.md'.format(ROOT, 'talks'))
+            content += models.render_markdown('{0}/static/md/{1}.md'.format(root_path, 'talks'))
             return render_template('markdown.html', **locals())
 
 @app.route('/about-me')
@@ -122,7 +117,7 @@ def posters():
 
 @app.route('/uploads/<year>/<month>/<filename>')
 def uploads(year, month, filename):
-    dirpath = os.path.join(ROOT, '..', 'uploads', year, month)
+    dirpath = os.path.join(root_path, '..', 'uploads', year, month)
     print dirpath
     return send_from_directory(dirpath, filename)
 

@@ -2,8 +2,8 @@
 {% block body %}
 <h4 id="posts">Posts</h4>
 <table>
-  {% for entry in entries %}
-  <tr><td style="padding:1mm;">{{ entry[0] }}</td><td><a href="{{ url_for('display_post', postname=entry[1]) }}">{{ entry[1].replace('-',' ') }}</a></td></tr>
+  {% for date in dates %}
+  <tr><td style="padding:1mm;">{{ date }}</td><td><a href="{{ url_for('display_post', postname=entries[date]['url']) }}">{{ entries[date]['title'] }}</a></td></tr>
   {% endfor %}
 </table>
 {% endblock %}
