@@ -72,8 +72,8 @@ def display_post(postname):
 @app.route('/update')
 def update_entries():
     from subprocess import call
-    retcode = call(['git', '-C', root_path, 'pull', '--recurse-submodules'])
-    if retcode:
+    retcode = call(['git', '-C', '/'.join([root_path, '..']), 'pull', '--recurse-submodules'])
+    if not retcode:
         return redirect(url_for('about'))
     else:
         return render_template('500.html'), 500
