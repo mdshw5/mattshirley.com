@@ -72,8 +72,11 @@ def display_post(postname):
 @app.route('/update')
 def update_entries():
     from subprocess import call
-    call('git pull --recurse-submodules'.split())
-    return redirect(url_for('about'))
+    retcode = call(['git', '-C', root_path, 'pull', '--recurse-submodules'])
+    if retcode:
+        return redirect(url_for('about'))
+    else:
+        return render_template('500.html'), 500
 
 @app.route('/')
 def index():
