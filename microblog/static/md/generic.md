@@ -99,6 +99,9 @@
 #### Peer Reviewed Publications
 
 <table>
+
+    <tr><td style="vertical-align:top"><div data-badge-popover="top" data-badge-type="donut" data-doi="" data-hide-no-mentions="true" class="hidden-print altmetric-embed"></div></td><td class="hangingindent"><strong>Shirley MD</strong>, Pederson B, Ma Z, Wheelan S. <a href="https://www.authorea.com/users/3882/articles/14770/_show_article"><em>pyfaidx: Efficient "Pythonic" Access to FASTA files</em></a>. Preprint. 2015.</td></tr>
+
     <tr><td style="vertical-align:top"><div data-badge-popover="top" data-badge-type="donut" data-doi="10.1056/NEJMoa1213507" data-hide-no-mentions="true" class="hidden-print altmetric-embed"></div></td><td class="hangingindent"><strong>Shirley MD</strong>, Tang H, Gallione CJ, Baugher JD, Frelin LP, Cohen B, North PE, Marchuk DA, Comi AM, Pevsner J. <a href="uploads/2012/03/N-Engl-J-Med-2013-Shirley.pdf"><em>Sturge–Weber Syndrome and Port-Wine Stains Caused by Somatic Mutation in GNAQ</em></a>. New England Journal of Medicine. 2013.</td></tr>
 
     <tr><td style="vertical-align:top"><div data-badge-popover="top" data-badge-type="donut" data-doi="10.1186/1471-2164-14-367" class="hidden-print altmetric-embed"></div></td><td class="hangingindent">Baugher JD, Baugher BD, <strong>Shirley MD</strong>, Pevsner J. <a href="http://www.biomedcentral.com/1471-2164/14/367"><em>Sensitive and specific detection of mosaic chromosomal abnormalities using the Parent-of-Origin-based Detection (POD) method</em></a>. BMC Genomics. 2013.</td></tr>
