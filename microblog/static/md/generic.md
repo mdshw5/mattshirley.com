@@ -96,7 +96,7 @@
 
 <div id="publications" style="page-break-before:always;"></div>
 
-#### Peer Reviewed Publications
+#### Publications
 
 <table>
 
