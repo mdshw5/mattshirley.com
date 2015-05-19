@@ -19,13 +19,13 @@
 <table style="width:100%;">
     <tr>
         <td style="text-align:left;vertical-align:top;padding-right:4em" width="60%">
-            Rare disease and prostate cancer genomics researcher, developer of software for genomics data.
+            Rare disease and cancer genomics researcher, developer of software for genomics data.
         </td>
 
         <td style="text-align:right;vertical-align:top;" width="40%">
-        Johns Hopkins School of Medicine <br>
-        CRBII 142 1550 Orleans Street <br>
-        Baltimore MD 21287 <br>
+        250 Massachussetts Ave <br>
+        3C-470-03 <br>
+        Cambridge MA 02139 <br>
         <a href="mailto:mdshw5@gmail.com">mdshw5@gmail.com</a> <br>
         <i class="fa fa-briefcase" style="color:#666666;font-size:80%"></i> (443) 637-2459 <br>
         <a href="https://impactstory.org/MatthewShirley"><img src="static/img/impactstory-logo.png" width="13" /></a>
@@ -48,7 +48,11 @@
 #### Research & Professional Experience
 
 <table>
-    <tr><td style="padding:2mm;"><strong>Mar 2013 - current</strong></td><td>Postdoctoral Fellow, Department of Oncology,
+    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Investigator II, Novartis Institutes for BioMedical Research, Cambridge MA</td></tr>
+</table>
+
+<table>
+    <tr><td style="padding:2mm;"><strong>Mar 2013 - May 2015</strong></td><td>Postdoctoral Fellow, Department of Oncology,
     Johns Hopkins School of Medicine</td></tr>
 </table>
 

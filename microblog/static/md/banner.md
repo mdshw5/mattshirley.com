@@ -1,9 +1,5 @@
-<p class="lead">My name is Matt Shirley and I'm a postdoctoral fellow at the
-Sidney Kimmel Comprehensive Cancer Center at the Johns Hopkins
-School of Medicine in the Department of Oncology.</p>
+<p class="lead">My name is Matt Shirley and I work as an Investigator in Oncology Bioinformatics at Novartis Institutes for BioMedical Research.</p>
 
-I work with [Sarah Wheelan](ttp://sjwheelan.som.jhmi.edu) and
-[Vasan Yegnasubramanian](http://yegnalab.onc.jhmi.edu).
 You can find my publications on [ORCID](http://orcid.org/0000-0003-0855-9274) and
 [Scholar](http://scholar.google.com/citations?user=b7Jyb4YAAAAJ&hl=en). View
 the impact of my research products on [ImpactStory](https://impactstory.org/MatthewShirley).
