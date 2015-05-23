@@ -125,10 +125,11 @@
 
 <table>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=pyfaidx&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/pyfaidx">pyfaidx</a>: efficient & pythonic random access to fasta subsequences</td></tr>
+    <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=simplesam&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/simplesam">simplesam</a>: Simple pure Python SAM parser and objects for working with SAM records</td></tr>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=fastqp&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/fastqp">fastqp</a>: Python FASTQ and SAM read quality assessment and plotting</td></tr>
+    <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=sra-tools-galaxy&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/sra-tools-galaxy">sra-tools-galaxy</a>: NCBI SRA toolkit Galaxy package and tool wrappers</td></tr>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=hamstring&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/hamstring">hamstring</a>: Python module for Hamming7,4 error-correcting DNA barcodes</td></tr>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=jdbaugher&repo=tripod&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="http://tripod.mattshirley.com">tripod</a>: web interface for the triPOD mosaicism analysis</td></tr>
-    <tr></td><td style="vertical-align:top"><td><a href="http://toolshed.g2.bx.psu.edu/view/matt-shirley/ncbi_sra_toolkit">sra toolkit</a>: official Galaxy tool definitions for <a href="http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software">NCBI SRA Toolkit</a></td></tr>
 </table>
 
 <div id="grants"></div>
