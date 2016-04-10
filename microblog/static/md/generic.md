@@ -28,7 +28,7 @@
         Cambridge MA 02139 <br>
         <a href="mailto:mdshw5@gmail.com">mdshw5@gmail.com</a> <br>
         <i class="fa fa-briefcase" style="color:#666666;font-size:80%"></i> (443) 637-2459 <br>
-        <a href="https://impactstory.org/MatthewShirley"><img src="static/img/impactstory-logo.png" width="13" /></a>
+        <a href="https://impactstory.org/u/0000-0003-0855-9274"><img src="static/img/impactstory-logo.png" width="13" /></a>
         <a href="https://twitter.com/mdshw5"><i class="fa fa-twitter"></i></a>
         <a href="https://github.com/mdshw5"><i class="fa fa-git"></i></a>
         <a href="https://linkedin.com/in/mdshw5"><i class="fa fa-linkedin-square"></i></a>
