@@ -55,7 +55,7 @@
  - Developed and support an alignment-free RNA-seq pipeline for processing thousands of internal and external data sets. 
  - Identified and validated novel pharmacodynamic markers to support multiple oncology drug development programs. 
  - Interface between wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
- - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency 
+ - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
  - Mining internal and public data sets to identify or validate new drug targets. 
  - Organized a global computational research symposium spanning six geographical sites. 
  - Committee member of a global resource group for Novartis computational biology, bioinformatics and cheminformatics employees. 
