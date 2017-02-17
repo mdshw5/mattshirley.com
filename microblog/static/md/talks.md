@@ -17,7 +17,8 @@
 
 <div id="seminars"></div>
 
-#### Invited Talks
+#### Seminars
+- [*PISCES: alignment free RNA-seq quantiation and QC pipeline*](http://www.openwetware.org/images/6/6b/2017-02-16_BIG-meeting.pdf), February 16 2017, [MIT BIG meeting](http://www.openwetware.org/wiki/BioMicroCenter:BIG_meeting), MIT, Cambridge MA ([video](https://www.youtube.com/watch?v=6uS5JENyDg0))
 - [*Deep amplicon sequencing reveals GNAQ 548G>A as the causal somatic mutation in Sturge-Weber syndrome and common port-wine stains*](uploads/2013/10/Young-Investigators-Seminar.pdf), October 17 2013, Center for Computational Genomics, Johns Hopkins School of Medicine, Baltimore MD
 - [*Chromosomal Variation in Lymphoblastoid Cell Lines*][27], December 10 2012, Department of Biochemistry, Cellular, and Molecular Biology, Johns Hopkins School of Medicine, Baltimore MD
 
