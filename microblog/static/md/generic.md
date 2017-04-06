@@ -53,7 +53,7 @@
     <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Investigator II, Novartis Institutes for BioMedical Research, Cambridge MA</td></tr>
 </table>
 
- - Developed and support an alignment-free RNA-seq pipeline for processing thousands of internal and external data sets. 
+ - Developed and support an [alignment-free RNA-seq pipeline](http://www.openwetware.org/images/6/6b/2017-02-16_BIG-meeting.pdf) for processing thousands of internal and external data sets. 
  - Identified and validated novel pharmacodynamic markers to support multiple oncology drug development programs. 
  - Interface between wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
  - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
