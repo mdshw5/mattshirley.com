@@ -5,7 +5,7 @@
 
 #### Abstracts and Posters
 - **Shirley MD**, Korn JM, Bitter H. *[PISCES: a package for quantitation and QC of big mRNA-seq datasets](http://mattshirley.com/uploads/2017/11/2017-11-01_Genome_Informatics.pdf)*, Genome Informatics. Cold Spring Harbor Laboratories. November 2017
-- Grace P. Leung, Tianshu Feng, **Matthew D. Shirley**, Alyson K. Freeman, Mariela Jaskelioff, and Darrin D. Stuart. *Deleterious effects of MAPK pathway hyperactivation in BRAF-mutant melanoma*, Kinases: Next-Generation Insights and Approaches. Breckenridge, Colorado USA. March 2017
+- Grace P. Leung, Tianshu Feng, **Matthew D. Shirley**, Alyson K. Freeman, Mariela Jaskelioff, and Darrin D. Stuart. *Deleterious effects of MAPK pathway hyperactivation in BRAF-mutant melanoma*, [Kinases: Next-Generation Insights and Approaches](https://www.keystonesymposia.org/17C4). Breckenridge, Colorado USA. March 2017
 - **Shirley MD** et al. *[A Somatic Mosaic Mutation in GNAQ causes Sturge-Weber syndrome and Isolated Port-wine Birthmarks](http://mattshirley.com/uploads/2014/04/ana24069.pdf)*, 42nd Annual Meeting of the Child Neurology Society. November 2013
 - **Shirley MD** et al. [Chromosomal Variation in Lymphoblastoid Cell Lines][39], April 25 2012, Johns Hopkins School of Medicine, Baltimore MD
 - **Shirley MD** et al. [Rapid Automated Characterization of Transposon Insertion Mutants in *Desulfovibrio vulgaris* Hildenborough by srnPCR][30], Undergraduate Research and Creative Achievements Forum, 2007, University of Missouri, Columbia MO
