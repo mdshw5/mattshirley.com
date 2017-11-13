@@ -1,3 +1,16 @@
+#### Seminars
+- [*PISCES: alignment free RNA-seq quantiation and QC pipeline*](http://www.openwetware.org/images/6/6b/2017-02-16_BIG-meeting.pdf), February 16 2017, [MIT BIG meeting](http://www.openwetware.org/wiki/BioMicroCenter:BIG_meeting), MIT, Cambridge MA ([video](https://www.youtube.com/watch?v=6uS5JENyDg0))
+- [*Deep amplicon sequencing reveals GNAQ 548G>A as the causal somatic mutation in Sturge-Weber syndrome and common port-wine stains*](uploads/2013/10/Young-Investigators-Seminar.pdf), October 17 2013, Center for Computational Genomics, Johns Hopkins School of Medicine, Baltimore MD
+- [*Chromosomal Variation in Lymphoblastoid Cell Lines*][27], December 10 2012, Department of Biochemistry, Cellular, and Molecular Biology, Johns Hopkins School of Medicine, Baltimore MD
+
+#### Abstracts and Posters
+- **Shirley MD**, Korn JM, Bitter H. *[PISCES: a package for quantitation and QC of big mRNA-seq datasets](http://mattshirley.com/uploads/2017/11/2017-11-01_Genome_Informatics.pdf)*, Genome Informatics. Cold Spring Harbor Laboratories. November 2017
+- Grace P. Leung, Tianshu Feng, **Matthew D. Shirley**, Alyson K. Freeman, Mariela Jaskelioff, and Darrin D. Stuart. *Deleterious effects of MAPK pathway hyperactivation in BRAF-mutant melanoma*, Kinases: Next-Generation Insights and Approaches. Breckenridge, Colorado USA. March 2017
+- **Shirley MD** et al. *[A Somatic Mosaic Mutation in GNAQ causes Sturge-Weber syndrome and Isolated Port-wine Birthmarks](http://mattshirley.com/uploads/2014/04/ana24069.pdf)*, 42nd Annual Meeting of the Child Neurology Society. November 2013
+- **Shirley MD** et al. [Chromosomal Variation in Lymphoblastoid Cell Lines][39], April 25 2012, Johns Hopkins School of Medicine, Baltimore MD
+- **Shirley MD** et al. [Rapid Automated Characterization of Transposon Insertion Mutants in *Desulfovibrio vulgaris* Hildenborough by srnPCR][30], Undergraduate Research and Creative Achievements Forum, 2007, University of Missouri, Columbia MO
+- **Shirley MD** et al. [Rapid Automated Characterization of Transposon Insertion Mutants in *Desulfovibrio vulgaris* Hildenborough by srnPCR](http://vimss.lbl.gov/publicfiles/ESPP_retreat_2007_Shirley.pdf), Virtual Institute for Microbial Stress and Survival, 2007, Lawrence Berkeley National Laboratories, Berkeley CA
+
 #### Lectures
 
 <h5>Titles of talks link to slides.</h5>
@@ -16,27 +29,6 @@
 - Biotrac45: Bioinformatic Analysis of Next Generation Sequencing Data, [Galaxy for Next Generation Sequencing Analysis][28], November 12 2012, FAES
 
 <div id="seminars"></div>
-
-#### Seminars
-- [*PISCES: alignment free RNA-seq quantiation and QC pipeline*](http://www.openwetware.org/images/6/6b/2017-02-16_BIG-meeting.pdf), February 16 2017, [MIT BIG meeting](http://www.openwetware.org/wiki/BioMicroCenter:BIG_meeting), MIT, Cambridge MA ([video](https://www.youtube.com/watch?v=6uS5JENyDg0))
-- [*Deep amplicon sequencing reveals GNAQ 548G>A as the causal somatic mutation in Sturge-Weber syndrome and common port-wine stains*](uploads/2013/10/Young-Investigators-Seminar.pdf), October 17 2013, Center for Computational Genomics, Johns Hopkins School of Medicine, Baltimore MD
-- [*Chromosomal Variation in Lymphoblastoid Cell Lines*][27], December 10 2012, Department of Biochemistry, Cellular, and Molecular Biology, Johns Hopkins School of Medicine, Baltimore MD
-
-#### Abstracts and Posters
-- **Shirley MD**, Korn JM, Bitter H. *[PISCES: a package for quantitation and QC of big mRNA-seq datasets](http://mattshirley.com/uploads/2017/11/2017-11-01_Genome_Informatics.pdf)*, Genome Informatics 2017. Cold Spring Harbor Laboratories. November 2017
-- **Shirley MD** et al. *[A Somatic Mosaic Mutation in GNAQ causes Sturge-Weber syndrome and Isolated Port-wine Birthmarks](http://mattshirley.com/uploads/2014/04/ana24069.pdf)*, 42nd Annual Meeting of the Child Neurology Society. November 2013
-- **Shirley MD** et al. [Chromosomal Variation in Lymphoblastoid Cell Lines][39], April 25 2012, Johns Hopkins School of Medicine, Baltimore MD
-- **Shirley MD** et al. [Rapid Automated Characterization of Transposon Insertion Mutants in *Desulfovibrio vulgaris* Hildenborough by srnPCR][30], Undergraduate Research and Creative Achievements Forum, 2007, University of Missouri, Columbia MO
-- **Shirley MD** et al. [Rapid Automated Characterization of Transposon Insertion Mutants in *Desulfovibrio vulgaris* Hildenborough by srnPCR](http://vimss.lbl.gov/publicfiles/ESPP_retreat_2007_Shirley.pdf), Virtual Institute for Microbial Stress and Survival, 2007, Lawrence Berkeley National Laboratories, Berkeley CA
-
-<div id="awards"></div>
-
-#### Awards
-| |
----- | - |-------------------
-**2007** | | Undergraduate Research Ambassador
-**2007** | | Chancellor’s Award for Excellence in Research
-
 
  [1]: http://biolchem.bs.jhmi.edu/bcmb/Pages/index.aspx
  [2]: http://biochem.missouri.edu/
