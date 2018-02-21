@@ -5,5 +5,5 @@ You can find my publications on [ORCID](http://orcid.org/0000-0003-0855-9274) <a
 the impact of my research products on [ImpactStory](https://impactstory.org/u/0000-0003-0855-9274) <a href="https://impactstory.org/u/0000-0003-0855-9274"><i class="ai ai-impactstory"></i></a>.
 Send me a pull request on [GitHub](https://github.com/mdshw5?tab=activity) <a href="https://github.com/mdshw5"><i class="fa fa-git-square"></i></a>.
 Ask me about bioinformatics on [BioStars.org](http://www.biostars.org/user/profile/1681/)
-or ask me a general question on [Quora](http://www.quora.com/Matt-Shirley). Network with me on [LinkedIn](http://linkedin.com/in/mdshw5) or
-[Twitter](http://twitter.com/mdshw5). 
+or ask me a general question on [Quora](http://www.quora.com/Matt-Shirley). Network with me on [LinkedIn](http://linkedin.com/in/mdshw5) <a href="https://linkedin.com/in/mdshw5"><i class="fa fa-linkedin-square"></i></a> or
+[Twitter](http://twitter.com/mdshw5) <a href="https://twitter.com/mdshw5"><i class="fa fa-twitter-square"></i></a>. 
