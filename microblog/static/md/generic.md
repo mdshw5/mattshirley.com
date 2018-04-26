@@ -29,7 +29,7 @@
         <a href="mailto:mdshw5@gmail.com">mdshw5@gmail.com</a> <br>
         <i class="fa fa-mobile" style="color:#666666;font-size:80%"></i> (443) 637-2459 <br>
         <i class="fa fa-briefcase" style="color:#666666;font-size:80%"></i> (617) 871-5544 <br>
-        <a href="http://mattshirley.com"><i class="fa fa-space-shuttle"></i> mattshirley.com</a><br>
+        <a href="http://mattshirley.com"><i class="faf fa-compass"></i> mattshirley.com</a><br>
         <a href="https://impactstory.org/u/0000-0003-0855-9274"><i class="ai ai-impactstory"></i></a>
         <a href="https://twitter.com/mdshw5"><i class="fa fa-twitter"></i></a>
         <a href="https://github.com/mdshw5"><i class="fa fa-git"></i></a>
