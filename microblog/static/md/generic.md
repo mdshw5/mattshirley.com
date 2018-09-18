@@ -113,6 +113,8 @@
 #### Publications
 
 <table>
+    
+    <tr><td style="vertical-align:top"><div data-badge-popover="top" data-badge-type="donut" data-doi="10.1158/1541-7786.MCR-18-0327" data-hide-no-mentions="true" class="hidden-print altmetric-embed"></div></td><td class="hangingindent">Grace P Leung, Tianshu Feng, Frederic D Sigoillot, Felipe Correa Geyer, <strong>Matthew D Shirley</strong>, David A Ruddy, Daniel Rakiec, Alyson K Freeman, Jeffrey A Engelman, Mariela Jaskelioff, Darrin D Stuart <a href="https://doi.org/10.1158/1541-7786.MCR-18-0327"><em>Hyperactivation of MAPK Signaling is Deleterious to RAS/RAF Mutant Melanoma</em></a>. Molecular Cancer Research. 2018.</td></tr>
 
     <tr><td style="vertical-align:top"><div data-badge-popover="top" data-badge-type="donut" data-doi="10.1158/2159-8290.CD-16-0178" data-hide-no-mentions="true" class="hidden-print altmetric-embed"></div></td><td class="hangingindent">Munoz DM, Cassiani PJ, Li L, Billy E, Korn JM, Jones MD, Golji J, Ruddy DA, Yu K, McAllister G, DeWeck A, Abramowski D, Wan J, <strong>Shirley MD</strong>, Neshat SY, Rakiec D, de Beaumont R, Weber O, Kauffmann A, McDonald ER, Keen N, Hofmann F, Sellers WR, Schmelzle T, Stegmeier F, Schlabach MR. <a href="https://doi.org/10.1158/2159-8290.CD-16-0178"><em>CRISPR screens provide a comprehensive assessment of cancer vulnerabilities but generate false-positive hits for highly amplified genomic regions</em></a>. Cancer Discovery. 2016.</td></tr>
     
