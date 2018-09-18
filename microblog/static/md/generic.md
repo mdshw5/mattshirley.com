@@ -148,6 +148,13 @@
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=jdbaugher&repo=tripod&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="http://tripod.mattshirley.com">tripod</a>: web interface for the triPOD mosaicism analysis</td></tr>
 </table>
 
+#### Patents
+
+<table>
+    <tr><td style="vertical-align:top"><td class="hangingindent">Jonathan Pevsner, Anne Comi, Douglas Marchuk, <strong>Matthew Shirley</strong>
+        <a href="http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PG01&p=1&u=/netahtml/PTO/srchnum.html&r=1&f=G&l=50&s1=20160237492.PGNR."><em>Diagnostic and prognostic test for Sturge-Weber syndrome, Klippel-Trenaunay-Weber syndrome, and port-wine stains (PWSS)</em></a>. USPTO. 2016.</td></tr>
+</table>
+
 <div id="grants"></div>
 
 #### Grants
