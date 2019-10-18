@@ -72,7 +72,7 @@ def most_recent_blurb():
         most_recent_post = entries[dates[0]]['url']
         post_markdown = open('{root}/posts/{postname}.md'.format(root=root_path, postname=most_recent_post)).readlines()
         return (entries[dates[0]]['title'],
-                '{0}...'.format(''.join([line for line in post_markdown if line[0] != '#'])[:200]),
+                '{0}...'.format(''.join([line for line in post_markdown if line[0] != '#'])[:100]),
                 most_recent_post)
 
 
