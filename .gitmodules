@@ -1,6 +1,3 @@
 [submodule "microblog/blog"]
 	path = microblog/blog
 	url = https://github.com/mdshw5/blog.git
-[submodule "microblog/posts"]
-	path = microblog/posts
-	url = git@gist.github.com:/f262f33308e1f9197279.git

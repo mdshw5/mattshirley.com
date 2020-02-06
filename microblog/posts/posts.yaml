@@ -1,0 +1,21 @@
+2014-11-20:
+  title: A Belated Introduction to pyfaidx
+  url: introducing-pyfaidx
+2014-11-19:
+  title: Properly resolving versioned Python shared object suffixes
+  url: python-abi-hack
+2014-10-10:
+  title: Software Carpentry concept assessment
+  url: assessment-python-functions
+2014-01-23:
+  title: Automating Apple time machine backups to Amazon Glacier using python, tar, and zfs
+  url: automating-apple-time-machine-backups-to-amazon-glacier-using-python-tar-and-zfs
+2014-03-27:
+  title: Compiling matplotlib with custom freetype and png libraries
+  url: compiling-matplotlib-with-custom-freetype-and-png-libraries
+2013-01-08:
+  title: Adding Airplay to an external usb audio interface using RasPi
+  url: adding-airplay-to-an-external-usb-audio-interface
+2013-07-15:
+  title: Benchmarking BitTorrent for large transfers of next-generation sequencing data
+  url: Benchmarking-BitTorrent-for-large-transfers-of-next-generation-sequencing-data
