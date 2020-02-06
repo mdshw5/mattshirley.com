@@ -1,3 +1,6 @@
+2014-11-21:
+  title: Masking low-complexity regions using pyfaidx MutableFastaRecord
+  url: masking-lcr-with-pyfaidx
 2014-11-20:
   title: A Belated Introduction to pyfaidx
   url: introducing-pyfaidx
