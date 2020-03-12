@@ -156,7 +156,7 @@
 
 <table>
     <tr><td style="vertical-align:top"><td class="hangingindent">Jonathan Pevsner, Anne Comi, Douglas Marchuk, <strong>Matthew Shirley</strong>
-        <a href="http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PG01&p=1&u=/netahtml/PTO/srchnum.html&r=1&f=G&l=50&s1=20160237492.PGNR."><em>Diagnostic and prognostic test for Sturge-Weber syndrome, Klippel-Trenaunay-Weber syndrome, and port-wine stains (PWSS)</em></a>. USPTO. 2016.</td></tr>
+        <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10544461"><em>Diagnostic and prognostic test for Sturge-Weber syndrome, Klippel-Trenaunay-Weber syndrome, and port-wine stains (PWSS)</em></a>. USPTO. 2020.</td></tr>
 </table>
 
 <div id="grants"></div>
