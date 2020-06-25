@@ -50,7 +50,7 @@
 #### Research & Professional Experience
 
 <table>
-    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Investigator III, Novartis Institutes for BioMedical Research, Cambridge MA</td></tr>
+    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert II, Novartis Institutes for BioMedical Research, Cambridge MA</td></tr>
 </table>
 
  - Developed and support an [alignment-free RNA-seq pipeline](http://www.openwetware.org/images/6/6b/2017-02-16_BIG-meeting.pdf) for processing thousands of internal and external data sets. 
