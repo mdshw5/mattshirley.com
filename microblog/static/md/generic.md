@@ -53,7 +53,7 @@
     <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert II, Novartis Institutes for BioMedical Research, Cambridge MA</td></tr>
 </table>
 
- - Developed and support an [alignment-free RNA-seq pipeline](http://www.openwetware.org/images/6/6b/2017-02-16_BIG-meeting.pdf) for processing thousands of internal and external data sets. 
+ - Developed and support an [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) for processing thousands of internal and external data sets. 
  - Identified and validated novel pharmacodynamic markers to support multiple oncology drug development programs. 
  - Interface between wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
  - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
@@ -113,6 +113,7 @@
 #### Publications
 
 <table>
+    <tr><td style="vertical-align:top"><div data-badge-popover="top" data-badge-type="donut" data-doi="10.1101/2020.12.01.390575" data-hide-no-mentions="true" class="hidden-print altmetric-embed"></div></td><td class="hangingindent">Matthew D Shirley, Viveksagar K Radhakrishna, Javad Golji, Joshua M Korn<a href="https://doi.org/10.1101/2020.12.01.390575"><em>(Preprint) PISCES: a package for rapid quantitation and quality control of large scale mRNA-seq datasets.</em></a>. bioRxiv. 2020.</td></tr>
     
     <tr><td style="vertical-align:top"><div data-badge-popover="top" data-badge-type="donut" data-doi="10.1101/812628" data-hide-no-mentions="true" class="hidden-print altmetric-embed"></div></td><td class="hangingindent">Zainab Jagani, Gregg Chenail, Kay Xiang, Geoffrey Bushold, Hyo-Eun C Bhang, Ailing Li, GiNell Elliott, Jiang Zhu, Anthony Vattay, Tamara Gilbert, Anka Bric, Rie Kikkawa, Valerie Dubost, Remi Terranova, John Cantwell, Catherine Luu, Serena Silver, <strong>Matt Shirley</strong>, Francois Huet, Rob Maher, John Reece-Hoyes, David Ruddy, Daniel Rakiec, Joshua Korn, Carsten Russ, Vera Ruda, Julia Dooley, Emily Costa, Isabel Park, Henrik Moebitz, Katsumasa Nakajima, Christopher D Adair, Simon Mathieu, Rukundo Ntaganda, Troy Smith, David Farley, Daniel King, Xiaoling Xie, Raviraj Kulathila, Tiancen Hu, Xuewen Pan, Qicheng Ma, Katarina Vulic, Florencia Rago, Scott Clarkson, Robin Ge, Frederic Sigoillot, Gwynn Pardee, Linda Bagdasarian, Margaret McLaughlin, Kristy Haas, Jan Weiler, Steve Kovats, Mariela Jaskelioff, Marie Apolline-Gerard, Johanna Beil, Ulrike Naumann, Pascal Fortin, Frank P Stegmeier, Michael G. Acker, Juliet Williams, Matthew Meyer, James E Bradner, Nicholas Keen, William R Sellers, Francesco Hofmann, Jeffrey Engelman, Darrin Stuart, Julien P.N Papillon. <a href="https://doi.org/10.1101/812628"><em>(Preprint) In-Depth Characterization and Validation in BRG1-Mutant Lung Cancers Define Novel Catalytic Inhibitors of SWI/SNF Chromatin Remodeling.</em></a>. bioRxiv. 2019.</td></tr>
     
@@ -144,6 +145,7 @@
 #### Software
 
 <table>
+    <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=Novartis&repo=pisces&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/Novartis/pisces">PISCES</a>: a package for rapid quantitation and quality control of large scale mRNA-seq datasets</td></tr>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=pyfaidx&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/pyfaidx">pyfaidx</a>: efficient & pythonic random access to fasta subsequences</td></tr>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=simplesam&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/simplesam">simplesam</a>: Simple pure Python SAM parser and objects for working with SAM records</td></tr>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=fastqp&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/fastqp">fastqp</a>: Python FASTQ and SAM read quality assessment and plotting</td></tr>
