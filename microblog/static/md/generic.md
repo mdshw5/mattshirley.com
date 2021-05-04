@@ -50,6 +50,10 @@
 #### Research & Professional Experience
 
 <table>
+    <tr><td style="padding:2mm;"><strong>May 2021 - current</strong></td><td>Chief Scientific Officer for Sturge-Weber Foundation, Houston TX</td></tr>
+</table> 
+
+<table>
     <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert II, Novartis Institutes for BioMedical Research, Cambridge MA</td></tr>
 </table>
 
