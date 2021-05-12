@@ -14,7 +14,7 @@ from app import app
 root_path = os.path.dirname(__file__)
 
 gravatar = Gravatar(app,
-                    size=180,
+                    size=640,
                     rating='g',
                     default='retro',
                     force_default=False,
