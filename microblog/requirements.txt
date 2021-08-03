@@ -1,8 +1,9 @@
 Flask
 Flask-Ext                                                           
-Flask-Cache                                                                   
+Flask-Caching                                                                
 Flask-WTF                                                                     
 Flask-Gravatar                                                                
 markdown                                                                      
 BeautifulSoup4                                                                
 icalendar           
+gunicorn
