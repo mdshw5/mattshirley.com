@@ -1,5 +1,5 @@
 from flask import Flask
-from flask.ext.cache import Cache
+from flask_caching import Cache
 import os
 
 SECRET_KEY = os.urandom(24)
