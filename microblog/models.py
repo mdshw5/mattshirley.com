@@ -67,7 +67,7 @@ def get_git_repos(user_name):
 
 def most_recent_blurb():
     with open(os.path.join(root_path, 'posts/posts.yaml'), 'r') as listing:
-        entries = yaml.load(listing, Loader=yaml.SafeLoader))
+        entries = yaml.load(listing, Loader=yaml.SafeLoader)
         dates = sorted(entries.keys(), reverse=True)
         most_recent_post = entries[dates[0]]['url']
         post_markdown = open('{root}/posts/{postname}.md'.format(root=root_path, postname=most_recent_post)).readlines()
