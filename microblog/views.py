@@ -120,7 +120,7 @@ def posters():
 
 @app.route('/uploads/<year>/<month>/<filename>')
 def uploads(year, month, filename):
-    dirpath = os.path.join(root_path, '..', 'uploads', year, month)
+    dirpath = os.path.join(root_path, 'uploads', year, month)
     print dirpath
     return send_from_directory(dirpath, filename)
 
