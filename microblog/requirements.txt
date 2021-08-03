@@ -1,0 +1,7 @@
+Flask                                                                         
+Flask-Cache                                                                   
+Flask-WTF                                                                     
+Flask-Gravatar                                                                
+markdown                                                                      
+BeautifulSoup4                                                                
+icalendar           
