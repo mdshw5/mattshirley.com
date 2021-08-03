@@ -4,14 +4,14 @@ import time
 import signal
 import threading
 import atexit
-import Queue
+import queue
 
 _interval = 1.0
 _times = {}
 _files = []
 
 _running = False
-_queue = Queue.Queue()
+_queue = queue.Queue()
 _lock = threading.Lock()
 
 def _restart(path):

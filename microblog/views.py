@@ -5,8 +5,8 @@ import datetime
 import monitor
 import models
 from flask import Response, request, redirect, url_for, render_template, send_from_directory
-from flask.ext.gravatar import Gravatar
-from werkzeug.contrib.atom import AtomFeed
+from flask_gravatar import Gravatar
+from feedwerk.atom import AtomFeed
 from app import app
 
 
@@ -121,7 +121,6 @@ def posters():
 @app.route('/uploads/<year>/<month>/<filename>')
 def uploads(year, month, filename):
     dirpath = os.path.join(root_path, 'uploads', year, month)
-    print dirpath
     return send_from_directory(dirpath, filename)
 
 @app.route('/reload')

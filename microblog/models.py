@@ -1,4 +1,4 @@
-from urlparse import urljoin
+from urllib.parse import urljoin
 from flask import Markup, request
 import codecs
 import markdown
@@ -6,7 +6,7 @@ import re
 import os
 import json
 import yaml
-import urllib2
+import urllib.request
 import subprocess as sub
 from bs4 import BeautifulSoup
 from icalendar import Calendar, Event
@@ -18,7 +18,7 @@ root_path = os.path.dirname(__file__)
 
 @cache.cached(timeout=600)
 def scrape_scical():
-    data = urllib2.urlopen('http://www.hopkinsmedicine.org/scical/').read()
+    data = urllib.request.urlopen('http://www.hopkinsmedicine.org/scical/').read()
     soup = BeautifulSoup(data)
     cal = Calendar()
     cal.add('prodid', '-//Hopkins Science Calendar//mattshirley.com/scical//')
@@ -55,7 +55,7 @@ def scrape_scical():
 @cache.cached(timeout=300)
 def get_git_repos(user_name):
     try:
-        data = json.load(urllib2.urlopen('https://api.github.com/users/{user}/repos?sort=updated&type=all'.format(user=user_name)))
+        data = json.load(urllib.request.urlopen('https://api.github.com/users/{user}/repos?sort=updated&type=all'.format(user=user_name)))
         links = list()
         for repo in data:
             if not repo['fork']:
