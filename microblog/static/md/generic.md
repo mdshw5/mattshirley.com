@@ -54,6 +54,10 @@
     <tr><td style="padding:2mm;"><strong>May 2021 - current</strong></td><td>Chief Scientific Officer for Sturge-Weber Foundation, Houston TX</td></tr>
 </table> 
 
+- Funding innovative translational research proposals through the [Lisa's Fellowship program](https://sturge-weber.org/for-professionals/2019-lisas-fellowship-award.html) with the goal of advancing therapeutics for Sturge-Weber Syndrome towards the clinic.
+- Organizing multidisciplinary international [research conferences and discussions](https://sturge-weber.org/for-professionals/) under the three core SWS research domains: neurology, dermatology, and opthamology. 
+- Establishing public/private collaborations utilizing the SWS [patient registry](https://sturge-weber.org/for-patients/our-research.html) data, seeking to accelerate discovery for rare epillepsies through the C-Path [Rare Disease Cures Accelerator Program](https://c-path.org/programs/rdca-dap/).
+
 <table>
     <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert II, Novartis Institutes for BioMedical Research, Cambridge MA</td></tr>
 </table>
