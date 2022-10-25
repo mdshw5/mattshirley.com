@@ -56,6 +56,7 @@
 
 - Funding innovative translational research proposals through the [Lisa's Fellowship program](https://sturge-weber.org/for-professionals/2019-lisas-fellowship-award.html) with the goal of advancing therapeutics for Sturge-Weber Syndrome towards the clinic.
 - Organizing multidisciplinary international [research conferences and discussions](https://sturge-weber.org/for-professionals/) under the three core SWS research domains: neurology, dermatology, and opthamology. 
+- Hosted the 2022 Sturge Weber International Research Network Conference in Grapevine TX, bringing together top researchers and labs from the Sturge-Weber research community. Managed a collaborative goal-setting process to build consensus around long-term research strategy. 
 - Establishing public/private collaborations utilizing the SWS [patient registry](https://sturge-weber.org/for-patients/our-research.html) data, seeking to accelerate discovery for rare epillepsies through the C-Path [Rare Disease Cures Accelerator Program](https://c-path.org/programs/rdca-dap/).
 
 <table>
@@ -63,12 +64,13 @@
 </table>
 
  - Developed and support an [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) for processing thousands of internal and external data sets. 
+ - Managed the NIBR Oncology Drug Discovery data science portfolio. Ensured that projects are properly supported by data scientists.
  - Identified and validated novel pharmacodynamic markers to support multiple oncology drug development programs. 
  - Interface between wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
  - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
  - Mining internal and public data sets to identify or validate new drug targets. 
  - Organized a global computational research symposium spanning six geographical sites. 
- - Committee member of a global resource group for Novartis computational biology, bioinformatics and cheminformatics employees. 
+ - Chaired a global employee resource group for Novartis computational biology, bioinformatics and cheminformatics staff. 
 
 <table>
     <tr><td style="padding:2mm;"><strong>Mar 2013 - May 2015</strong></td><td>Postdoctoral Fellow, Department of Oncology,
