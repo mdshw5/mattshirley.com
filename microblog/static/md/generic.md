@@ -19,7 +19,7 @@
 <table style="width:100%;">
     <tr>
         <td style="text-align:left;vertical-align:top;padding-right:4em" width="60%">
-            Rare disease and cancer genomics researcher, developer of software for genomics data.
+            Computational biologist working in rare disease and cancer genomic; developer of software for genomics data.
         </td>
 
         <td style="text-align:right;vertical-align:top;" width="40%">
@@ -56,32 +56,32 @@
 
 - Funding innovative translational research proposals through the [Lisa's Fellowship program](https://sturge-weber.org/for-professionals/2019-lisas-fellowship-award.html) with the goal of advancing therapeutics for Sturge-Weber Syndrome towards the clinic.
 - Organizing multidisciplinary international [research conferences and discussions](https://sturge-weber.org/for-professionals/) under the three core SWS research domains: neurology, dermatology, and opthamology. 
-- Hosted the 2022 Sturge Weber International Research Network Conference in Grapevine TX, bringing together top researchers and labs from the Sturge-Weber research community. Managed a collaborative goal-setting process to build consensus around long-term research strategy. 
-- Establishing public/private collaborations utilizing the SWS [patient registry](https://sturge-weber.org/for-patients/our-research.html) data, seeking to accelerate discovery for rare epillepsies through the C-Path [Rare Disease Cures Accelerator Program](https://c-path.org/programs/rdca-dap/).
+- Hosted the 2022 & 2023 Sturge Weber International Research Network Conferences in Grapevine TX and Charlotte NC, bringing together top researchers and labs from the Sturge-Weber research community. Applied for and [recieved funding through NIH R13](#grants) to support conference activities. Managed a collaborative goal-setting process to build consensus around long-term research strategy. 
+- Established public/private collaborations utilizing the SWS [patient registry](https://sturge-weber.org/for-patients/our-research.html) data, seeking to accelerate discovery for rare epillepsies through the C-Path [Rare Disease Cures Accelerator Program](https://c-path.org/programs/rdca-dap/).
 
 <table>
-    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert II, Novartis Institutes for BioMedical Research, Cambridge MA</td></tr>
+    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert II, Novartis BioMedical Research, Cambridge MA</td></tr>
 </table>
 
- - Developed and support an [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) for processing thousands of internal and external data sets. 
- - Managed the NIBR Oncology Drug Discovery data science portfolio. Ensured that projects are properly supported by data scientists.
+ - Developed [alignment-free RNA-seq methods](https://github.com/Novartis/pisces) for processing thousands of internal and external experiments across Novartis R&D portfolio. 
+ - Managed the Novartis Oncology drug discovery data science portfolio to ensure stakeholder needs are aligned with Oncology data scientists.
  - Identified and validated novel pharmacodynamic markers to support multiple oncology drug development programs. 
- - Interface between wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
+ - Interfaced wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
  - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
- - Mining internal and public data sets to identify or validate new drug targets. 
- - Organized a global computational research symposium spanning six geographical sites. 
- - Chaired a global employee resource group for Novartis computational biology, bioinformatics and cheminformatics staff. 
+ - Mined internal and public genomics data to identify and validate new drug targets. 
+ - Organized 2019-2023 yearly global computational research symposia spanning six geographical sites. 
+ - Chaired a global employee resource group for Novartis computational biology, bioinformatics and data science staff. 
 
 <table>
     <tr><td style="padding:2mm;"><strong>Mar 2013 - May 2015</strong></td><td>Postdoctoral Fellow, Department of Oncology,
     Johns Hopkins School of Medicine</td></tr>
 </table>
 
- - Developing statistical framework for integrative whole-genome genetic and bisulfite sequence analysis.
- - Mining genomic data for epigenetic prostate cancer biomarkers.
- - Collaboratively developing and deploying [new software tools](#software) in the genomics community.
- - Mentoring graduate and undergraduate students in computational methods.
- - Teaching [classes and workshops](#teaching) for computational biology and programming.
+ - Developed statistical framework for integrative whole-genome genetic and bisulfite sequence analysis.
+ - Mined genomic data for epigenetic prostate cancer biomarkers.
+ - Collaboratively developed and deployed [new software tools](#software) in the genomics community.
+ - Mentored graduate and undergraduate students in computational methods.
+ - Taught [classes and workshops](#teaching) for computational biology and programming.
 
 <table>
     <tr><td style="padding:2mm;"><strong>Aug 2008 - Mar 2013</strong></td><td>Ph.D. Candidate, Department of Neuroscience, Johns Hopkins School of Medicine</td></tr>
@@ -105,12 +105,12 @@
 #### Skills
 
 <ul class="list-inline">
-    <li>Sequencing Analysis</li>
+    <li>Next Generation Sequencing Analysis</li>
     <li>Molecular Biology</li>
     <li>Applied Statistics</li>
     <li>Python</li>
     <li>R</li>
-    <li>Bash</li>
+    <li>Team and Project Management</li>
     <li>Code Version Control</li>
     <li>SQL</li>
     <li>Continuous Integration Testing</li>
@@ -170,7 +170,6 @@
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=fastqp&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/fastqp">fastqp</a>: Python FASTQ and SAM read quality assessment and plotting</td></tr>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=sra-tools-galaxy&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/sra-tools-galaxy">sra-tools-galaxy</a>: NCBI SRA toolkit Galaxy package and tool wrappers</td></tr>
     <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=mdshw5&repo=hamstring&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="https://github.com/mdshw5/hamstring">hamstring</a>: Python module for Hamming7,4 error-correcting DNA barcodes</td></tr>
-    <tr><td style="vertical-align:top"><iframe src="http://ghbtns.com/github-btn.html?user=jdbaugher&repo=tripod&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe></td><td><a href="http://tripod.mattshirley.com">tripod</a>: web interface for the triPOD mosaicism analysis</td></tr>
 </table>
 
 #### Patents
@@ -185,6 +184,7 @@
 #### Grants
 
 <table>
+    <tr><td style="padding:2mm;"><strong>2023</strong></td><td><a href="https://reporter.nih.gov/project-details/10754154">1R13NS134286-01</a>Sturge Weber Syndrome: Moving Translational Science Forward into the Clinical Realm</td></tr>
     <tr><td style="padding:2mm;"><strong>2013</strong></td><td>Amazon Web Services in Education Grant, supporting <em>Introduction to Python</em></td></tr>
 </table>
 
