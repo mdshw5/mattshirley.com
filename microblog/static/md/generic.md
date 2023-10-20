@@ -184,7 +184,7 @@
 #### Grants
 
 <table>
-    <tr><td style="padding:2mm;"><strong>2023</strong></td><td><a href="https://reporter.nih.gov/project-details/10754154">1R13NS134286-01</a>Sturge Weber Syndrome: Moving Translational Science Forward into the Clinical Realm</td></tr>
+    <tr><td style="padding:2mm;"><strong>2023</strong></td><td><a href="https://reporter.nih.gov/project-details/10754154">1R13NS134286-01</a> - Sturge Weber Syndrome: Moving Translational Science Forward into the Clinical Realm</td></tr>
     <tr><td style="padding:2mm;"><strong>2013</strong></td><td>Amazon Web Services in Education Grant, supporting <em>Introduction to Python</em></td></tr>
 </table>
 
