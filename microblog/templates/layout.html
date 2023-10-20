@@ -41,17 +41,8 @@
                     {{ get_git_repos('mdshw5') }}
                 </ul>
             </div>
-            <div class="col-sm-6 col-md-12">
-                <h5>LATEST POST</h5>
-                <ul class="list-unstyled">
-                    <li><em><a href="{{ url_for('display_post', postname=recent_blurb()[2]) }}">{{ recent_blurb()[0] }}</a></em></li>
-                    <li><blockquote>{{ recent_blurb()[1] }}</blockquote></li>
-                    <li><a href="{{ url_for('posts') }}#posts">More posts</a></li>
-                </ul>
-            </div>
             <hr>
             <div class="col-sm-6 col-md-12">
-                <small class="text-muted hidden-print">Disclaimer: As an Amazon Associate I earn from qualifying purchases.</small><br>
                 <small class="text-muted hidden-print">Powered by <a href="http://flask.pocoo.org">Flask. </a></small><br>
                 <small class="text-muted hidden-print">Styled with <a href="http://twitter.github.io/">Bootstrap.</a></small><br>
                 <small class="text-muted hidden-print">Icons from <a href="http://jpswalsh.github.io/academicons//">Academicons.</a></small><br>
