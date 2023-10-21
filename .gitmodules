@@ -1,3 +1,0 @@
-[submodule "microblog/blog"]
-	path = microblog/blog
-	url = https://github.com/mdshw5/blog.git
