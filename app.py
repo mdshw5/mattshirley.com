@@ -15,13 +15,34 @@ app = Flask(__name__)
 
 root_path = os.path.dirname(__file__)
 
+@app.template_filter('gravatar_url')
 def gravatar_url(email, size=100, rating='g', default='retro', force_default=False):
     hash_value = md5(email.lower().encode('utf-8')).hexdigest()
     return f"https://www.gravatar.com/avatar/{hash_value}?s={size}&d={default}&r={rating}&f={force_default}"
 
-@app.context_processor
-def query_git_repos():
-    return dict(get_git_repos=get_git_repos)
+@app.template_filter('get_git_repos')
+def get_git_repos(user_name):
+    try:
+        data = json.load(urllib.request.urlopen('https://api.github.com/users/{user}/repos?sort=updated&type=all'.format(user=user_name)))
+        links = list()
+        for repo in data:
+            if not repo['fork']:
+                links.append(u'<li><a href="{url}" target="_blank">{name}</a></li>'.format(url=repo['html_url'], name=repo['name']))
+        return Markup('\n'.join(links))
+    except:
+        return('Repositories not available')
+
+@app.template_filter('render_markdown')
+def render_markdown(md, header=False):
+    """ Takes a markdown file and returns html """
+    try:
+        mdfile = codecs.open(os.path.join(root_path, md), 'r', 'utf-8')
+    except IOError:
+        return False
+    extensions=['tables', 'fenced_code', 'footnotes']
+    with mdfile:
+            content = Markup(markdown.markdown(mdfile.read(), extensions=extensions))
+    return content
 
 @app.route('/')
 def index():
@@ -58,25 +79,3 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template('500.html'), 500
-
-def get_git_repos(user_name):
-    try:
-        data = json.load(urllib.request.urlopen('https://api.github.com/users/{user}/repos?sort=updated&type=all'.format(user=user_name)))
-        links = list()
-        for repo in data:
-            if not repo['fork']:
-                links.append(u'<li><a href="{url}" target="_blank">{name}</a></li>'.format(url=repo['html_url'], name=repo['name']))
-        return Markup('\n'.join(links))
-    except:
-        return('Repositories not available')
-
-def render_markdown(md, header=False):
-    """ Takes a markdown file and returns html """
-    try:
-        mdfile = codecs.open(os.path.join(root_path, md), 'r', 'utf-8')
-    except IOError:
-        return False
-    extensions=['tables', 'fenced_code', 'footnotes']
-    with mdfile:
-            content = Markup(markdown.markdown(mdfile.read(), extensions=extensions))
-    return content
