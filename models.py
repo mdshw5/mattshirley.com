@@ -6,11 +6,9 @@ import os
 import json
 import yaml
 import urllib.request
-from app import cache
 
 root_path = os.path.dirname(__file__)
 
-@cache.cached(timeout=300)
 def get_git_repos(user_name):
     try:
         data = json.load(urllib.request.urlopen('https://api.github.com/users/{user}/repos?sort=updated&type=all'.format(user=user_name)))
