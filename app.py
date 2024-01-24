@@ -18,7 +18,7 @@ root_path = os.path.dirname(__file__)
 
 @app.template_filter('gravatar_url')
 def gravatar_url(email):
-    url = Gravatar.get_image(email, size=180, rating='g')
+    url = Gravatar(email).get_image(size=180, rating='g')
     return url
 
 @app.template_filter('get_git_repos')
