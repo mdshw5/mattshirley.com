@@ -8,18 +8,15 @@ from flask import Flask, request
 from markupsafe import Markup
 from urllib.parse import urljoin
 from flask import Response, request, redirect, url_for, render_template, send_from_directory
-from flask_gravatar import Gravatar
+from hashlib import md5
 
 app = Flask(__name__)
 
 root_path = os.path.dirname(__file__)
 
-gravatar = Gravatar(app,
-                    size=180,
-                    rating='g',
-                    default='retro',
-                    force_default=False,
-                    force_lower=False)
+def gravatar_url(email, size=100, rating='g', default='retro', force_default=False):
+    hash_value = md5(email.lower().encode('utf-8')).hexdigest()
+    return f"https://www.gravatar.com/avatar/{hash_value}?s={size}&d={default}&r={rating}&f={force_default}"
 
 @app.context_processor
 def query_git_repos():
