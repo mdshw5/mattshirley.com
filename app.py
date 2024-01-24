@@ -17,8 +17,8 @@ app = Flask(__name__)
 root_path = os.path.dirname(__file__)
 
 @app.template_filter('gravatar_url')
-def gravatar_url(email, size=180):
-    url = Gravatar.get_image(email, size=size, rating='g')
+def gravatar_url(email):
+    url = Gravatar.get_image(email, size=180, rating='g')
     return url
 
 @app.template_filter('get_git_repos')
