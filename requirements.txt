@@ -2,4 +2,4 @@ Flask
 Flask-Gravatar
 gunicorn
 Markdown
-yaml
+PyYAML
