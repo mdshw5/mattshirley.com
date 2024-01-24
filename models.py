@@ -20,16 +20,6 @@ def get_git_repos(user_name):
     except:
         return('Repositories not available')
 
-def most_recent_blurb():
-    with open(os.path.join(root_path, 'posts/posts.yaml'), 'r') as listing:
-        entries = yaml.load(listing, Loader=yaml.SafeLoader)
-        dates = sorted(entries.keys(), reverse=True)
-        most_recent_post = entries[dates[0]]['url']
-        post_markdown = open('{root}/posts/{postname}.md'.format(root=root_path, postname=most_recent_post)).readlines()
-        return (entries[dates[0]]['title'],
-                '{0}...'.format(''.join([line for line in post_markdown if line[0] != '#'])[:100]),
-                most_recent_post)
-
 def render_markdown(md, header=False):
     """ Takes a markdown file and returns html """
     try:

@@ -1,12 +1,9 @@
 import os
 import json
 import yaml
-import datetime
-import monitor
 import models
 from flask import Response, request, redirect, url_for, render_template, send_from_directory
 from flask_gravatar import Gravatar
-from feedwerk.atom import AtomFeed
 from app import app
 
 
@@ -30,48 +27,9 @@ def remove_trailing_slash():
 def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
 
-@app.route('/recent.atom')
-def recent_feed():
-    feed = AtomFeed('Recent Articles',
-                    feed_url=request.url, url=request.url_root)
-    with open(os.path.join(root_path, 'postlisting'), 'r') as i:
-        articles = json.load(i)
-        articles = sorted(articles.items(), reverse=True)
-        articles = articles[:10]
-    for article in articles:
-        feed.add(article[1], unicode(models.render_markdown(root_path + 'blog/posts/{0}.{1}'.format(article[1], 'md'),
-                                                     header=True)),
-                 content_type='html',
-                 author='Matt Shirley',
-                 url=models.make_external('http://mattshirley.com/'+article[1]),
-                 updated=datetime.datetime.strptime(article[0].replace('-','') + '000000', "%Y%m%d%H%M%S"),
-                 published=datetime.datetime.strptime(article[0].replace('-','') + '000000', "%Y%m%d%H%M%S"))
-    return feed.get_response()
-
 @app.context_processor
 def query_git_repos():
     return dict(get_git_repos=models.get_git_repos)
-
-@app.context_processor
-def utility_processor():
-    return(dict(root_path=root_path, render_markdown=models.render_markdown, recent_blurb=models.most_recent_blurb))
-
-@app.route('/<postname>')
-def display_post(postname):
-    content = models.render_markdown('{root}/posts/{postname}.md'.format(root=root_path, postname=postname))
-    if content is not False:
-        return render_template('markdown.html', **locals())
-    elif content is False:
-        return render_template('500.html'), 500
-
-@app.route('/update')
-def update_entries():
-    from subprocess import call
-    retcode = call(['git', '-C', '/'.join([root_path, '..']), 'submodule', 'foreach', 'git', 'pull', 'origin', 'master'])
-    if int(retcode) <= 0:
-        return redirect(url_for('about'))
-    else:
-        return render_template('500.html'), 500
 
 @app.route('/')
 def index():
@@ -117,12 +75,6 @@ def posters():
 def uploads(year, month, filename):
     dirpath = os.path.join(root_path, 'uploads', year, month)
     return send_from_directory(dirpath, filename)
-
-@app.route('/reload')
-def reload():
-    """ Monitor for changes to site code and restart wsgi process if necessary """
-    monitor.start(interval=1.0)
-    return redirect(url_for('index'))
 
 @app.errorhandler(404)
 def page_not_found(e):
