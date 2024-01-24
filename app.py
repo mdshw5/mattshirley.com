@@ -16,7 +16,7 @@ app = Flask(__name__)
 root_path = os.path.dirname(__file__)
 
 @app.template_filter('gravatar_url')
-def gravatar_url(email, size=100, rating='g', default='retro', force_default=False):
+def gravatar_url(email, size=180, rating='g', default='retro', force_default=False):
     hash_value = md5(email.lower().encode('utf-8')).hexdigest()
     return f"https://www.gravatar.com/avatar/{hash_value}?s={size}&d={default}&r={rating}&f={force_default}"
 
