@@ -1,6 +1,7 @@
 import codecs
 import markdown
 import os
+import os.path
 import json
 import yaml
 import urllib.request
@@ -32,11 +33,10 @@ def about():
     if request.method == 'GET':
         print_page = request.args.get('print', False)
         resume_template = request.args.get('resume', 'generic')
-        content = render_markdown('{0}/static/md/{1}.md'.format(root_path, resume_template))
+        content = render_markdown('static/md/{0}.md'.format(resume_template))
         if print_page:
             return render_template('print_markdown.html', **locals())
         else:
-            content += render_markdown('{0}/static/md/{1}.md'.format(root_path, 'talks'))
             return render_template('markdown.html', **locals())
 
 @app.route('/presentations')
@@ -73,7 +73,7 @@ def get_git_repos(user_name):
 def render_markdown(md, header=False):
     """ Takes a markdown file and returns html """
     try:
-        mdfile = codecs.open(md, 'r', 'utf-8')
+        mdfile = codecs.open(os.path.join(root_path, md), 'r', 'utf-8')
     except IOError:
         return False
     extensions=['tables', 'fenced_code', 'footnotes']
