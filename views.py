@@ -17,11 +17,6 @@ gravatar = Gravatar(app,
                     force_default=False,
                     force_lower=False)
 
-@app.before_request
-def remove_trailing_slash():
-    if request.path != '/' and request.path.endswith('/'):
-        return redirect(request.path[:-1])
-
 @app.route('/robots.txt')
 @app.route('/sitemap.xml')
 def static_from_root():
