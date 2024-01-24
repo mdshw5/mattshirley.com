@@ -3,3 +3,4 @@ Flask-Gravatar
 gunicorn
 Markdown
 PyYAML
+MarkupSafe
