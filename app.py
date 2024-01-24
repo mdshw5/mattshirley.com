@@ -5,7 +5,7 @@ import json
 import yaml
 import urllib.request
 from flask import Flask, request
-from MarkupSafe import Markup
+from markupsafe import Markup
 from urllib.parse import urljoin
 from flask import Response, request, redirect, url_for, render_template, send_from_directory
 from flask_gravatar import Gravatar
