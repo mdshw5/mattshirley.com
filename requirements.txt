@@ -3,3 +3,4 @@ gunicorn
 Markdown
 PyYAML
 MarkupSafe
+libgravatar
