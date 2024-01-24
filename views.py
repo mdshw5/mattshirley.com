@@ -48,11 +48,6 @@ def recent_feed():
                  published=datetime.datetime.strptime(article[0].replace('-','') + '000000', "%Y%m%d%H%M%S"))
     return feed.get_response()
 
-@app.route('/scical.ics')
-def return_scical():
-    cal = models.scrape_scical()
-    return Response(cal, mimetype='text/calendar')
-
 @app.context_processor
 def query_git_repos():
     return dict(get_git_repos=models.get_git_repos)
