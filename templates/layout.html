@@ -29,22 +29,22 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12 col-md-2 hidden-print">
+        <div class="col-12 hidden-print">
 
-            <div class="col-sm-6 col-md-12">
+            <div class="col-6">
                 <h5>GITHUB REPOSITORIES</h5>
                 <ul class="list-inline">
                     {{ 'mdshw5' | get_git_repos }}
                 </ul>
             </div>
             <hr>
-            <div class="col-sm-6 col-md-12">
+            <div class="col-6">
                 <small class="text-muted hidden-print">Powered by <a href="http://flask.pocoo.org">Flask. </a></small><br>
                 <small class="text-muted hidden-print">Styled with <a href="http://twitter.github.io/">Bootstrap.</a></small><br>
                 <small class="text-muted hidden-print">Icons from <a href="http://jpswalsh.github.io/academicons//">Academicons.</a></small><br>
             </div>
         </div>
-        <div class="col-sm-12 col-md-10">
+        <div class="col-12">
             <div class="content">
                 {% for message in get_flashed_messages() %}
                 <div class="alert alert-info">
