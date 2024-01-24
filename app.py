@@ -20,11 +20,6 @@ gravatar = Gravatar(app,
                     force_default=False,
                     force_lower=False)
 
-@app.route('/robots.txt')
-@app.route('/sitemap.xml')
-def static_from_root():
-    return send_from_directory(app.static_folder, request.path[1:])
-
 @app.context_processor
 def query_git_repos():
     return dict(get_git_repos=get_git_repos)
@@ -32,13 +27,6 @@ def query_git_repos():
 @app.route('/')
 def index():
     return redirect(url_for('about'))
-
-@app.route('/posts')
-def posts():
-    with open(os.path.join(root_path, 'posts/posts.yaml'), 'r') as listing:
-        entries = yaml.load(listing)
-        dates = sorted(entries.keys(), reverse=True)
-        return render_template('show_entries.html', dates=dates, entries=entries)
 
 @app.route('/about', methods=['GET'])
 def about():
@@ -53,10 +41,6 @@ def about():
             content += render_markdown('{0}/static/md/{1}.md'.format(root_path, 'talks'))
             return render_template('markdown.html', **locals())
 
-@app.route('/about-me')
-def aboutme_legacy():
-    return redirect(url_for('about'))
-
 @app.route('/presentations')
 def presentations():
     return redirect(url_for('about') + '#talks')
@@ -68,11 +52,6 @@ def talks():
 @app.route('/posters')
 def posters():
     return redirect(url_for('about') + '#posters')
-
-@app.route('/uploads/<year>/<month>/<filename>')
-def uploads(year, month, filename):
-    dirpath = os.path.join(root_path, 'uploads', year, month)
-    return send_from_directory(dirpath, filename)
 
 @app.errorhandler(404)
 def page_not_found(e):
