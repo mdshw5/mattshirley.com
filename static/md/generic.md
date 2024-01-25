@@ -51,7 +51,7 @@
 #### Research & Professional Experience
 
 <table>
-    <tr><td style="padding:2mm;"><strong>May 2021 - current</strong></td><td>Chief Scientific Officer for The Sturge-Weber Foundation, Aurora CO</td></tr>
+    <tr><td style="padding:2mm;"><strong>May 2021 - current</strong></td><td>Chief Scientific Officer, The Sturge-Weber Foundation, Aurora CO</td></tr>
 </table> 
 
 - Funding innovative translational research proposals through the [Lisa's Fellowship program](https://sturge-weber.org/for-professionals/2019-lisas-fellowship-award.html) with the goal of advancing therapeutics for Sturge-Weber Syndrome towards the clinic.
@@ -60,12 +60,12 @@
 - Established public/private collaborations utilizing the SWS [patient registry](https://sturge-weber.org/for-patients/our-research.html) data, seeking to accelerate discovery for rare epillepsies through the C-Path [Rare Disease Cures Accelerator Program](https://c-path.org/programs/rdca-dap/).
 
 <table>
-    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert II, Novartis BioMedical Research, Cambridge MA</td></tr>
+    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert Data Scientist, Novartis BioMedical Research, Cambridge MA</td></tr>
 </table>
 
- - Developed [alignment-free RNA-seq methods](https://github.com/Novartis/pisces) for processing thousands of internal and external experiments across Novartis R&D portfolio. 
- - Managed the Novartis Oncology drug discovery data science portfolio to ensure stakeholder needs are aligned with Oncology data scientists.
- - Identified and validated novel pharmacodynamic markers to support multiple oncology drug development programs. 
+ - Developed [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) for processing thousands of internal and external experiments across Novartis R&D portfolio. 
+ - Managed resourcing and stakeholder relationships for the Novartis Oncology Data Science drug discovery portfolio to ensure continued support of research programs.
+ - Identified and validated novel pharmacodynamic markers to support multiple oncology drug discovery and development programs. 
  - Interfaced wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
  - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
  - Mined internal and public genomics data to identify and validate new drug targets. 
