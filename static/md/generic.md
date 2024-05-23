@@ -60,7 +60,7 @@
 - Established public/private collaborations utilizing the SWS [patient registry](https://sturge-weber.org/for-patients/our-research.html) data, seeking to accelerate discovery for rare epillepsies through the C-Path [Rare Disease Cures Accelerator Program](https://c-path.org/programs/rdca-dap/).
 
 <table>
-    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Senior Expert Data Scientist, Novartis BioMedical Research, Cambridge MA</td></tr>
+    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Associate Director and Senior Principle Data Scientist, Novartis BioMedical Research, Cambridge MA</td></tr>
 </table>
 
  - Developed [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) for processing thousands of internal and external experiments across Novartis R&D portfolio. 
