@@ -63,14 +63,15 @@
     <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Associate Director and Senior Principle Data Scientist, Novartis BioMedical Research, Cambridge MA</td></tr>
 </table>
 
- - Developed [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) for processing thousands of internal and external experiments across Novartis R&D portfolio. 
- - Managed resourcing and stakeholder relationships for the Novartis Oncology Data Science drug discovery portfolio to ensure continued support of research programs.
- - Identified and validated novel pharmacodynamic markers to support multiple oncology drug discovery and development programs. 
- - Interfaced wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
- - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
- - Mined internal and public genomics data to identify and validate new drug targets. 
+ - Data strategy and analysis coordination for external oncology translational research academic collaborations.
+ - Develop [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) and coordinate pipeline automation and data warehousing for processing thousands of internal and external experiments across Novartis R&D portfolio. 
+ - Manage resourcing and stakeholder relationships for the Novartis Oncology data science drug discovery research portfolio.
+ - Identify and validate novel pharmacodynamic markers to support multiple oncology drug discovery and development programs. 
+ - Interface with wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
+ - Design [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
+ - Mine internal and public genomics data to identify and validate new drug targets. 
  - Organized 2019-2023 yearly global computational research symposia spanning six geographical sites. 
- - Chaired a global employee resource group for Novartis computational biology, bioinformatics and data science staff. 
+ - Chaired a global employee resource group for Novartis computational biology, bioinformatics and data science staff.
 
 <table>
     <tr><td style="padding:2mm;"><strong>Mar 2013 - May 2015</strong></td><td>Postdoctoral Fellow, Department of Oncology,
