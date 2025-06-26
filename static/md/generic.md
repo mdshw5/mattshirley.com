@@ -30,8 +30,8 @@
         <i class="fa fa-mobile" style="color:#666666;font-size:80%"></i> (443) 637-2459 <br>
         <i class="fa fa-briefcase" style="color:#666666;font-size:80%"></i> (617) 871-5544 <br>
         <a href="http://mattshirley.com"><i class="far fa-compass"></i> mattshirley.com</a><br>
-        <a href="https://github.com/mdshw5"><i class="fab fa-git-square"></i></a>
-        <a href="https://linkedin.com/in/mdshw5"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/mdshw5"><i class="fab fa-git-square"> github.com/mdshw5</i></a>
+        <a href="https://linkedin.com/in/mdshw5"><i class="fab fa-linkedin"> linkedin.com/in/mdshw5</i></a>
         </td>
     </tr>
 </table>
