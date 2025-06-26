@@ -60,13 +60,14 @@
     <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Associate Director and Senior Principle Data Scientist, Novartis BioMedical Research, Cambridge MA</td></tr>
 </table>
 
- - Data strategy and analysis coordination for external oncology translational research academic collaborations.
- - Develop [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) and coordinate pipeline automation and data warehousing for processing thousands of internal and external experiments across Novartis R&D portfolio. 
- - Manage resourcing and stakeholder relationships for the Novartis Oncology data science drug discovery research portfolio.
- - Identify and validate novel pharmacodynamic markers to support multiple oncology drug discovery and development programs. 
- - Interface with wet lab biologists and sequencing facilities to guide experimental design, execution and perform data analysis of multiple NGS assays. 
- - Design [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
- - Mine internal and public genomics data to identify and validate new drug targets. 
+ - Managed a high performing group of computational biologists focused on early drug development from target identification through phase 1 clinical trials.
+ - Coordinated data strategy and analysis for external oncology translational research academic collaborations.
+ - Developed [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) and coordinated pipeline automation and data warehousing for processing thousands of internal and external experiments across Novartis R&D portfolio. 
+ - Managed resourcing and stakeholder relationships for the Novartis Oncology data science drug discovery research portfolio.
+ - Identified and validated novel pharmacodynamic markers to support multiple oncology drug discovery and development programs. 
+ - Interfaced with wet lab biologists and sequencing facilities to guide experimental design, execution and data analysis of multiple NGS assays. 
+ - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
+ - Mined internal and public genomics data to identify and validate new drug targets. 
  - Organized 2019-2023 yearly global computational research symposia spanning six geographical sites. 
  - Chaired a global employee resource group for Novartis computational biology, bioinformatics and data science staff.
 
