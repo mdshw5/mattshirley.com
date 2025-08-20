@@ -1,4 +1,4 @@
-<p class="lead">My name is Matt Shirley and I work as a Data Scientist in Oncology Bioinformatics at Novartis Institutes for BioMedical Research, and I advise the Sturge-Weber Foundation's patient-focused research as CSO.</p>
+<p class="lead">My name is Matt Shirley and I work as a Genomics Data Scientist in Oncology Biomedical Research at Novartis, and I advise the Sturge-Weber Foundation's patient-focused research as its Chief Scientific Officer.</p>
 
 You can find my publications on [ORCID](http://orcid.org/0000-0003-0855-9274) <a href="http://orcid.org/0000-0003-0855-9274"><i class="ai ai-orcid"></i></a> and
 [Scholar](http://scholar.google.com/citations?user=b7Jyb4YAAAAJ&hl=en) <a href="http://scholar.google.com/citations?user=b7Jyb4YAAAAJ&hl=en"><i class="fas fa-graduation-cap"></i></a>. Chat with me on [Mastodon](https://mastodon.social/@mdshw5) <a href="https://mastodon.social/@mdshw5"><i class="fab fa-mastodon"></i></a> and network with me on [LinkedIn](http://linkedin.com/in/mdshw5) <a href="https://linkedin.com/in/mdshw5"><i class="fab fa-linkedin"></i></a>.
