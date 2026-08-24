@@ -1,59 +1,56 @@
-<!DOCTYPE html>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="Matthew Shirley">
-
-<title>Mattshirley.com &middot; an n=1 experiment</title>
-
-<link rel=stylesheet media="screen" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-<link rel=stylesheet media="print" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
-
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Matthew Shirley, Ph.D. - computational biologist and genomics data scientist">
+    <meta name="author" content="Matthew Shirley">
+    <title>{% block title %}Matthew Shirley, Ph.D.{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66mrdb46+porD/OJV+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
 <body>
-<div class="container">
-    <div class="row well hidden-print">
-        <div class="row">
-            <div class="col-sm-8 col-md-9">
-                {{ 'static/md/banner.md' | render_markdown }}
-            </div>
-            <div class="col-sm-4 col-md-3">
-                <a href="{{ url_for('about') }}"><img class="img-circle" src="{{ 'mdshw5@gmail.com' | gravatar_url }}"/></a>
-            </div>
-        </div>
+<header class="site-header hidden-print">
+    <div class="shell header-inner">
+        <a class="site-name" href="{{ url_for('about') }}">Matthew Shirley<span>, Ph.D.</span></a>
+        <nav aria-label="Primary navigation">
+            <a href="{{ url_for('about') }}#about">About</a>
+            <a href="{{ url_for('about') }}#education">Experience</a>
+            <a href="{{ url_for('about') }}#publications">Publications</a>
+            <a href="https://github.com/mdshw5" rel="noopener">GitHub -&gt;</a>
+        </nav>
     </div>
-    <div class="row">
-        <div class="col-12 hidden-print">
+</header>
 
-            <div class="col-9">
-                <h5>GITHUB REPOSITORIES</h5>
-                <ul class="list-inline">
-                    {{ 'mdshw5' | get_git_repos }}
-                </ul>
-            </div>
-            <div class="col-3">
-                <small class="text-muted hidden-print">Powered by <a href="http://flask.pocoo.org">Flask. </a></small><br>
-                <small class="text-muted hidden-print">Styled with <a href="http://twitter.github.io/">Bootstrap.</a></small><br>
-                <small class="text-muted hidden-print">Icons from <a href="http://jpswalsh.github.io/academicons//">Academicons.</a></small><br>
-            </div>
+<main class="shell">
+    <section class="intro hidden-print" aria-label="Introduction">
+        <div class="intro-copy">{{ 'static/md/banner.md' | render_markdown }}</div>
+        <a class="portrait-link" href="{{ url_for('about') }}" aria-label="Return to Matthew Shirley's profile">
+            <img class="portrait" src="{{ 'mdshw5@gmail.com' | gravatar_url }}" alt="Matthew Shirley">
+        </a>
+    </section>
+
+    <section class="repository-strip hidden-print" aria-labelledby="repositories-heading">
+        <div>
+            <p class="eyebrow" id="repositories-heading">Selected work</p>
+            <ul class="repo-list">{{ 'mdshw5' | get_git_repos }}</ul>
         </div>
-        <div class="col-12">
-            <div class="content">
-                {% for message in get_flashed_messages() %}
-                <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{ message }}
-                </div>
-                {% endfor %}
-                {% block body %}{% endblock %}
-            </div>
-        </div>
-    </div>
-</div>
+        <p class="site-note">Research, software, and open data<br><a href="mailto:mdshw5@gmail.com">Get in touch</a></p>
+    </section>
+
+    {% for message in get_flashed_messages() %}
+    <div class="alert" role="status">{{ message }}</div>
+    {% endfor %}
+    <article class="content">
+        {% block body %}{% endblock %}
+    </article>
+</main>
+
+<footer class="site-footer hidden-print">
+    <div class="shell">Built with Flask | <a href="https://github.com/mdshw5/mattshirley.com">View source</a></div>
+</footer>
 </body>
+</html>
