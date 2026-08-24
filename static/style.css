@@ -61,7 +61,7 @@ nav a:hover { color: var(--accent-dark); }
     .site-note { margin-top: 1rem; text-align: left; }
     .content { padding-top: 2.5rem; overflow-wrap: anywhere; }
     .content table { display: table; overflow: visible; }
-    .content td:first-child { white-space: nowrap; width: 1%; }
+    .content td:first-child { white-space: nowrap; }
     .content h4 + ul.list-inline { columns: 1; }
 }
 @media print {
