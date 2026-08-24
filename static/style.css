@@ -13,7 +13,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: Georgia, 'Times New Roman', serif; line-height: 1.65; }
 a { color: var(--accent-dark); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--accent); }
-.shell { width: min(100% - 2rem, 70rem); margin: 0 auto; }
+.shell { width: min(100% - 2rem, 60rem); margin: 0 auto; }
 .site-header { border-bottom: 1px solid var(--line); background: rgba(251, 252, 250, .94); }
 .header-inner { min-height: 4.75rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .site-name { color: var(--ink); font-size: 1.2rem; font-weight: bold; text-decoration: none; letter-spacing: .01em; }
