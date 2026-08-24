@@ -27,10 +27,12 @@
 
 <main class="shell">
     <section class="intro hidden-print" aria-label="Introduction">
-        <div class="intro-copy">{{ 'static/md/banner.md' | render_markdown }}</div>
-        <a class="portrait-link" href="{{ url_for('about') }}" aria-label="Return to Matthew Shirley's profile">
-            <img class="portrait" src="{{ 'mdshw5@gmail.com' | gravatar_url }}" alt="Matthew Shirley">
-        </a>
+        <div class="intro-copy">
+            <a class="portrait-link" href="{{ url_for('about') }}" aria-label="Return to Matthew Shirley's profile">
+                <img class="portrait" src="{{ 'mdshw5@gmail.com' | gravatar_url }}" alt="Matthew Shirley">
+            </a>
+            {{ 'static/md/banner.md' | render_markdown }}
+        </div>
     </section>
 
     <section class="repository-strip hidden-print" aria-labelledby="repositories-heading">
