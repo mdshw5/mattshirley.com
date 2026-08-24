@@ -24,7 +24,7 @@ nav a:hover { color: var(--accent-dark); }
 .intro { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--line); }
 .intro-copy { min-width: 0; }
 .intro-copy .lead { max-width: 47rem; margin: 0; color: var(--ink); font-size: 1.8rem; line-height: 1.35; }
-.intro-copy p:not(.lead) { max-width: 54rem; color: var(--muted); }
+.intro-copy p:not(.lead) { max-width: 54rem; color: var(--muted); font-size: .92rem; }
 .portrait-link { float: left; margin: 0 3rem 1rem 0; }
 .portrait { display: block; width: 9rem; height: 9rem; border: 8px solid white; border-radius: 50%; box-shadow: 0 8px 24px rgba(23, 33, 38, .12); }
 .intro-copy::after { display: table; clear: both; content: ''; }

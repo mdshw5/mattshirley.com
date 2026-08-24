@@ -26,9 +26,12 @@ def get_git_repos(user_name):
             data = json.load(response)
         links = []
         for repo in data:
-            if not repo['fork']:
-                links.append('<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>'.format(
-                    url=escape(repo['html_url']), name=escape(repo['name'])))
+            if repo['fork']:
+                continue
+            links.append('<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>'.format(
+                url=escape(repo['html_url']), name=escape(repo['name'])))
+            if len(links) == 7:
+                break
         return Markup('\n'.join(links))
     except (HTTPError, URLError, TimeoutError, ValueError):
         return('Repositories not available')
