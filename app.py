@@ -1,11 +1,13 @@
 import markdown
 import json
 import urllib.request
+from io import BytesIO
 from pathlib import Path
 from urllib.error import URLError, HTTPError
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, send_file, url_for
 from markupsafe import Markup, escape
 from libgravatar import Gravatar
+from weasyprint import HTML
 
 app = Flask(__name__)
 
@@ -58,6 +60,7 @@ def index():
 @app.route('/about', methods=['GET'])
 def about():
     print_page = request.args.get('print', False)
+    pdf_page = request.args.get('pdf', False)
     resume_template = request.args.get('resume', 'generic')
     resume_path = markdown_root / '{}.md'.format(resume_template)
     try:
@@ -67,6 +70,14 @@ def about():
     content = render_markdown(str(resume_path.relative_to(root_path)))
     if content is False:
         return render_template('404.html'), 404
+    if pdf_page:
+        rendered_page = render_template('print_markdown.html', **locals())
+        pdf = HTML(string=rendered_page, base_url=str(root_path)).write_pdf()
+        return send_file(
+            BytesIO(pdf),
+            mimetype='application/pdf',
+            as_attachment=True,
+            download_name='{}.pdf'.format(resume_template))
     if print_page:
         return render_template('print_markdown.html', **locals())
     return render_template('markdown.html', **locals())

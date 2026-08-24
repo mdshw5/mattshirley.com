@@ -4,3 +4,4 @@ Markdown
 PyYAML
 MarkupSafe
 libgravatar
+WeasyPrint
