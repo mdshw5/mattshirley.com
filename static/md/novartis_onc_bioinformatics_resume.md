@@ -11,7 +11,6 @@
     <td style="text-align:right;">
         <div class="hidden-print" align="right">
             <button type="button" class="btn btn-default" aria-label="Print resume" onclick="window.location.href = 'about?resume=novartis_onc_bioinformatics_resume&print=true'"><span class="fas fa-print" aria-hidden="true"></span></button>
-            <a class="btn btn-default" aria-label="Download resume as PDF" href="about?resume=novartis_onc_bioinformatics_resume&pdf=true"><span class="fas fa-download" aria-hidden="true"></span></a>
         </div>
     </td>
 </tr>

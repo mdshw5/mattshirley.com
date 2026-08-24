@@ -10,7 +10,6 @@
     <td style="text-align:right;">
         <div class="hidden-print" align="right">
             <button type="button" class="btn btn-default" aria-label="Print resume" onclick="window.location.href = 'about?print=true&resume=biorad_resume'"><span class="fas fa-print" aria-hidden="true"></span></button>
-            <a class="btn btn-default" aria-label="Download resume as PDF" href="about?pdf=true&resume=biorad_resume"><span class="fas fa-download" aria-hidden="true"></span></a>
         </div>
     </td>
 </tr>
