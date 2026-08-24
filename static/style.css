@@ -60,7 +60,8 @@ nav a:hover { color: var(--accent-dark); }
     .repository-strip { display: block; }
     .site-note { margin-top: 1rem; text-align: left; }
     .content { padding-top: 2.5rem; overflow-wrap: anywhere; }
-    .content table { display: block; overflow-x: auto; }
+    .content table { display: table; overflow: visible; }
+    .content td:first-child { white-space: nowrap; width: 1%; }
     .content h4 + ul.list-inline { columns: 1; }
 }
 @media print {
