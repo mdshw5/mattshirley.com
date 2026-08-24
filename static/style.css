@@ -55,8 +55,8 @@ nav a:hover { color: var(--accent-dark); }
     .intro { padding: 3.5rem 0 2.5rem; }
     .intro-copy .lead { font-size: 1.2rem; }
     .content h1 { font-size: 2.2rem; }
-    .portrait-link { float: none; margin: 0 0 1.5rem; }
-    .portrait { width: 6rem; height: 6rem; }
+    .portrait-link { display: block; float: none; width: max-content; margin: 0 auto 1.5rem; }
+    .portrait { width: 7rem; height: 7rem; }
     .repository-strip { display: block; }
     .site-note { margin-top: 1rem; text-align: left; }
     .content { padding-top: 2.5rem; overflow-wrap: anywhere; }
