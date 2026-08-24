@@ -21,20 +21,20 @@ a:hover { color: var(--accent); }
 nav { display: flex; gap: 1.4rem; font-family: system-ui, sans-serif; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
 nav a { color: var(--muted); text-decoration: none; }
 nav a:hover { color: var(--accent-dark); }
-.intro { display: grid; grid-template-columns: 10rem 1fr; gap: 3rem; align-items: center; padding: 5.5rem 0 4rem; border-bottom: 1px solid var(--line); }
+.intro { display: grid; grid-template-columns: 10rem 1fr; gap: 3rem; align-items: center; padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--line); }
 .intro-copy { grid-column: 2; grid-row: 1; min-width: 0; }
 .intro-copy .lead { max-width: 47rem; margin: 0; color: var(--ink); font-size: 1.8rem; line-height: 1.35; }
 .intro-copy p:not(.lead) { max-width: 54rem; color: var(--muted); }
 .portrait-link { grid-column: 1; grid-row: 1; justify-self: start; }
 .portrait { display: block; width: 9rem; height: 9rem; border: 8px solid white; border-radius: 50%; box-shadow: 0 8px 24px rgba(23, 33, 38, .12); }
-.repository-strip { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--line); font-family: system-ui, sans-serif; }
+.repository-strip { display: flex; justify-content: space-between; gap: 2rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); font-family: system-ui, sans-serif; }
 .eyebrow { margin: 0 0 .4rem; color: var(--accent-dark); font-size: .7rem; font-weight: bold; letter-spacing: .14em; text-transform: uppercase; }
 .repo-list { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: 0; }
 .repo-list li { display: inline-block; }
 .repo-list a { display: block; padding: .35rem .7rem; color: var(--ink); background: var(--warm); font-size: .85rem; text-decoration: none; }
 .repo-list a:hover { background: #e2e8e3; }
 .site-note { margin: 0; color: var(--muted); font-size: .85rem; text-align: right; }
-.content { max-width: 60rem; padding: 4rem 0 5rem; }
+.content { max-width: 60rem; padding: 2.5rem 0 4rem; }
 .content h1, .content h2, .content h3, .content h4 { color: var(--ink); line-height: 1.2; }
 .content h1 { margin: 0 0 1.5rem; border-bottom: 2px solid var(--accent); font-size: 3rem; }
 .content h2 { margin-top: 3rem; font-size: 1.45rem; }
