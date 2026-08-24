@@ -2,4 +2,7 @@
 {% block title %}Matthew Shirley, Ph.D. | Print{% endblock %}
 {% block body %}
 {{ content }}
+<script>
+	window.addEventListener('load', function () { window.print(); });
+</script>
 {% endblock %}
