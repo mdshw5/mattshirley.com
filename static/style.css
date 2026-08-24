@@ -61,7 +61,8 @@ nav a:hover { color: var(--accent-dark); }
     .site-note { margin-top: 1rem; text-align: left; }
     .content { padding-top: 2.5rem; overflow-wrap: anywhere; }
     .content table { display: table; overflow: visible; }
-    .content td:first-child { white-space: nowrap; }
+    .content table:nth-of-type(2) td { display: block; width: auto !important; padding-right: 0; text-align: left !important; }
+    .content table:nth-of-type(n + 3) td:first-child { white-space: nowrap; }
     .content h4 + ul.list-inline { columns: 1; }
 }
 @media print {
