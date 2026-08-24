@@ -45,6 +45,7 @@ nav a:hover { color: var(--accent-dark); }
 .content h4 + ul.list-inline { columns: 3; column-gap: 2rem; padding-left: 1.2rem; }
 .content h4 + ul.list-inline li { break-inside: avoid; margin-bottom: .25rem; }
 .content img { max-width: 100%; height: auto; }
+.content td iframe[src*="ghbtns.com"] { width: 150px; max-width: 100%; }
 .btn { display: inline-block; padding: .45rem .8rem; border: 1px solid var(--line); color: var(--accent-dark); background: white; cursor: pointer; }
 .alert { margin-top: 1.5rem; padding: .8rem 1rem; background: #e4f2f0; border-left: 3px solid var(--accent); }
 .site-footer { padding: 1.5rem 0; border-top: 1px solid var(--line); color: var(--muted); font-family: system-ui, sans-serif; font-size: .8rem; }
