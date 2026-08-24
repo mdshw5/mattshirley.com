@@ -1,20 +1,16 @@
-import codecs
 import markdown
-import os
-import os.path
 import json
-import yaml
 import urllib.request
-from flask import Flask, request
-from markupsafe import Markup
-from urllib.parse import urljoin
-from flask import Response, request, redirect, url_for, render_template, send_from_directory
-from hashlib import md5
+from pathlib import Path
+from urllib.error import URLError, HTTPError
+from flask import Flask, redirect, render_template, request, url_for
+from markupsafe import Markup, escape
 from libgravatar import Gravatar
 
 app = Flask(__name__)
 
-root_path = os.path.dirname(__file__)
+root_path = Path(__file__).resolve().parent
+markdown_root = root_path / 'static' / 'md'
 
 @app.template_filter('gravatar_url')
 def gravatar_url(email):
@@ -24,26 +20,33 @@ def gravatar_url(email):
 @app.template_filter('get_git_repos')
 def get_git_repos(user_name):
     try:
-        data = json.load(urllib.request.urlopen('https://api.github.com/users/{user}/repos?sort=updated&type=all'.format(user=user_name)))
-        links = list()
+        url = 'https://api.github.com/users/{user}/repos?sort=updated&type=all'.format(user=user_name)
+        request = urllib.request.Request(url, headers={'User-Agent': 'mattshirley.com'})
+        with urllib.request.urlopen(request, timeout=5) as response:
+            data = json.load(response)
+        links = []
         for repo in data:
             if not repo['fork']:
-                links.append(u'<li><a href="{url}" target="_blank">{name}</a></li>'.format(url=repo['html_url'], name=repo['name']))
+                links.append('<li><a href="{url}" target="_blank" rel="noopener">{name}</a></li>'.format(
+                    url=escape(repo['html_url']), name=escape(repo['name'])))
         return Markup('\n'.join(links))
-    except:
+    except (HTTPError, URLError, TimeoutError, ValueError):
         return('Repositories not available')
 
 @app.template_filter('render_markdown')
 def render_markdown(md, header=False):
     """ Takes a markdown file and returns html """
+    markdown_path = (root_path / md).resolve()
     try:
-        mdfile = codecs.open(os.path.join(root_path, md), 'r', 'utf-8')
-    except IOError:
+        markdown_path.relative_to(root_path)
+    except ValueError:
         return False
-    extensions=['tables', 'fenced_code', 'footnotes']
-    with mdfile:
-            content = Markup(markdown.markdown(mdfile.read(), extensions=extensions))
-    return content
+    if markdown_path.suffix != '.md' or not markdown_path.is_file():
+        return False
+    with markdown_path.open(encoding='utf-8') as markdown_file:
+        return Markup(markdown.markdown(
+            markdown_file.read(),
+            extensions=['tables', 'fenced_code', 'footnotes']))
 
 @app.route('/')
 def index():
@@ -51,15 +54,19 @@ def index():
 
 @app.route('/about', methods=['GET'])
 def about():
-    serif = True
-    if request.method == 'GET':
-        print_page = request.args.get('print', False)
-        resume_template = request.args.get('resume', 'generic')
-        content = render_markdown('static/md/{0}.md'.format(resume_template))
-        if print_page:
-            return render_template('print_markdown.html', **locals())
-        else:
-            return render_template('markdown.html', **locals())
+    print_page = request.args.get('print', False)
+    resume_template = request.args.get('resume', 'generic')
+    resume_path = markdown_root / '{}.md'.format(resume_template)
+    try:
+        resume_path.resolve().relative_to(markdown_root)
+    except ValueError:
+        return render_template('404.html'), 404
+    content = render_markdown(str(resume_path.relative_to(root_path)))
+    if content is False:
+        return render_template('404.html'), 404
+    if print_page:
+        return render_template('print_markdown.html', **locals())
+    return render_template('markdown.html', **locals())
 
 @app.route('/presentations')
 def presentations():
