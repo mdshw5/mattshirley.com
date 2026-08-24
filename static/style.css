@@ -60,7 +60,11 @@ nav a:hover { color: var(--accent-dark); }
 }
 @media print {
     .hidden-print, .site-header, .site-footer { display: none !important; }
-    body { background: white; }
+    body { background: white; font-size: .85rem; line-height: 1.4; }
     .shell { width: 100%; }
     .content { padding: 0; }
+    .content h1 { font-size: 2rem; }
+    .content h2 { margin-top: 1.5rem; font-size: 1.1rem; }
+    .content h3, .content h4 { margin-top: 1rem; }
+    .content td, .content th { padding: .35rem; }
 }
