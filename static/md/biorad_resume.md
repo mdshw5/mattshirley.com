@@ -9,7 +9,7 @@
     </td>
     <td style="text-align:right;">
         <div class="hidden-print" align="right">
-            <button type="button" class="btn btn-default" onclick="window.location.href = 'about?print=true&resume=biorad_resume'"><span class="glyphicon glyphicon-print"></span></button>
+            <button type="button" class="btn btn-default" aria-label="Print resume" onclick="window.location.href = 'about?print=true&resume=biorad_resume'"><span class="fas fa-print" aria-hidden="true"></span></button>
         </div>
     </td>
 </tr>
