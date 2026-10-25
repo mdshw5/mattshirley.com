@@ -45,12 +45,12 @@ nav a:hover { color: var(--accent-dark); }
 .content h4 + ul.list-inline { columns: 3; column-gap: 2rem; padding-left: 1.2rem; }
 .content h4 + ul.list-inline li { break-inside: avoid; margin-bottom: .25rem; }
 .content img { max-width: 100%; height: auto; }
-.content td iframe[src*="ghbtns.com"] { width: 150px; max-width: 100%; }
+.content td img.gh-stars { width: auto; max-width: 100%; }
 .btn { display: inline-block; padding: .45rem .8rem; border: 1px solid var(--line); color: var(--accent-dark); background: white; cursor: pointer; }
 .alert { margin-top: 1.5rem; padding: .8rem 1rem; background: #e4f2f0; border-left: 3px solid var(--accent); }
 .site-footer { padding: 1.5rem 0; border-top: 1px solid var(--line); color: var(--muted); font-family: system-ui, sans-serif; font-size: .8rem; }
 .hidden-print { display: block; }
-@media (max-width: 680px) {
+@media screen and (max-width: 680px) {
     .header-inner { align-items: flex-start; flex-direction: column; padding: 1.2rem 0; gap: .8rem; }
     nav { gap: .9rem; font-size: .68rem; }
     .intro { padding: 3.5rem 0 2.5rem; }
@@ -79,5 +79,6 @@ nav a:hover { color: var(--accent-dark); }
     .content td, .content th { padding: .22rem .45rem !important; }
     .content td > strong:only-child { white-space: nowrap; }
     .content tr, .content li { break-inside: avoid; }
-    .content h4 + ul.list-inline { columns: 3; column-gap: 1rem; }
+    .content h4 + ul.list-inline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 1rem; padding-left: 1.2rem; list-style: none; }
+    .content h4 + ul.list-inline li::before { content: "\2022"; margin-right: .45rem; color: var(--muted); }
 }
