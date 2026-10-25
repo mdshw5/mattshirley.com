@@ -26,7 +26,6 @@
         250 Massachussetts Ave <br>
         Cambridge MA 02139 <br>
         <a href="mailto:mdshw5@gmail.com">mdshw5@gmail.com</a> <br>
-        <a href="mailto:cso@sturge-weber.org">cso@sturge-weber.org</a> <br>
         <i class="fa fa-mobile" style="color:#666666;font-size:80%"></i> (443) 637-4759 <br>
         <i class="fa fa-briefcase" style="color:#666666;font-size:80%"></i> (617) 871-5544 <br>
         <a href="http://mattshirley.com"><i class="far fa-compass"></i> mattshirley.com</a><br>
@@ -48,28 +47,27 @@
 #### Research & Professional Experience
 
 <table>
-    <tr><td style="padding:2mm;"><strong>May 2021 - current</strong></td><td>Chief Scientific Officer, The Sturge-Weber Foundation, Aurora CO</td></tr>
-</table> 
-
-- Funding innovative translational research proposals through the [Lisa's Fellowship program](https://sturge-weber.org/for-professionals/2019-lisas-fellowship-award.html) with the goal of advancing therapeutics for Sturge-Weber Syndrome towards the clinic.
-- Organizing multidisciplinary international [research conferences and discussions](https://sturge-weber.org/for-professionals/) under the three core SWS research domains: neurology, dermatology, and opthamology. 
-- Hosted the 2022 & 2023 Sturge Weber International Research Network Conferences in Grapevine TX and Charlotte NC, bringing together top researchers and labs from the Sturge-Weber research community. Applied for and [recieved funding through NIH R13](#grants) to support conference activities. Managed a collaborative goal-setting process to build consensus around long-term research strategy. 
-- Established public/private collaborations utilizing the SWS [patient registry](https://sturge-weber.org/for-patients/our-research.html) data, seeking to accelerate discovery for rare epillepsies through the C-Path [Rare Disease Cures Accelerator Program](https://c-path.org/programs/rdca-dap/).
-
-<table>
-    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Associate Director and Senior Principle Data Scientist, Novartis BioMedical Research, Cambridge MA</td></tr>
+    <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Associate Director & Senior Principle Data Scientist, Novartis BioMedical Research, Cambridge MA</td></tr>
 </table>
 
- - Managed a high performing group of computational biologists focused on early drug development from target identification through phase 1 clinical trials.
- - Coordinated data strategy and analysis for external oncology translational research academic collaborations.
- - Developed [alignment-free RNA-seq pipeline](https://github.com/Novartis/pisces) and coordinated pipeline automation and data warehousing for processing thousands of internal and external experiments across Novartis R&D portfolio. 
+ - Managed a high performing group of biological data scientists focused on early drug development, from target identification through phase 1 clinical trials.
+ - Coordinated data strategy and analysis for academic translational research collaborations.
+ - Developed [bulk RNA-seq pipeline](https://github.com/Novartis/pisces) and coordinated company-wide automation and data warehousing for thousands of internal and external experiments across Novartis Biomedical Research organization. 
  - Managed resourcing and stakeholder relationships for the Novartis Oncology data science drug discovery research portfolio.
- - Identified and validated novel pharmacodynamic markers to support multiple oncology drug discovery and development programs. 
- - Interfaced with wet lab biologists and sequencing facilities to guide experimental design, execution and data analysis of multiple NGS assays. 
+ - Identified and validated novel pharmacodynamic markers to enable decision making across multiple oncology drug discovery programs. 
+ - Interfaced with wet lab biologists and sequencing facilities to guide experimental design, execution and data analysis of various NGS assays. 
  - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
- - Mined internal and public genomics data to identify and validate new drug targets. 
  - Organized 2019-2023 yearly global computational research symposia spanning six geographical sites. 
  - Chaired a global employee resource group for Novartis computational biology, bioinformatics and data science staff.
+
+ <table>
+    <tr><td style="padding:2mm;"><strong>May 2021 - October 2026</strong></td><td>Chief Scientific Officer, The Sturge-Weber Foundation, Aurora CO</td></tr>
+</table> 
+
+- Funded innovative translational research proposals through the [Lisa's Fellowship program](https://sturge-weber.org/for-professionals/2019-lisas-fellowship-award.html) with the goal of advancing therapeutics for Sturge-Weber Syndrome towards the clinic.
+- Organized multidisciplinary international [research conferences and discussions](https://sturge-weber.org/for-professionals/) under the three core SWS research domains: neurology, dermatology, and opthamology. 
+- Hosted the 2022, 2023 & 2025 Sturge Weber International Research Network Conferences in Grapevine TX, Charlotte NC & Madison WI, bringing together top researchers and labs from the Sturge-Weber research community. Applied for and [recieved funding through NIH R13](#grants) to support conference activities. Managed a collaborative goal-setting process to build consensus around long-term research strategy. 
+- Established public/private collaborations utilizing the SWS [patient registry](https://sturge-weber.org/for-patients/our-research.html) data, seeking to accelerate discovery for rare epillepsies through the C-Path [Rare Disease Cures Accelerator Program](https://c-path.org/programs/rdca-dap/).
 
 <table>
     <tr><td style="padding:2mm;"><strong>Mar 2013 - May 2015</strong></td><td>Postdoctoral Fellow, Department of Oncology,
@@ -105,18 +103,19 @@
 
 <ul class="list-inline">
     <li>Experimental Design</li>
-    <li>Next Generation Sequencing Analysis</li>
     <li>Molecular Biology</li>
     <li>Applied Statistics</li>
+    <li>NGS Analysis</li>
     <li>Python</li>
-    <li>R</li>
+    <li>R Language</li>
     <li>Team and Project Management</li>
-    <li>Code Version Control</li>
     <li>SQL</li>
+    <li>LLM Assisted Workflows</li>
+    <li>Software Development</li>
     <li>Continuous Integration Testing</li>
+    <li>Code Version Control</li>
     <li>Unix</li>
     <li>Cloud Computing</li>
-    <li>Software Development</li>
 </ul>
 
 <div id="publications" style="page-break-before:always;"></div>
