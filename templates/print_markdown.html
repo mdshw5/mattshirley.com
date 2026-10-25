@@ -3,6 +3,41 @@
 {% block body %}
 {{ content }}
 <script>
-	window.addEventListener('load', function () { window.print(); });
+	(function () {
+		var printed = false;
+
+		function badgeCount() {
+			return document.querySelectorAll('.__dimensions_badge_embed__').length;
+		}
+
+		function installedCount() {
+			return document.querySelectorAll(
+				'.__dimensions_badge_embed__[data-dimensions-badge-installed]'
+			).length;
+		}
+
+		function printOnce() {
+			if (printed) {
+				return;
+			}
+			printed = true;
+			window.print();
+		}
+
+		function attempt(deadline) {
+			var expected = badgeCount();
+			if (expected === 0 || installedCount() >= expected || Date.now() > deadline) {
+				printOnce();
+				return;
+			}
+			window.setTimeout(function () { attempt(deadline); }, 150);
+		}
+
+		window.addEventListener('load', function () {
+			/* Dimensions badges render asynchronously, so give them up to
+			   5 seconds to finish before opening the print dialog. */
+			attempt(Date.now() + 5000);
+		});
+	})();
 </script>
 {% endblock %}
