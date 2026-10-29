@@ -50,15 +50,18 @@
     <tr><td style="padding:2mm;"><strong>May 2015 - current</strong></td><td>Associate Director & Senior Principle Data Scientist, Novartis BioMedical Research, Cambridge MA</td></tr>
 </table>
 
- - Managed a high performing group of biological data scientists focused on early drug development, from target identification through phase 1 clinical trials.
- - Coordinated data strategy and analysis for academic translational research collaborations.
- - Developed [bulk RNA-seq pipeline](https://github.com/Novartis/pisces) and coordinated company-wide automation and data warehousing for thousands of internal and external experiments across Novartis Biomedical Research organization. 
- - Managed resourcing and stakeholder relationships for the Novartis Oncology data science drug discovery research portfolio.
- - Identified and validated novel pharmacodynamic markers to enable decision making across multiple oncology drug discovery programs. 
- - Interfaced with wet lab biologists and sequencing facilities to guide experimental design, execution and data analysis of various NGS assays. 
- - Designed [new tools](#publications) for validation of CRISPR/Cas9 sgRNA efficiency. 
- - Organized 2019-2023 yearly global computational research symposia spanning six geographical sites. 
- - Chaired a global employee resource group for Novartis computational biology, bioinformatics and data science staff.
+- *Scientific leadership*: Serve as data science lead on cross-functional teams working on small-molecule cancer drugs, from target identification through first-in-human studies. Advise on target biology, how drugs work, biomarker strategy and patient selection, and present at portfolio and governance reviews.
+- *Interim hub leadership*: Served as interim co-lead of a data science hub supporting small-molecule discovery in the US. Assigned analysts across the discovery portfolio, set priorities and meeting agendas, and worked with discovery leadership to find gaps and opportunities.
+- *People leadership*: Manage and develop a team of data scientists at expert and senior-expert level. This includes setting goals, coaching careers, supporting talent development, and closing skill gaps.
+- *Combining data types*: Lead analysis across bulk and single-cell RNA-seq, CRISPR functional genomics screens, deep mutational scanning, chromatin profiling (ChIP-seq, ATAC-seq) and in vivo studies to explain cancer biology and guide lead optimization.
+- Developed an alignment-free RNA-seq pipeline, PISCES, and coordinated the pipeline automation and data warehousing behind processing thousands of internal and external experiments across the R&D portfolio.
+- Identified and validated new pharmacodynamic markers for multiple oncology discovery and development programs.
+- Mined internal and public genomics data to identify and validate new drug targets.
+- Designed new tools for validating CRISPR/Cas9 guide-RNA efficiency.
+- Coordinated data strategy and analysis for external academic collaborations in translational oncology research.
+- Worked with wet-lab biologists and sequencing facilities on the design, execution and analysis of multiple NGS assays. 
+- Organized 2019-2023 yearly global computational research symposia spanning six geographical sites. 
+- Chaired a global employee resource group for Novartis computational biology, bioinformatics and data science staff.
 
  <table>
     <tr><td style="padding:2mm;"><strong>May 2021 - October 2026</strong></td><td>Chief Scientific Officer, The Sturge-Weber Foundation, Aurora CO</td></tr>
