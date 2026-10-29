@@ -1,4 +1,4 @@
-<p class="lead">My name is Matt Shirley and I'm a Data Scientist in Oncology Biomedical Research at Novartis, and I also advise the Sturge-Weber Foundation's patient-focused research mission.</p>
+<p class="lead">My name is Matt Shirley and I'm an Associate Director and Senior Principal Data Scientist in Oncology Drug Discovery at Novartis, with 11+ years leading computational biology for small-molecule programs from target identification to the clinic. I also advise the Sturge-Weber Foundation's patient-focused research mission.</p>
 
 You can find my publications on [ORCID](http://orcid.org/0000-0003-0855-9274) <a href="http://orcid.org/0000-0003-0855-9274"><i class="ai ai-orcid"></i></a> and
 [Scholar](http://scholar.google.com/citations?user=b7Jyb4YAAAAJ&hl=en) <a href="http://scholar.google.com/citations?user=b7Jyb4YAAAAJ&hl=en"><i class="fas fa-graduation-cap"></i></a>. Network with me on [LinkedIn](http://linkedin.com/in/mdshw5) <a href="https://linkedin.com/in/mdshw5"><i class="fab fa-linkedin"></i></a>.
